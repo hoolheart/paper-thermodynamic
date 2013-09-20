@@ -1,0 +1,13 @@
+# Temporary Files
+*~
+*.bak
+*.backup
+
+# Latex
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.spl
+
