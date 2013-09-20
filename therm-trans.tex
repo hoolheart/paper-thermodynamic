@@ -53,8 +53,8 @@
 
 \begin{frontmatter}
 
-\title{Thermodynamic Point of View for Urban\\ Transportation
-Network}
+\title{Thermodynamic and Information Point of View for Urban
+Transportation Network}
 \author[SeT]{Huide Zhou\corref{cor}}
 \ead{huide.zhou@utbm.fr}
 \author[SeT]{Rachid Bouyekhf}
@@ -69,94 +69,94 @@ Rue Thierry Mieg, 90010 Belfort Cedex, France}
 \begin{abstract}
 To explore the nature of the transportation system, this paper shows
 the connections between the transportation system and the
-thermodynamic system by regarding the vehicles as the energy. In
-particular, it is demonstrated that transportation systems can have a
-similar notion of entropy to measure the system disorder. With these
-correspondent notions, the principles of thermodynamics are also
-introduced into the transportation context. Specially, the second law
-of thermodynamics leads to a dissipativeness law in transportation
-context which can make the transportation system tend to reduce its
-disorder and hence become better organized. Furthermore, the approach
-of Shannon's entropy is also applied to present the concept of the
-transportation information, which reflects the system contributions
-to the transportation functionality. With all these efforts, this
-paper provides a novel thermodynamic point of view in traffic
-engineering.
+thermodynamic system by regarding the vehicles as the energy. The
+correspondence of basic concepts are presented, and it is demonstrated
+that transportation systems can have a similar notion of entropy to
+measure the system disorder. Meanwhile, the principles of
+thermodynamics are also introduced into the transportation context.
+In particular, the second law of thermodynamics leads to a
+dissipative law of the transportation entropy which can make the
+transportation system tend to reduce its disorder and hence become
+better organized. Furthermore, the approach of Shannon's entropy is
+also applied in this paper to present the concept of the
+transportation information, which reflects the liquidity of the
+traffic and hence can better measure the transportation functionality
+of the system. With all these efforts, this paper provides a novel
+thermodynamic and information point of view for the urban
+transportation network.
 \end{abstract}
 
 \begin{keyword}
-urban transportation system\sep thermodynamic system \sep entropy\sep
+urban transportation\sep thermodynamic system \sep entropy\sep
 dissipativeness theory\sep Shannon \sep information
 \end{keyword}
 
 \end{frontmatter}
 
-% \title{Thermodynamic Point of View for Urban\\ Transportation
-% Network}
-% \author{Zhou Huide}
-% \date{\today}
-% \maketitle
-
 \section{Introduction}
 
 Urban transportation is an essential part of the modern cities. Due
 to the rapid increase of traffic demands in recent decades, the
-congestion problem emerges more frequently, which leads to serious
-economic and environment issues. To solve it, there have been many
-efforts made to study and understand the phenomenons in the urban
-transportation system from various approaches.
+congestion problem has become very frequent and led to serious
+economic and environment issues.
 
-The most widely used approach is the traffic flow theory
+To solve it, various approaches have been studied and applied to
+understand the phenomenons in the urban transportation system. Among
+them, the most widely used one is the traffic flow theory
 \citep{nathan_h_gartner_revised_2005}. This approach describes the
 behaviors of the transportation system by considering the vehicle
-movements as flows. Indeed, the general impression of the vehicle
-movements in modern cities is really similar with the liquid flows.
-The popular traffic signal control strategies, like TRANSYT
+movements as liquid flows, which matches the general impression of
+the traffic in modern cities. Hence, the traffic flow theory is very
+popular and has generated several well-known traffic signal control
+strategies, like TRANSYT
 \citep{robertson_tansyt_1969,hale_traffic_2005}, SCOOT
 \citep{bretherton_r_d_scoot_1982}, TUC
-\citep{diakaki_multivariable_2002}, etc, are all apply this approach
-to model the transportation system. Some concepts of traffic flows
-are also used in this paper. Beyond the flow analogy, the kinematic
-wave theory has been also applied to study the relationship between
-the traffic density and the traffic flow rate, which led the Cell
-Transmission Model (CTM)
+\citep{diakaki_multivariable_2002}, etc. In this paper, we also
+apply some concepts of traffic flows to model the system. Beyond this
+approach, the kinematic wave theory has been also applied to study the
+relationship between the traffic density and the traffic flow rate,
+which led the Cell Transmission Model (CTM)
 \citep{daganzo_cell_1995,flotterod_operational_2011}. This model can
 accurately describe the behaviors of traffic flows. Hence, the
 simulation based on CTM is more approximate with the real system than
-other well-known queue models \citep{almasri_online_2005}. This model
-has been well-applied in the simulation \citep{Su2013}, the observer
-\citep{CanudasdeWit2012} and the traffic signal control
-\citep{Pohlmann2010}. Another widely used model for the
+other well-known queue models \citep{almasri_online_2005}. Benefit
+from its accuracy, CTM has been applied in the simulation
+\citep{Su2013}, the observer \citep{CanudasdeWit2012} and the traffic
+signal control \citep{Pohlmann2010}. Another widely used model for the
 transportation system is the Petri-Net (PN)
 \citep{dotoli_urban_2006,ng_review_2013}, which works well with logic
 controllers.
 
-However, most of these existing works only focused on the superficial
-transportation behaviors and tried to adapt some existing models to
-them. They failed to show the nature of the transportation
-phenomenons from more fundamental perspectives.
+However, in our opinion, these existing works have done very little
+to explore the nature of the transportation system. They only focused
+on the superficial transportation behaviors and failed to show the
+fundamentals of the transportation phenomenon. Indeed, as a specific
+physical system, urban transportation network should be able to be
+studied from more general point of view. In particular, it is
+observed that the urban transportation system consists of the traffic
+lanes and the vehicles which can stay in the lanes or travel from one
+to another. This whole picture reminds us that the transportation
+system is very similar with the large-scale open thermodynamic system,
+which consists of connected subsystems (matters) and the energy that
+can be stored in subsystems or be transferred from one to another.
+These similarities encourage us to introduce thermodynamic concepts
+into transportation context to better understand the transportation
+phenomenons.
 
-In this context, the objective of this chapter is to explore the
-connections between the transportation system and more general
-physical systems in order to show its physical nature.
-%
-Indeed, the urban transportation system consists of the traffic lanes
-and the vehicles which can enter the system, leave the system or
-travel from one lane to another. This whole picture reminds us that
-the transportation system has many common characters with the
-large-scale open thermodynamic system, which consists of connected
-subsystems (matters) and the energy that can be transferred into the
-system, out of the system or from one subsystem to another. Since all
-physical systems are thermodynamic systems fundamentally, this
-chapter tries to introduce thermodynamic notions into transportation
-context in order to discover the nature of the transportation system
-and to provide better references for the traffic signal control. In
-particular, it is demonstrated that the transportation system can
-have a similar entropy notion to measure its disorder. Furthermore,
-based on the correspondences of notions, the principles corresponding
-to the laws of thermodynamics are presented as well in the following
-development. These efforts construct a novel thermodynamic point of
-view in the traffic engineering.
+In detail, this paper will firstly show the connections between the
+transportation system and the thermodynamic system. Based on them, the
+correspondence of the basic concepts will be presented. Then, it will
+be demonstrated that the transportation system can have a similar
+notion of the entropy to measure the system disorder. This paper will
+also present a dissipative law of the transportation entropy to
+render the system tend to lose its disorder and hence become better
+organized. Furthermore, the Shannon's entropy will be applied to
+present the notion of the transportation information. Different with
+the transportation entropy, the transportation information reflects
+the liquidity and can better measure the transportation functionality
+of the system. All the efforts in this paper will build up a novel
+thermodynamic and information point of view to explore the nature of
+the transportation system.
 
 \section{Basic Concepts and Conservation of Vehicles}
 
