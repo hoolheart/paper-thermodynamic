@@ -1,22 +1,10 @@
-% This paper tries to present the thermodynamic point of view for
-% studying the transportation system. To show the university of this
-% contribution, a general transportation model is used instead of the
-% previous linear one.
+% This paper tries to present the thermodynamic point of view for studying the transportation system. To show the university of this contribution, a general transportation model is used instead of the previous linear one.
 
-% This new point of view is to analogize the transportation system to
-% the thermodynamic system. The fundamental pair of correspondent
-% concepts are the vehicle and the energy. The principles are
-% introduced as well.
+% This new point of view is to analogize the transportation system to the thermodynamic system. The fundamental pair of correspondent concepts are the vehicle and the energy. The principles are introduced as well.
 
-% The new attempt to make this a separate paper is to present the point
-% of view more clearly. In particular, the relationship between Haddad
-% entropy and Boltzmann entropy should be explored properly. The
-% ectropy for transportation system is also needed to present to
-% complete the approach.
+% The new attempt to make this a separate paper is to present the point of view more clearly. In particular, the relationship between Haddad entropy and Boltzmann entropy should be explored properly. The ectropy for transportation system is also needed to present to complete the approach.
 
-% The approach of Shannon's entropy is also explored to present the
-% notion of transportation information, which measures the system
-% contribution to the transportation functionality.
+% The approach of Shannon's entropy is also explored to present the notion of transportation information, which measures the system contribution to the transportation functionality.
 
 % preprint format
 \documentclass[preprint,authoryear,12pt]{elsarticle}
@@ -67,114 +55,32 @@ Rue Thierry Mieg, 90010 Belfort Cedex, France}
 \cortext[cor]{Corresponding author.}
 
 \begin{abstract}
-To explore the nature of the transportation system, this paper shows
-the connections between the transportation system and the
-thermodynamic system by regarding the vehicles as the energy. The
-correspondence of basic concepts are presented, and it is demonstrated
-that transportation systems can have a similar notion of entropy to
-measure the system disorder. Meanwhile, the principles of
-thermodynamics are also introduced into the transportation context.
-In particular, the second law of thermodynamics leads to a
-dissipative law of the transportation entropy which can make the
-transportation system tend to reduce its disorder and hence become
-better organized. Furthermore, the approach of Shannon's entropy is
-also applied in this paper to present the concept of the
-transportation information, which reflects the liquidity of the
-traffic and hence can better measure the transportation functionality
-of the system. With all these efforts, this paper provides a novel
-thermodynamic and information point of view for the urban
-transportation network.
+To explore the nature of the transportation system, this paper shows the connections between the transportation system and the thermodynamic system by regarding the vehicles as the energy. The correspondence of basic concepts are presented, and it is demonstrated that transportation systems can have a similar notion of entropy to measure the system disorder. Meanwhile, the principles of thermodynamics are also introduced into the transportation context. In particular, the second law of thermodynamics leads to a dissipative law of the transportation entropy which can make the transportation system tend to reduce its disorder and hence become better organized. Furthermore, the approach of Shannon's entropy is also applied in this paper to present the concept of the transportation information, which reflects the liquidity of the traffic and hence can better measure the transportation functionality of the system. With all these efforts, this paper provides a novel thermodynamic and information point of view for the urban transportation network.
 \end{abstract}
 
 \begin{keyword}
-urban transportation\sep thermodynamic system \sep entropy\sep
-dissipativeness theory\sep Shannon \sep information
+urban transportation\sep thermodynamic system \sep entropy\sep dissipativeness theory\sep Shannon \sep information
 \end{keyword}
 
 \end{frontmatter}
 
 \section{Introduction}
 
-Urban transportation is an essential part of the modern cities. Due
-to the rapid increase of traffic demands in recent decades, the
-congestion problem has become very frequent and led to serious
-economic and environment issues.
+Urban transportation is an essential part of the modern cities. Due to the rapid increase of traffic demands in recent decades, the congestion problem has become very frequent and led to serious economic and environment issues.
 
-To solve it, various approaches have been studied and applied to
-understand the phenomenons in the urban transportation system. Among
-them, the most widely used one is the traffic flow theory
-\citep{nathan_h_gartner_revised_2005}. This approach describes the
-behaviors of the transportation system by considering the vehicle
-movements as liquid flows, which matches the general impression of
-the traffic in modern cities. Hence, the traffic flow theory is very
-popular and has generated several well-known traffic signal control
-strategies, like TRANSYT
-\citep{robertson_tansyt_1969,hale_traffic_2005}, SCOOT
-\citep{bretherton_r_d_scoot_1982}, TUC
-\citep{diakaki_multivariable_2002}, etc. In this paper, we also
-apply some concepts of traffic flows to model the system. Beyond this
-approach, the kinematic wave theory has been also applied to study the
-relationship between the traffic density and the traffic flow rate,
-which led the Cell Transmission Model (CTM)
-\citep{daganzo_cell_1995,flotterod_operational_2011}. This model can
-accurately describe the behaviors of traffic flows. Hence, the
-simulation based on CTM is more approximate with the real system than
-other well-known queue models \citep{almasri_online_2005}. Benefit
-from its accuracy, CTM has been applied in the simulation
-\citep{Su2013}, the observer \citep{CanudasdeWit2012} and the traffic
-signal control \citep{Pohlmann2010}. Another widely used model for the
-transportation system is the Petri-Net (PN)
-\citep{dotoli_urban_2006,ng_review_2013}, which works well with logic
-controllers.
+To solve it, various approaches have been studied and applied to understand the phenomenons in the urban transportation system. Among them, the most widely used one is the traffic flow theory \citep{nathan_h_gartner_revised_2005}. This approach describes the behaviors of the transportation system by considering the vehicle movements as liquid flows, which matches the general impression of the traffic in modern cities. Hence, the traffic flow theory is very popular and has generated several well-known traffic signal control strategies, like TRANSYT \citep{robertson_tansyt_1969,hale_traffic_2005}, SCOOT \citep{bretherton_r_d_scoot_1982}, TUC \citep{diakaki_multivariable_2002}, etc. In this paper, we also apply some concepts of traffic flows to model the system. Beyond this approach, the kinematic wave theory has been also applied to study the relationship between the traffic density and the traffic flow rate, which led the Cell Transmission Model (CTM) \citep{daganzo_cell_1995,flotterod_operational_2011}. This model can accurately describe the behaviors of traffic flows. Hence, the simulation based on CTM is more approximate with the real system than other well-known queue models \citep{almasri_online_2005}. Benefit from its accuracy, CTM has been applied in the simulation \citep{Su2013}, the observer \citep{CanudasdeWit2012} and the traffic signal control \citep{Pohlmann2010}. Another widely used model for the transportation system is the Petri-Net (PN) \citep{dotoli_urban_2006,ng_review_2013}, which works well with logic controllers.
 
-However, in our opinion, these existing works have done very little
-to explore the nature of the transportation system. They only focused
-on the superficial transportation behaviors and failed to show the
-fundamentals of the transportation phenomenon. Indeed, as a specific
-physical system, urban transportation network should be able to be
-studied from more general point of view. In particular, it is
-observed that the urban transportation system consists of the traffic
-lanes and the vehicles which can stay in the lanes or travel from one
-to another. This whole picture reminds us that the transportation
-system is very similar with the large-scale open thermodynamic system,
-which consists of connected subsystems (matters) and the energy that
-can be stored in subsystems or be transferred from one to another.
-These similarities encourage us to introduce thermodynamic concepts
-into transportation context to better understand the transportation
-phenomenons.
+However, in our opinion, these existing works have done very little to explore the nature of the transportation system. They only focused on the superficial transportation behaviors and failed to show the fundamentals of the transportation phenomenon. Indeed, as a specific physical system, urban transportation network should be able to be studied from more general point of view. In particular, it is observed that the urban transportation system consists of the traffic lanes and the vehicles which can stay in the lanes or travel from one to another. This whole picture reminds us that the transportation system is very similar with the large-scale open thermodynamic system, which consists of connected subsystems (matters) and the energy that can be stored in subsystems or be transferred from one to another. These similarities encourage us to introduce thermodynamic concepts into transportation context to better understand the transportation phenomenons.
 
-In detail, this paper will firstly show the connections between the
-transportation system and the thermodynamic system. Based on them, the
-correspondence of the basic concepts will be presented. Then, it will
-be demonstrated that the transportation system can have a similar
-notion of the entropy to measure the system disorder. This paper will
-also present a dissipative law of the transportation entropy to
-render the system tend to lose its disorder and hence become better
-organized. Furthermore, the Shannon's entropy will be applied to
-present the notion of the transportation information. Different with
-the transportation entropy, the transportation information reflects
-the liquidity and can better measure the transportation functionality
-of the system. All the efforts in this paper will build up a novel
-thermodynamic and information point of view to explore the nature of
-the transportation system.
+In detail, this paper will firstly show the connections between the transportation system and the thermodynamic system. Based on them, the correspondence of the basic concepts will be presented. Then, it will be demonstrated that the transportation system can have a similar notion of the entropy to measure the system disorder. This paper will also present a dissipative law of the transportation entropy to render the system tend to lose its disorder and hence become better organized. Furthermore, the Shannon's entropy will be applied to present the notion of the transportation information. Different with the transportation entropy, the transportation information reflects the liquidity and can better measure the transportation functionality of the system. All the efforts in this paper will build up a novel thermodynamic and information point of view to explore the nature of the transportation system.
 
 \section{Basic Concepts and Conservation of Vehicles}
 
 \subsection{Introduction to Transportation System}
 
-The two fundamental elements of the urban transportation system are
-the traffic streets and the vehicles. Basically, the connected
-traffic streets provide a network within cities so that the vehicles
-can travel from their departure points to their destinations. This is
-the basic image of the transportation functionality.
+The two fundamental elements of the urban transportation system are the traffic streets and the vehicles. Basically, the connected traffic streets provide a network within cities so that the vehicles can travel from their departure points to their destinations. This is the basic image of the transportation functionality.
 
-In details, a street is a linear traffic area connecting two separate
-points with a fixed length. When more than two streets meet in a
-single point, there will be a crossing area among these streets. This
-crossing area and the connected streets compose an intersection
-\citep{papageorgiou_review_2003}. For example, two common types of
-intersections are shown in Figure \ref{fig:int4leg} and Figure
-\ref{fig:int3leg}, which connects 4 and 3 streets respectively.
+In details, a street is a linear traffic area connecting two separate points with a fixed length. When more than two streets meet in a single point, there will be a crossing area among these streets. These crossing areas and the connected streets compose the intersections \citep{papageorgiou_review_2003}. For example, Figure \ref{fig:int4leg} and Figure \ref{fig:int3leg} illustrate two common types of intersections, which connects 4 and 3 streets respectively.
 
 \begin{figure}[ht]
   \centering
@@ -185,41 +91,13 @@ intersections are shown in Figure \ref{fig:int4leg} and Figure
   \caption{Examples of intersections}
 \end{figure}
 
-Based on the directions of vehicles within the street, it is further
-divided into several traffic lanes. For example, the 4 streets in the
-intersection illustrated by Figure \ref{fig:int4leg} are all split
-into two lanes corresponding to two opposite directions. On the other
-hand, in Figure \ref{fig:int3leg}, the streets all consist of three
-lanes (Note that in this T-intersection, the lanes are split based on
-both the current and the potential directions of vehicles). A street
-may correspond to more than one traffic signals, but a lane can only
-correspond to one. Hence, the traffic lanes are more appropriate to
-be considered as the units of the traffic areas instead of the
-streets.
-%Therefore, the transportation system is considered as the network of
-%traffic lanes in this paper.
-Precisely, for each lane, the appropriate state variable is obviously
-the number of the vehicles within it, which, in this paper, is called
-the queue length of the traffic lane.
+Based on the directions of vehicles, a street can be further seperated into several traffic lanes. For example, the 4 streets in the intersection illustrated by Figure \ref{fig:int4leg} are all split into two lanes corresponding to two opposite directions. On the other hand, in Figure \ref{fig:int3leg}, the streets all consist of three lanes (Note that in this intersection, the lanes are split based on both the current and the potential directions of vehicles). A street may correspond to more than one traffic signals, but a lane can only correspond to one. Hence, the traffic lanes are more appropriate to be considered as the units of the traffic areas instead of the streets.
+%Therefore, the transportation system is considered as the network of traffic lanes in this paper.
+For each lane, the appropriate state variable is obviously the number of the vehicles within it, which, in this paper, is called the queue length of the traffic lane.
 
-Now, observe that to accomplish the mission of transportation, a
-vehicle need enter the transportation network from its origin point,
-travel from one lane to another until leaving the system at its
-destination. This is the fundamental functionality of the
-transportation system. Clearly, the dynamic of the queue lengths is
-reflected by the movements of vehicles between different lanes or
-between the lanes and the outside. All these movements can be
-considered as traffic flows \citep{nathan_h_gartner_revised_2005}.
+Now, observe that to accomplish the functionality of transportation, a vehicle need enter the transportation network from its departure point, travel from one lane to another until leaving the system at its destination. This is the fundamental of the transportation system. Hence, the dynamic of the system is reflected by the movements of vehicles. By applying the traffic flow theory \citep{nathan_h_gartner_revised_2005}, these movements can be considered as traffic flows.
 
-Consider a transportation network including $n$ traffic lanes, $n>0$.
-Figure \ref{fig:flows} illustrates all traffic flows related with the
-lane $i$, $i\in\{1,\cdots,n\}$. In details, $x_i$ is the queue length
-of lane $i$; the flow $r_i$ denotes the vehicles entering the lane
-$i$ from the outside; the flow $\sigma_{i,j}$ (resp, $\sigma_{j,i}$),
-$j\neq i$, $j\in\{1,\cdots,n\}$, represents the vehicles travel from
-the lane $j$ (resp, $i$) queue to the lane $i$ (resp, $j$); the flow
-$d_{i}$ is the output flow denoting the vehicles which leave the
-transportation system from the lane $i$.
+Consider a transportation network including $n$ traffic lanes, $n>0$. Figure \ref{fig:flows} illustrates all traffic flows related with the lane $i$, $i\in\{1,\cdots,n\}$. $x_i$ is the queue length of lane $i$; the flow $r_i$ denotes the vehicles entering the lane $i$ from the outside; the flow $\sigma_{i,j}$ (resp, $\sigma_{j,i}$), $j\neq i$, $j\in\{1,\cdots,n\}$, represents the vehicles travel from the lane $j$ (resp, $i$) queue to the lane $i$ (resp, $j$); the flow $d_{i}$ is the output flow denoting the vehicles which leave the transportation system from the lane $i$.
 
 \begin{figure}[ht]
   \centering
@@ -228,32 +106,19 @@ transportation system from the lane $i$.
   \label{fig:flows}
 \end{figure}
 
-To describe the dynamic of the transportation system from
-discrete-time approach, it is easy to know that the change of the
-queue length $x_i$ during the interval $k$, $k\in\mathbb{N}$, is
-given by
+To describe the dynamic of the transportation system from discrete-time approach, the change of the queue length $x_i$ during the interval $k$, $k\in\mathbb{N}$, is given by
 \begin{equation}\label{equ:mdl_gnl_lane}
 \Delta x_i(k) = l_i(k)+r_i(k)-d_i(k)
 \end{equation}
-where $l_i$ is the sum of all exchange flows related with lane $i$,
-which means
+where $l_i$ is the sum of all exchange flows related with lane $i$, which means
 $$l_i(k)=\sum_{j=1,j\neq i}^{n}(\sigma_{i,j}(k)-\sigma_{j,i}(k))$$
-Equivalently, in vector form, the transportation system can be
-represented by the following state-space difference equation
+Equivalently, in vector form, the transportation system can be represented by the following state-space difference equation
 \begin{equation}\label{equ:mdl_gnl}
-\vec{x}(k+1)=\vec{x}(k)+\vec{l}(k)+\vec{r}(k)-\vec{d}(k),\quad \forall
-k\in\mathbb{N}
+\vec{x}(k+1)=\vec{x}(k)+\vec{l}(k)+\vec{r}(k)-\vec{d}(k),\quad \forall k\in\mathbb{N}
 \end{equation}
-where $\vec{x}=[x_1,\cdots,x_n]^T$, $\vec{l}=[l_1,\cdots,l_n]^T$,
-$\vec{r}=[r_1,\cdots,r_n]^T$, $\vec{d}=[d_1,\cdots,d_n]^T$, and
-$x_i(k)$ is the queue length of lane $i$ at the beginning of the
-interval $k$.
+where $\vec{x}=[x_1,\cdots,x_n]^T$, $\vec{l}=[l_1,\cdots,l_n]^T$, $\vec{r}=[r_1,\cdots,r_n]^T$, $\vec{d}=[d_1,\cdots,d_n]^T$, and $x_i(k)$ is the queue length of lane $i$ at the beginning of the interval $k$.
 
-It is important to note that without any specific assumption,
-\eqref{equ:mdl_gnl} is a general model, which suits any kind of
-transportation system in any circumstance. Based on this general
-model, the sequel will explore the nature of transportation system
-from thermodynamic point of view.
+It is important to note that without any specific assumption, \eqref{equ:mdl_gnl} is a general model, which suits any kind of transportation system in any circumstance. Based on this general model, the sequel will explore the nature of transportation system from thermodynamic point of view.
 
 \subsection{Introduction to Thermodynamic System}
 
