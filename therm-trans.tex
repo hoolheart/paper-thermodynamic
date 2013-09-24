@@ -1,8 +1,6 @@
-% This paper tries to present the thermodynamic point of view for studying the transportation system. To show the university of this contribution, a general transportation model is used instead of the previous linear one.
+% This paper tries to present the thermodynamic point of view for studying the transportation system. To show the universe of this contribution, a general transportation model is used instead of the previous linear one.
 
 % This new point of view is to analogize the transportation system to the thermodynamic system. The fundamental pair of correspondent concepts are the vehicle and the energy. The principles are introduced as well.
-
-% The new attempt to make this a separate paper is to present the point of view more clearly. In particular, the relationship between Haddad entropy and Boltzmann entropy should be explored properly. The ectropy for transportation system is also needed to present to complete the approach.
 
 % The approach of Shannon's entropy is also explored to present the notion of transportation information, which measures the system contribution to the transportation functionality.
 
@@ -24,6 +22,7 @@
 \fi
 \usepackage{subfigure}
 
+% mathematic packages and settings
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsthm}
@@ -71,11 +70,12 @@ Transportation systems\sep thermodynamic system \sep entropy\sep dissipativity t
 
 Urban transportation is an essential part of the modern cities. Due to the rapid increase of traffic demands in recent decades, the congestion problem has become very frequent and led to serious economic and environment issues.
 
-To solve it, various approaches have been studied and applied to understand the phenomenons in the urban transportation system. Among them, the most widely used one is the traffic flow theory \citep{nathan_h_gartner_revised_2005}. This approach describes the behaviors of the transportation system by considering the vehicle movements as liquid flows, which matches the general impression of the traffic in modern cities. Hence, the traffic flow theory is very popular and has generated several well-known traffic signal control strategies, like TRANSYT \citep{robertson_tansyt_1969,hale_traffic_2005}, SCOOT \citep{bretherton_r_d_scoot_1982}, TUC \citep{diakaki_multivariable_2002}, etc. In this paper, we also apply some concepts of traffic flows to model the system. Beyond this approach, the kinematic wave theory has been also applied to study the relationship between the traffic density and the traffic flow rate, which led the Cell Transmission Model (CTM) \citep{daganzo_cell_1995,flotterod_operational_2011}. This model can accurately describe the behaviors of traffic flows. Hence, the simulation based on CTM is more approximate with the real system than other well-known queue models \citep{almasri_online_2005}. Benefit from its accuracy, CTM has been applied in the simulation \citep{Su2013}, the observer \citep{CanudasdeWit2012} and the traffic signal control \citep{Pohlmann2010}. Another widely used model for the transportation system is the Petri-Net (PN) \citep{dotoli_urban_2006,ng_review_2013}, which works well with logic controllers.
+To solve it, various approaches have been studied and applied to understand the phenomenons in the urban transportation system. Among them, the most widely used one is the traffic flow theory \citep{nathan_h_gartner_revised_2005}. This approach describes the behaviors of the transportation system by considering the vehicle movements as liquid flows, which matches the general impression of the traffic in modern cities. Hence, the traffic flow theory is very popular and has generated several well-known traffic signal control strategies, like TRANSYT \citep{robertson_tansyt_1969,hale_traffic_2005}, SCOOT \citep{bretherton_r_d_scoot_1982}, TUC \citep{diakaki_multivariable_2002}, etc. In this paper, we also apply some concepts of traffic flows to model the system. Beyond this approach, the kinematic wave theory has been also applied to study the relationship between the traffic density and the traffic flow rate, which led the Cell Transmission Model (CTM) \citep{daganzo_cell_1995,flotterod_operational_2011}. This 
+model can accurately describe the behaviors of traffic flows. Hence, the simulation based on CTM is more approximate with the real system than other well-known queue models \citep{almasri_online_2005}. Benefit from its accuracy, CTM has been applied in the simulation \citep{Su2013}, the observer \citep{CanudasdeWit2012} and the traffic signal control \citep{Pohlmann2010}. Another widely used model for the transportation system is the Petri-Net (PN) \citep{dotoli_urban_2006,ng_review_2013}, which works well with logic controllers.
 
 However, in our opinion, these existing works have done very little to explore the nature of the transportation system. They only focused on the superficial transportation behaviors and failed to show the fundamentals of the transportation phenomenon. Indeed, as a specific physical system, urban transportation network should be able to be studied from more general point of view. In particular, it is observed that the urban transportation system consists of the traffic lanes and the vehicles which can stay in the lanes or travel from one to another. This whole picture reminds us that the transportation system is very similar with the large-scale open thermodynamic system, which consists of connected subsystems (matters) and the energy that can be stored in subsystems or be transferred from one to another. These similarities encourage us to introduce thermodynamic concepts into transportation context to better understand the transportation phenomenons.
 
-In detail, this paper will firstly show the connections between the transportation system and the thermodynamic system. Based on them, the correspondence of the basic concepts will be presented. Then, it will be demonstrated that the transportation system can have a similar notion of the entropy to measure the system disorder. This paper will also present a dissipative law of the transportation entropy to render the system tend to lose its disorder and hence become better organized. Furthermore, the Shannon's entropy will be applied to present the notion of the transportation information. Different with the transportation entropy, the transportation information reflects the liquidity and can better measure the transportation functionality of the system. All the efforts in this paper will build up a novel thermodynamic and information point of view to explore the nature of the transportation system.
+In detail, this paper will firstly show the connections between the transportation system and the thermodynamic system. Based on them, the correspondence of the basic concepts will be presented. Then, it will be demonstrated that the transportation system can have a similar notion of the entropy to measure the system disorder. This paper will also present a dissipative law of the transportation entropy to reduce the disorder and hence render the system better organized. Furthermore, the Shannon's entropy will be also applied to measure the information of the transportation system. Different with the transportation entropy, the information concept measures the transportation functionality and hence can be a good means to evaluate the system itself. The work in this paper will provide a novel thermodynamic and information theory point of view to explore the nature of the transportation system.
 
 \section{Basic Concepts and Conservation of Vehicles}
 
@@ -247,7 +247,7 @@ U(k_2) = U(k_1)+\sum_{k=k_1}^{k_2-1}Q(k)
 \end{equation}
 for any $k_1,k_2\in\mathbb{N}$, $k_2>k_1$. Hence, according to \citep{willems_dissipative_1972-1}, the conservation of vehicles also implies that the transportation system \eqref{equ:mdl_gnl} is lossless with respect to the storage function \eqref{equ:total_vehicle} and the supply function \eqref{equ:all_io}.
 
-\section{Transportation Entropy and Dissipativeness}
+\section{Transportation Entropy and Dissipativity}
 
 \subsection{Second Law of Thermodynamics}
 
@@ -343,7 +343,8 @@ where $\psi(\vec{x})$ is transportation entropy, $\phi(\vec{x})$ is transportati
 
 % It is important to note that the entropy \eqref{equ:Tran_entropy} is a Lyapunov candidate function, which is much more useful in control issues than the ectropy \eqref{equ:Tran_ectropy}. Hence, it will be the major emphasis of the sequel.
 
-The formula of the transportation entropy \eqref{equ:Tran_entropy} comes only from the thermodynamic system, but we have not shown its signification in the transportation context. To do this, consider the transportation network as a service provider and consider the vehicles traveling within it as its customers. Hence, the order of transportation network should be the sum of the qualities of the services provided to all vehicles, and the disorder is, of course, the opposite. Clearly, the services that the vehicles obtain from the urban transportation system are the traffic routes, and the qualities are evaluated by how fast the vehicles can pass these routes. Figure \ref{fig:d_q} shows the flow-density diagram based on kinetic wave model, where $\rho_m$ is the jam density, $\nu$ is the speed and $\nu_m$ is the free-flow speed \citep{ukkusuri_robust_2010}. It is observed that the traffic flow and the speed can be considered as functions of the traffic density. Precisely, the bigger traffic density generates the smaller speed and hence prolongs the delay. Indeed, despite the habits of drivers, any vehicle need spend more time to pass more crowded lanes. This indicates that the traffic densities are opposite to the qualities of services provided by the transportation network, hence they correspond to the system disorder.
+The formula of the transportation entropy \eqref{equ:Tran_entropy} comes only from the thermodynamic system, but we have not shown its signification in the transportation context. To do this, consider the transportation network as a service provider and consider the vehicles traveling within it as its customers. Hence, the order of transportation network should be the sum of the qualities of the services provided to all vehicles, and the disorder is, of course, the opposite. Clearly, the services that the vehicles obtain from the urban transportation system are the traffic routes, and the qualities are evaluated by how fast the vehicles can pass these routes. Figure \ref{fig:d_q} shows the flow-density diagram based on kinetic wave model, where $\rho_m$ is the jam density, $\nu$ is the speed and $\nu_m$ is the free-flow speed \citep{ukkusuri_robust_2010}. It is observed that the traffic flow and the speed can be considered as functions of the traffic density. Precisely, the bigger traffic density generates 
+the smaller speed and hence prolongs the delay. Indeed, despite the habits of drivers, any vehicle need spend more time to pass more crowded lanes. This indicates that the traffic densities are opposite to the qualities of services provided by the transportation network, hence they correspond to the system disorder.
 
 \begin{figure}[ht]
   \centering
@@ -389,7 +390,7 @@ k\in\mathbb{N}
 \end{equation}
 If this inequality is verified, the transportation system has the tendency to decrease its disorder and become better organized.
 
-Furthermore, according to the \citet{willems_dissipative_1972} and \citet{hill_dissipative_1980}, \eqref{equ:dissipative} also implies the dissipativeness with the entropy \eqref{equ:Tran_entropy} as the storage function and with \eqref{equ:supply} as the supply function. In this case, \eqref{equ:dissipative} is called dissipation inequality. Figure \ref{fig:trans_dis} illustrates this dissipativeness of system disorder. Indeed, the input flows bring disorder to the transportation system to make it worse organized. At the same time, the appropriate traffic signal control dissipates the traffic so that the system stores only a part of this input disorder.
+Furthermore, according to the \citet{willems_dissipative_1972} and \citet{hill_dissipative_1980}, \eqref{equ:dissipative} also implies the dissipativity with the entropy \eqref{equ:Tran_entropy} as the storage function and with \eqref{equ:supply} as the supply function. In this case, \eqref{equ:dissipative} is called dissipation inequality. Figure \ref{fig:trans_dis} illustrates this dissipativity of system disorder. Indeed, the input flows bring disorder to the transportation system to make it worse organized. At the same time, the appropriate traffic signal control dissipates the traffic so that the system stores only a part of this input disorder.
 \begin{figure}[ht]
   \centering
   \includegraphics{pics/trans_dis}\\
@@ -397,9 +398,9 @@ Furthermore, according to the \citet{willems_dissipative_1972} and \citet{hill_d
   \label{fig:trans_dis}
 \end{figure}
 
-This dissipativeness implies that the storage of the system disorder is always smaller than or equal to the supplied one from the outside. In other words, if this dissipative phenomenon exists in the transportation system, the system disorder will tend to decrease and hence the system will tend to become better organized.
+This dissipativity implies that the storage of the system disorder is always smaller than or equal to the supplied one from the outside. In other words, if this dissipative phenomenon exists in the transportation system, the system disorder will tend to decrease and hence the system will tend to become better organized.
 
-This dissipativeness does not exist naturally. But, it is known that the traffic signals have the ability to control the traffic flows. Therefore, it is possible that under certain control schemes, the traffic signals can verify the dissipation inequality \eqref{equ:dissipative}. This inequality can be considered as one of objectives for traffic signal control.
+This dissipativity does not exist naturally. But, it is known that the traffic signals have the ability to control the traffic flows. Therefore, it is possible that under certain control schemes, the traffic signals can verify the dissipation inequality \eqref{equ:dissipative}. This inequality can be considered as one of objectives for traffic signal control.
 
 \section{Nominal Situation and Equilibrium}
 
@@ -411,22 +412,23 @@ Obviously, in the nominal situation, the net exchange between the transportation
 \begin{equation}\label{equ:nominal_exchange}
 Q(k)\equiv 0, \quad \forall k\in\mathbb{N}
 \end{equation}
-Since the transportation system is lossless with the storage function $U$ and the supply function $Q$, \eqref{equ:nominal_exchange} infers that the total amount of traffic $U$ within the whole system keeps constant in the nominal situation. This is very similar with the closed thermodynamic system which has zero exchange of energy with the environment. Hence, we propose that the nominal situation of the transportation system can be analogized to the closed status of the thermodynamic system.
+Since the transportation system is lossless with the storage function $U$ and the supply function $Q$, \eqref{equ:nominal_exchange} infers that the total amount of vehicles $U$ within the whole system keeps constant in the nominal situation. This is very similar with the closed thermodynamic system which has zero exchange of energy with the environment.
+% Hence, we propose that the nominal situation of the transportation system can be analogized to the closed status of the thermodynamic system.
 
 Note that \citet{de_oliveira_multi-agent_2010} have presented some effective procedures to estimate the nominal parameters for the general transportation system, hence it is reasonable to assume the availability of the nominal situation in general.
 
-Now, we define
+Now, define the disturbances of the transportation system as the difference between the real input flows and the nominal ones, which is given by
 \begin{equation}
 \vec{\omega}(k)\triangleq\vec{r}(k)-\vec{r}^N, \quad \forall
 k\in\mathbb{N}
 \end{equation}
-as the vector of the disturbances of the traffic demands. Since the nominal transportation system corresponds to the closed thermodynamic system, the disturbances $\vec{\omega}$ are more appropriate than the input traffic flows $\vec{r}$ to correspond to the input energy in the thermodynamic system.
+Since the nominal situation of transportation system is similar to the closed status of thermodynamic system, the disturbances $\vec{\omega}$ are more appropriate than the input traffic flows $\vec{r}$ to correspond to the input energy in the thermodynamic system, specially when we consider the dissipativity phenomenon.
 
 Hence, let
 \begin{equation}\label{equ:supply_omega}
   S_\omega(k) = \vec{x}(k+1)^T \mat{P} \vec{\omega}(k)
 \end{equation}
-be the new supply function with respect to $\vec{\omega}$. Consequently, the dissipativeness presented in previous section can be modified to the one with the entropy \eqref{equ:Tran_entropy} as the storage function and with \eqref{equ:supply_omega} as the supply function. Note that this new dissipativeness is the sufficient condition of the previous one, which is stated in the following theorem.
+be the new supply function with respect to $\vec{\omega}$. Consequently, the dissipativity presented in previous section can be modified to the one with the entropy \eqref{equ:Tran_entropy} as the storage function and with \eqref{equ:supply_omega} as the supply function. Note that this new dissipativity is the sufficient condition of the previous one, which is stated in the following theorem.
 
 \begin{thm}
 If the transportation system described by the difference equation \eqref{equ:mdl_gnl} is dissipative with respect to the storage function \eqref{equ:Tran_entropy} and the supply function \eqref{equ:supply_omega}, then the system is also dissipative with respect to the same storage function and the supply function \eqref{equ:supply}.
@@ -437,21 +439,21 @@ The dissipation inequality related with the storage function (\ref{equ:Tran_entr
 \begin{equation}\label{equ:dissipative_omega}
   \psi(\vec{x}(k+1))-\psi(\vec{x}(k)) \leq S_\omega(k)
 \end{equation}
-Since $\vec{r}(k)=\vec{q}(k)c$ and $\vec{\omega}(k)=(\vec{q}(k)-\vec{q}^N)c$, it follows $\vec{\omega}(k)=\vec{r}(k)-\vec{r}^N$. Hence,
+Since $\vec{\omega}(k)=\vec{r}(k)-\vec{r}^N$, it follows
 \begin{align*}
-S_\omega(k) &= \vec{x}(k+1)^T \mat{P} (\vec{r}(k)-\vec{r}^N(k))\\
-    &= \vec{x}(k+1)^T \mat{P} \vec{r}(k)-\vec{x}(k+1)^T \mat{P}
-\vec{r}^N(k)
+S_\omega(k) &= \vec{x}(k+1)^T \mat{P} (\vec{r}(k)-\vec{r}^N)\\
+    &= \vec{x}(k+1)^T \mat{P} \vec{r}(k)-\vec{x}(k+1)^T\mat{P}\vec{r}^N
 \end{align*}
 Since the nominal inputs and all queue lengths are non-negative, this infers
 $$S_\omega(k)\leq \vec{x}(k+1)^T \mat{P} \vec{r}(k) = S(k)$$
 So, the conclusion follows.
 \end{proof}
-% Now, the second law of thermodynamics corresponds to this new dissipativeness.
+% Now, the second law of thermodynamics corresponds to this new dissipativity.
+This theorem also implies that the dissipativity with the supply function $S_\omega(k)$ is more strict than the one with the supply function $S(k)$. Hence, by taking the new dissipativity as the objective instead of the previous one, the traffic signal control can generate better performances.
 
 Finally, we close this section by introducing the concept of thermal equilibrium into the transportation context. For a closed thermodynamic system, if a pair of connected subsystems have different temperatures, the energy transmission will emerge between them so that their temperatures tend to approximate. After enough time, all connected subsystems will have the same temperature so that no energy movement can emerge any more. In other words, the system loses all its capacity to do useful work in this moment. This particular state is called thermal equilibrium state \citep{cengel_thermodynamics:_2001}, which also corresponds to the maximal entropy and minimal ectropy in the closed thermodynamic system.
 
-Correspondingly, we present the concept of transportation equilibrium to denote the state when the occupancies of all traffic lanes are the same, which implies that the vehicles are uniformly distributed within the whole transportation area in the transportation equilibrium. Mathematically, the transportation equilibrium means
+This concept of equilibrium can be also introduced into the transportation context to denote the state when the occupancies of all traffic lanes are the same, which implies that the vehicles are uniformly distributed within the whole transportation area in the transportation equilibrium. Mathematically, the transportation equilibrium means
 \begin{equation}\label{equ:equilibrium}
 \frac{x_1}{x_1^*}=\cdots=\frac{x_n}{x_n^*}=\alpha
 \end{equation}
@@ -493,7 +495,7 @@ Transportation equilibrium also implies that no particular concentration of vehi
 
 \section{Approach of Shannon's Entropy}
 
-The above studies analogized the transportation system to thermodynamic system by regarding the vehicles as the energy. Beside this approach, it is noticed that the researches of thermodynamics have been expanded to the domains other than pure physical systems. In particular, Shannon has connected the entropy with the concept of information \citep{Shannon1948}. This work encourages us to explore the nature of the transportation system from the information perspective, which is the emphasis of this section.
+The above studies analogized the transportation system to thermodynamic system by regarding the vehicles as the energy. Beside this approach, it is noticed that the researches of thermodynamics have been expanded to the domains other than pure physical systems. In particular, Shannon has connected the entropy with the concept of information \citep{Shannon1948}. This work encourages us to explore the nature of the transportation system from the perspective of information theory, which is the emphasis of this section.
 
 \subsection{Information of Transportation System}
 
@@ -514,7 +516,7 @@ For the whole lane $i$, the information of all spots' occupancies can be given b
 H_i(x_i) = -h_i[\frac{x_i}{x_i^*} \log_2
 \frac{x_i}{x_i^*}+(1-\frac{x_i}{x_i^*}) \log_2 (1-\frac{x_i}{x_i^*})]
 \end{equation}
-where $h_i$ is the length of lane $i$. Since $h_i=h_{veh} x_i^*$ is proportional to the capacity $x_i^*$, \eqref{equ:info_lane_h} can be simplified to
+Since $h_i=h_{veh} x_i^*$ and the average car length $h_{veh}$ is considered fixed generally, \eqref{equ:info_lane_h} can be simplified to
 \begin{align}
 H_i(x_i) &= -x_i^*[\frac{x_i}{x_i^*} \log_2
 \frac{x_i}{x_i^*}+(1-\frac{x_i}{x_i^*}) \log_2
@@ -538,10 +540,10 @@ We define this expression as the information of transportation system. The seque
 
 \subsection{Signification}
 
-The information \eqref{equ:info} of transportation system comes from the consideration of the occupancies of traffic areas. Precisely, it measures the uncertainty of the occupancies. If the occupancy of a traffic spot is more uncertain, it is more difficult to predict whether there is a vehicle in this spot without direct observation, which means this spot has higher fluidity. In other words, the greater information \eqref{equ:info} implies the higher fluidity of the transportation system. It is clear that the fluidity corresponds to the transportation functionality. Hence, the information of transportation system is related with the transportation functionality of the system. The sequel will discuss this relationship in detail.
+The information \eqref{equ:info} of transportation system comes from the consideration of the occupancies of traffic areas. Precisely, it measures the uncertainty of the occupancies. If the occupancy of a traffic spot is more uncertain, which means it is more difficult to predict whether there is a vehicle in this spot without direct observation, it implies that this spot has higher fluidity. In other words, the greater information \eqref{equ:info} implies the higher fluidity of the whole transportation system. It is clear that the fluidity corresponds to the transportation functionality. Hence, the information of transportation system is related with the transportation functionality of the system. The sequel will discuss this relationship in detail.
 
 % FOR A LANE
-Firstly, consider a single lane $i$, $i\in\{1,\cdots,n\}$, its information $H_i$ due to all possible queue length $x_i$ is illustrated in Figure \ref{fig:info_lane}. Observe that when the lane is empty ($x_i=0$), the information equals zero ($H_i=0$). This is because any spot within this lane is certainly not occupied by a vehicle. This lane is extremely clean in this case. However, since no vehicle travels inside, no transportation behavior appears in this lane. In other words, the system contributes nothing to the transportation functionality with zero usage.
+First, consider a single lane $i$, $i\in\{1,\cdots,n\}$, its information $H_i$ due to all possible queue length $x_i$ is illustrated in Figure \ref{fig:info_lane}. Observe that when the lane is empty ($x_i=0$), the information equals zero ($H_i=0$). This is because any spot within this lane is certainly not occupied by a vehicle. This lane is extremely clean in this case. However, since no vehicle travels inside, no transportation behavior appears in this lane. In other words, the system contributes nothing to the transportation functionality with zero usage.
 
 \begin{figure}[ht]
   \centering
@@ -552,33 +554,35 @@ Firstly, consider a single lane $i$, $i\in\{1,\cdots,n\}$, its information $H_i$
 
 On the other hand, when the lane is totally occupied ($x_i=x_i^*$), since the occupancy of any spot is also certain in this case, the information $H_i$ also equals zero. The usage of the system is extremely high in this case. But, because there is no space to move, the transportation behavior can not happen either. Hence, with complete crowdedness, the system also contributes nothing to the transportation functionality.
 
-Now, we can summarize that the urban transportation functions only under these two conditions:
+Now, we can summarize that the transportation functions only under these two conditions:
 \begin{enumerate}
   \item[\textbf{C1}] there are vehicles; \label{list:c1}
   \item[\textbf{C2}] there are free spaces to allow the vehicles to move. \label{list:c2}
 \end{enumerate}
-Therefore, only when $0<x_i<x_i^*$, these two conditions are both verified so that this lane can contribute to the transportation functionality.
+In other words, the transportation functionality depends on the balance between usage and free spaces. Therefore, only when $0<x_i<x_i^*$, these two conditions are both verified so that this lane can contribute to the transportation functionality.
 
-Observe that only when $0<x_i<x_i^*$, the information $H_i$ becomes positive because the occupancies are uncertain in this case. Specially, $H_i$ maximizes when the lane is half-occupied ($x_i=x_i^*/2$). For a lane, its information $H_i$ reflects the balance between the low usage and the high crowdedness. In view of the above two conditions \textbf{C1} and \textbf{C2}, it can be inferred that for any lane, its information corresponds to its contribution to the transportation functionality.
+Observe that only when $0<x_i<x_i^*$, the information $H_i$ becomes positive because the occupancies are uncertain in this case. Specially, $H_i$ maximizes when the lane is half-occupied ($x_i=x_i^*/2$). It can be concluded that, for a lane, its information $H_i$ reflects the balance between usage and free spaces, hence the information corresponds to the transportation functionality.
 
 % FOR NETWORK
-Then, we consider the relationship between the transportation information and the distribution of vehicles over different lanes. For example, consider a system including two lanes. Let $x_1$, $x_2$ be the queue lengths and let $x_1^*$, $x_2^*$ be the capacities. Suppose $x_1^*<x_2^*$ and the sum $N=x_1+x_2$ is fixed. Figure \ref{fig:info_twolane} shows the information due to $x_1$ in three cases: $N\le x^*_1\le x^*_2$, $x^*_1\le N\le x^*_2$ and $x^*_1\le x^*_2\le N$. The information maximizes in certain point $x_p$, which is given by in all three cases
+Beside the relationship with the number of vehicles, the information of a transportation network also relies on the distribution of vehicles over different lanes if the total amount of vehicles is given.
+% Then, we consider the relationship between the transportation information and the distribution of vehicles over different lanes.
+For example, consider a system including two lanes. Let $x_1$, $x_2$ be the queue lengths and let $x_1^*$, $x_2^*$ be the capacities. Suppose $x_1^*<x_2^*$ and the sum $N=x_1+x_2$ is fixed. Figure \ref{fig:info_twolane} shows the information due to $x_1$ in three cases: $N\le x^*_1\le x^*_2$, $x^*_1\le N\le x^*_2$ and $x^*_1\le x^*_2\le N$. The information maximizes in certain point $x_p$, which is given by in all three cases
 $$x_p = \frac{N}{x_1^*+x_2^*} x_1^*$$
-Clearly, the information reflects the balance between these two lanes.
+This maximal point happens to mean that the vehicles are distributed uniformly in these two lanes. Clearly, the information reflects the balance between these two lanes as well.
 
 \begin{figure}[ht]
   \centering
   \subfigure[$N\le x^*_1\le x^*_2$]
-  {\includegraphics{pics/twolane_s}}
+  {\includegraphics[width=0.3\textwidth]{pics/twolane_s}}
   \subfigure[$x^*_1\le N\le x^*_2$]
-  {\includegraphics{pics/twolane_m}}
+  {\includegraphics[width=0.3\textwidth]{pics/twolane_m}}
   \subfigure[$x^*_1\le x^*_2\le N$]
-  {\includegraphics{pics/twolane_l}}\\
+  {\includegraphics[width=0.3\textwidth]{pics/twolane_l}}\\
   \caption{Information of two lanes with fixed total vehicles}
   \label{fig:info_twolane}
 \end{figure}
 
-Furthermore, the following theorem indicates that for any large-scale transportation network, the information maximizes when the vehicles are distributed uniformly.
+Furthermore, the following theorem indicates that for any large-scale transportation network, if the total amount of vehicles is given, the information maximizes when the vehicles are distributed uniformly.
 
 \begin{thm}\label{thm:info_max}
 For any transportation network including $n$ lanes, assume that the total amount of vehicles $N$ is given, the transportation information \eqref{equ:info} is maximized when the vehicles are distributed uniformly.
@@ -617,34 +621,35 @@ $$
 Apparently, this implies the uniform distribution of vehicles, which completes the proof.
 \end{proof}
 
-Since the information maximizes when the vehicles are distributed uniformly and the information is a concave function, it is implied that the information reflects the balance of vehicles between different traffic areas. Consider that, if the vehicles are distributed more uniformly, the traffic lanes are used more equally for the transportation functionality. Hence, for the network, the information also corresponds to its contribution to the transportation functionality.
+Since the information maximizes when the vehicles are distributed uniformly and the information is a concave function, it is implied that the information reflects the balance of vehicles between different traffic lanes. Consider that, if the vehicles are distributed more uniformly, the traffic lanes are used more equally for the transportation functionality. Hence, by considering the distribution of vehicles over the network, the information is also related to the transportation functionality.
 
 % The uniform distribution of vehicles implies that all traffic areas are equally used for the transportation functionality, there is no waste and no overuse. This state leads to the  highest overall liquidity of the transportation system.
 
-Now, by combining the analysis of single lane and network, we can see that the transportation information reflects the balance between low usage and high crowdedness, and the balance between different traffic areas. These two balances together determine the contribution of the system to the transportation functionality. In other words, the information of transportation system is the appropriate measurement of the transportation functionality for the system.
+Now, by combining above analysis, the information of transportation system reflects the balance between usage and free spaces, and reflects the balance between different traffic lanes. These two balances together determine the contribution of the system to the transportation functionality. In other words, the information of transportation system is the appropriate measurement of the transportation functionality for the system.
 
 \subsection{Comparison Between Entropy and Information}
 
 % ENTROPY: CONTROL OBJECTIVE
 % INFORMATION: FUNCTIONALITY OF TRANSPORTATION
 
-From the approaches of classical thermodynamics and expanded Shannon information, this paper has presented the entropy \eqref{equ:Tran_entropy} and the information \eqref{equ:info} for the transportation system. We close this section by comparing these two novel concepts.
+From the approaches of classical thermodynamics and expanded Shannon's information theory, this paper has presented the entropy \eqref{equ:Tran_entropy} and the information \eqref{equ:info} for the transportation system. We close this section by comparing these two novel concepts.
 
-From different bases, the significations of these two concepts are very different. By considering the vehicles as the energy, the transportation entropy is presented based on the parallelism between the transportation system and the thermodynamic system. It is the sum of traffic densities of all vehicles, which is opposite to the service quality supplied by the system to the vehicles. Obviously, the entropy focuses on the performances of the vehicles and it is desired to be reduced.
+From different bases, the significations of these two concepts are very different. By considering the vehicles as the energy, the transportation entropy is presented based on the parallelism between the transportation system and the thermodynamic system. It is the measure of system disorder, which is proportional to the sum of traffic densities of all vehicles and therefore opposite to the service quality supplied by the system to the vehicles. Obviously, the entropy focuses on the services obtained by the vehicles and it is desired to be reduced.
 
-But on the other hand, the transportation information measures the system contribution to the transportation functionality. It comes from the consideration of the occupancy states of all traffic areas. Different from the entropy, the transportation information focuses on the performance of the transportation system and it is desired to be increased.
+But on the other hand, the information of transportation system measures the system contribution to the transportation functionality. It comes from the consideration of the occupancy states of all traffic areas. Different from the entropy, the information focuses on the performance of the transportation system (not the vehicles) and it is desired to be increased.
 
 This difference appears in their relationships with the queue lengths. The entropy \eqref{equ:Tran_entropy} is a monotonic function of queue lengths. It is obvious that every vehicle hopes to share the traffic resources with as less vehicles as possible. But, the transportation information \eqref{equ:info} approaches zero when the number of vehicles approaches zero because transportation functionality needs the vehicles and too few of them will lead to big waste of traffic infrastructures. More precisely, the considerations based on the entropy desire that the vehicles are reduced as many as possible, while the maximization of the information desires that the lanes are half-occupied.
 
-Apparently, the transportation entropy is more appropriate to be the objective of traffic signal control. The aim of the traffic signals focuses more on the vehicles rather than the transportation functionality of the whole system. On the other hand, the transportation information is a good evaluation of the transportation system itself. It reflects the balance between the vehicles (users) and the traffic areas (resources). In our opinion, the information \eqref{equ:info} is also more useful in the domains, such as the transportation infrastructure design, the urban planning, etc.
+Apparently, the transportation entropy is more appropriate to be used in traffic signal control, because the fundamental aim of the traffic signals is to enhance the service quality for the vehicles. On the other hand, the transportation information is better to evaluate the performance of the transportation system itself. The transportation system with bigger information means it contributes more to the transportation functionality for the society.
+% In our opinion, the information \eqref{equ:info} is also more useful in the domains, such as the transportation infrastructure design, the urban planning, etc.
 
-At last, we note that these two notions have common features to consider the distribution law of vehicles. No matter to minimize the entropy or to maximize the information, the vehicles are both desired to be distributed uniformly, which implies that the uniform distribution of vehicles is beneficial to both the vehicles and the transportation system.
+% At last, we note that these two notions have common features to consider the distribution law of vehicles. No matter to minimize the entropy or to maximize the information, the vehicles are both desired to be distributed uniformly, which implies that the uniform distribution of vehicles is beneficial to both the vehicles and the transportation system.
 
 \section{Conclusion}
 
-This paper has presented a novel thermodynamic approach for studying the transportation system. The comparison between the thermodynamic system and the transportation system showed that they are similar by regarding the vehicles as the energy and regarding the traffic lanes as the thermodynamic subsystems. With this similarity, the transportation system has been analogized to the thermodynamic system. In particular, it has been demonstrated that the transportation system can have a similar notion of the entropy to measure the system disorder. With this notion, this paper presented the dissipativeness of the transportation system to correspond to the second law of thermodynamics. This dissipativeness makes the system tend to decrease the disorder and hence become better organized. Though it is not verified naturally, it can be used as the objective and the evaluation of the traffic signal control. Furthermore, this paper proposed that the nominal situation is appropriate to correspond to the closed status of the thermodynamic system. The equilibrium state was also introduced into the transportation context to represent the uniform distribution of the vehicles. Beyond the classical thermodynamic approach, this paper also applied the Shannon's point of view to present the transportation information, which measures the system contribution to the transportation functionality.
+This paper has studied the transportation system from the thermodynamic and information theory perspectives. First, the comparison between the thermodynamic system and the transportation system showed that they are very similar by regarding the vehicles as the energy and regarding the traffic lanes as the thermodynamic subsystems. Hence, this paper has introduced the thermodynamic concepts into the transportation context. In particular, it has been demonstrated that the transportation system can have a similar notion of the entropy to measure the system disorder. By considering this notion as the storage function, this paper has presented a dissipativity law for the transportation system to decrease its disorder and hence render the system better organized. Though it is not verified naturally, it can be used as the objective of the traffic signal control. Furthermore, the equilibrium state was also introduced into the transportation context to represent the uniform distribution of the vehicles. Beside the classical thermodynamic approach, this paper also applied the Shannon's point of view to present the information of transportation system, which can measure the transportation functionality and hence can be a good means to evaluate the system.
 
-With all these efforts, this paper has constructed a novel thermodynamic point of view in traffic engineering. This work is a completely new attempt to discover the nature of the transportation system. Based on the contributions of this paper, other thermodynamic results can be further applied into the transportation context.
+In summary, this paper has constructed a novel thermodynamic and information theory point of view in traffic engineering. This work is a completely new attempt to discover the nature of the transportation system. The contributions of this paper provide a new approach to design better traffic signal control strategies.
 
 \bibliographystyle{model5-names}
 \bibliography{zhou_refs}
