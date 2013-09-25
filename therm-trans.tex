@@ -277,7 +277,7 @@ For the discrete-time thermodynamic model \eqref{equ:Ther_Model}, based on the C
 (a\vec{\epsilon}+\mat{P}_e\vec{E}) -\vec{\epsilon}^T\vec{E}^*\ln a
 \label{equ:Ther_entropy}
 \end{equation}
-where $\psi(\vec{E})$ is the entropy, $\vec{E}^*=[E^*_1,\cdots,E^*_n]^T$, $a$ is a positive scalar which represents the difference between the absolute temperature and the temperature defined in \eqref{equ:temperature} so that $T^a_i=a+T_i$, $i\in\{1,\cdots,n\}$, and $\mat{P}_e$ is a diagonal matrix with diagonal elements $1/E^*_i$.
+where $\psi(\vec{E})$ is the entropy, $\vec{E}^*=[E^*_1,\cdots,E^*_n]^T$, $a$ is a positive scalar which represents the difference between the absolute temperature and the temperature defined in \eqref{equ:temperature} so that $T^a_i=a+T_i$, $i\in\{1,\cdots,n\}$, and $\mat{P}_e$ is a diagonal matrix with diagonal elements $1/E^*_i$. Here, the logarithm of a vector is the vector of the logarithm of each component.
 
 Note that this formula is identical with the Boltzmann entropy expression for statistical thermodynamics. Indeed, for any subsystem without phase transition, the entropies in different absolute temperatures ($T1$, $T2$) satisfy the following relationship \citep{cengel_thermodynamics:_2001}
 \begin{equation}\label{equ:entropy_temperature}
@@ -338,13 +338,13 @@ In conclusion, the order significations of these two systems are opposite, which
 (a\vec{\epsilon}+\mat{P}\vec{x}) -\vec{\epsilon}^T\vec{x}^*\ln a
 \label{equ:Tran_ectropy}
 \end{align}
-where $\psi(\vec{x})$ is transportation entropy, $\phi(\vec{x})$ is transportation ectropy, $a$ is a positive scalar, $\mat{P}$ is the diagonal matrix with the diagonal elements $1/x_i^*$, and $\vec{x}^*=[x_1^*,\cdots,x_n^*]^T$. Here, the logarithm of a vector is the vector of the logarithm of each component.
+where $\psi(\vec{x})$ is transportation entropy, $\phi(\vec{x})$ is transportation ectropy, $a$ is a positive scalar, $\mat{P}$ is the diagonal matrix with the diagonal elements $1/x_i^*$, and $\vec{x}^*=[x_1^*,\cdots,x_n^*]^T$.
 % Since the Haddad's formula of entropy is identical with the Boltzmann's one, the definitions of the transportation entropy and ectropy can also be considered as consistent with Boltzmann's approach.
 
 % It is important to note that the entropy \eqref{equ:Tran_entropy} is a Lyapunov candidate function, which is much more useful in control issues than the ectropy \eqref{equ:Tran_ectropy}. Hence, it will be the major emphasis of the sequel.
 
-The formula of the transportation entropy \eqref{equ:Tran_entropy} comes only from the thermodynamic system, but we have not shown its signification in the transportation context. To do this, consider the transportation network as a service provider and consider the vehicles traveling within it as its customers. Hence, the order of transportation network should be the sum of the qualities of the services provided to all vehicles, and the disorder is, of course, the opposite. Clearly, the services that the vehicles obtain from the urban transportation system are the traffic routes, and the qualities are evaluated by how fast the vehicles can pass these routes. Figure \ref{fig:d_q} shows the flow-density diagram based on kinetic wave model, where $\rho_m$ is the jam density, $\nu$ is the speed and $\nu_m$ is the free-flow speed \citep{ukkusuri_robust_2010}. It is observed that the traffic flow and the speed can be considered as functions of the traffic density. Precisely, the bigger traffic density generates 
-the smaller speed and hence prolongs the delay. Indeed, despite the habits of drivers, any vehicle need spend more time to pass more crowded lanes. This indicates that the traffic densities are opposite to the qualities of services provided by the transportation network, hence they correspond to the system disorder.
+The formula of the transportation entropy \eqref{equ:Tran_entropy} comes only from the thermodynamic system, but we have not shown its signification in the transportation context. To do this, consider the transportation network as a service provider and consider the vehicles traveling within it as its customers. Hence, the order of transportation network should be the sum of the qualities of the services provided to all vehicles, and the disorder is, of course, the opposite. Clearly, the services that vehicles obtain from the urban transportation system are the traffic routes, and the qualities are evaluated by how fast the vehicles can pass these routes. Figure \ref{fig:d_q} shows the flow-density diagram based on kinetic wave model, where $\rho_m$ is the jam density, $\nu$ is the speed and $\nu_m$ is the free-flow speed \citep{ukkusuri_robust_2010}. It is observed that the traffic flow and the speed can be considered as functions of the traffic density. More precisely, the bigger traffic density generates 
+the smaller speed and hence prolongs the delay. Indeed, despite the habits of drivers, any vehicle need spend more time to pass more crowded lanes. This indicates that the bigger traffic densities are opposite to the qualities of services provided by the transportation network, hence they correspond to the system disorder.
 
 \begin{figure}[ht]
   \centering
@@ -383,7 +383,7 @@ as the supplied entropy in the interval $k$. Furthermore, since $\vec{f}=\mat{P}
 \begin{equation}\label{equ:supply}
     S(k)=\vec{x}(k+1)^T \mat{P} \vec{r}(k)
 \end{equation}
-Now, similar with the anti-Clausius inequality \eqref{equ:anti_clausius}, we propose its corresponding version in transportation context as follows
+Now, as in the anti-Clausius inequality \eqref{equ:anti_clausius}, we propose its corresponding version in transportation context as follows
 \begin{equation}\label{equ:dissipative}
 \psi(\vec{x}(k+1))-\psi(\vec{x}(k)) \leq S(k),\quad \forall
 k\in\mathbb{N}
@@ -402,16 +402,17 @@ This dissipativity implies that the storage of the system disorder is always sma
 
 This dissipativity does not exist naturally. But, it is known that the traffic signals have the ability to control the traffic flows. Therefore, it is possible that under certain control schemes, the traffic signals can verify the dissipation inequality \eqref{equ:dissipative}. This inequality can be considered as one of objectives for traffic signal control.
 
-\section{Nominal Situation and Equilibrium}
+\section{Nominal Situation and Occupancy Equilibrium}
 
 In the researches about thermodynamic systems, the closed system, which has no exchange with the environment, is one of the most studied subjects. Indeed, the closed thermodynamic system has special features. For example, in any closed thermodynamic system, the ectropy (resp, entropy) keeps decreasing (resp, increasing) until reaching the equilibrium state when all connected subsystems have the same temperature. The equilibrium also corresponds to the minimal possible ectropy and maximal possible entropy. Since the ectropy is a Lyapunov function, the closed thermodynamic system is Lyapunov stable \citep{haddad_thermodynamic_2005}.
 
-Unfortunately, the transportation system is always open. In fact, the openness is required by the functionality of the transportation. There is no such thing as closed transportation system. However, there exists nominal situation \citep{diakaki_multivariable_2002} in the transportation network which has some common features with the closed thermodynamic system. The nominal situation means that with certain traffic demands and certain traffic signal settings, the input vehicles equals the output vehicles for each traffic lane, in other words, the queue lengths of all traffic lanes keep constant. In this paper, these certain traffic demands are called nominal inputs from the outside, denoted by
+Unfortunately, the transportation system is always open. Indeed, the openness is imposed by the transportation functionality. However, there exists a nominal situation \citep{diakaki_multivariable_2002} in the transportation network which has some common features with the closed thermodynamic system. The nominal situation means that with certain traffic demands and certain traffic signal settings, the input vehicles equals the output vehicles for each traffic lane, in other words, the queue lengths of all traffic lanes keep constant. In this paper, these certain traffic demands are called nominal inputs from the outside, denoted by
 $$\vec{r}^N=\{r_1^N,\cdots,r_n^N\}$$
 Obviously, in the nominal situation, the net exchange between the transportation system and the outside equals zero in each cycle, that means
 \begin{equation}\label{equ:nominal_exchange}
 Q(k)\equiv 0, \quad \forall k\in\mathbb{N}
 \end{equation}
+
 Since the transportation system is lossless with the storage function $U$ and the supply function $Q$, \eqref{equ:nominal_exchange} infers that the total amount of vehicles $U$ within the whole system keeps constant in the nominal situation. This is very similar with the closed thermodynamic system which has zero exchange of energy with the environment.
 % Hence, we propose that the nominal situation of the transportation system can be analogized to the closed status of the thermodynamic system.
 
@@ -422,13 +423,11 @@ Now, define the disturbances of the transportation system as the difference betw
 \vec{\omega}(k)\triangleq\vec{r}(k)-\vec{r}^N, \quad \forall
 k\in\mathbb{N}
 \end{equation}
-Since the nominal situation of transportation system is similar to the closed status of thermodynamic system, the disturbances $\vec{\omega}$ are more appropriate than the input traffic flows $\vec{r}$ to correspond to the input energy in the thermodynamic system, specially when we consider the dissipativity phenomenon.
-
-Hence, let
+Since the nominal situation of transportation system is similar to the closed status of thermodynamic system, the disturbances $\vec{\omega}$ are more appropriate than the input traffic flows $\vec{r}$ to present the input ``energy'' for the transportation system, specially when we consider the dissipativity phenomenon. Indeed, let
 \begin{equation}\label{equ:supply_omega}
   S_\omega(k) = \vec{x}(k+1)^T \mat{P} \vec{\omega}(k)
 \end{equation}
-be the new supply function with respect to $\vec{\omega}$. Consequently, the dissipativity presented in previous section can be modified to the one with the entropy \eqref{equ:Tran_entropy} as the storage function and with \eqref{equ:supply_omega} as the supply function. Note that this new dissipativity is the sufficient condition of the previous one, which is stated in the following theorem.
+be the new supply function with respect to $\vec{\omega}$. Consequently, the dissipativity presented in previous section can be modified to the one with the entropy \eqref{equ:Tran_entropy} as the storage function and with \eqref{equ:supply_omega} as the supply function. This is stated in the following theorem.
 
 \begin{thm}
 If the transportation system described by the difference equation \eqref{equ:mdl_gnl} is dissipative with respect to the storage function \eqref{equ:Tran_entropy} and the supply function \eqref{equ:supply_omega}, then the system is also dissipative with respect to the same storage function and the supply function \eqref{equ:supply}.
@@ -449,21 +448,24 @@ $$S_\omega(k)\leq \vec{x}(k+1)^T \mat{P} \vec{r}(k) = S(k)$$
 So, the conclusion follows.
 \end{proof}
 % Now, the second law of thermodynamics corresponds to this new dissipativity.
-This theorem also implies that the dissipativity with the supply function $S_\omega(k)$ is more strict than the one with the supply function $S(k)$. Hence, by taking the new dissipativity as the objective instead of the previous one, the traffic signal control can generate better performances.
+This theorem also implies that the dissipativity with the supply function $S_\omega(k)$ is more strict than the one with the supply function $S(k)$. Hence, by taking the new dissipation inequality \eqref{equ:dissipative_omega} as the control objective, the traffic signal control can generate better performances.
 
 Finally, we close this section by introducing the concept of thermal equilibrium into the transportation context. For a closed thermodynamic system, if a pair of connected subsystems have different temperatures, the energy transmission will emerge between them so that their temperatures tend to approximate. After enough time, all connected subsystems will have the same temperature so that no energy movement can emerge any more. In other words, the system loses all its capacity to do useful work in this moment. This particular state is called thermal equilibrium state \citep{cengel_thermodynamics:_2001}, which also corresponds to the maximal entropy and minimal ectropy in the closed thermodynamic system.
 
-This concept of equilibrium can be also introduced into the transportation context to denote the state when the occupancies of all traffic lanes are the same, which implies that the vehicles are uniformly distributed within the whole transportation area in the transportation equilibrium. Mathematically, the transportation equilibrium means
+This concept of equilibrium can be also introduced into the transportation context to denote the state when the occupancies of all traffic lanes are the same. Mathematically, this occupancy equilibrium means
 \begin{equation}\label{equ:equilibrium}
 \frac{x_1}{x_1^*}=\cdots=\frac{x_n}{x_n^*}=\alpha
 \end{equation}
 where
 $$\alpha = \frac{\vec{\epsilon}^T\vec{x}}{\vec{\epsilon}^T\vec{x}^*}
 \in[0,1]$$
+It is clear that, the occupancy equilibrium  implies that no particular concentration of vehicles exists in the system and hence the possibility to emerge congestion is extremely low. This observation is demonstrated in the following theorem.
+
+
 % It can be easily proved that the transportation equilibrium
 % corresponds to the minimization of the transportation entropy with
 % certain amount of traffic.
-The relationship between the transportation equilibrium and the transportation entropy is stated in the following theorem.
+% The relationship between the transportation equilibrium and the transportation entropy is stated in the following theorem.
 
 \begin{thm}\label{thm:entropy_equilibrium}
 Assume that the total amount of vehicles $N$ is given, the transportation entropy \eqref{equ:Tran_entropy} is minimized when the system reaches the equilibrium state \eqref{equ:equilibrium}.
@@ -491,11 +493,11 @@ $$
 Apparently, $\beta$ can only equal to $-\alpha$, which completes the proof.
 \end{proof}
 
-Transportation equilibrium also implies that no particular concentration of vehicles exists in the system and hence the possibility to emerge congestion is extremely low. The transportation equilibrium is actually the ideal state for the transportation system and the ideal objective shared by all dynamic traffic signal control strategies.
+It follow immediately from the this theorem that the occupancy equilibrium leads to the minimal disorder in the network. Hence, the occupancy equilibrium is actually the ideal state for the transportation network and the principal objective shared by all dynamic traffic signal control strategies.
 
 \section{Approach of Shannon's Entropy}
 
-The above studies analogized the transportation system to thermodynamic system by regarding the vehicles as the energy. Beside this approach, it is noticed that the researches of thermodynamics have been expanded to the domains other than pure physical systems. In particular, Shannon has connected the entropy with the concept of information \citep{Shannon1948}. This work encourages us to explore the nature of the transportation system from the perspective of information theory, which is the emphasis of this section.
+The above sections analogized the transportation system to thermodynamic system by regarding the vehicles as the energy. Beside this approach, it is noticed that the researches of thermodynamics have been expanded to the domains other than pure physical systems. In particular, Shannon has connected the entropy with the concept of information \citep{Shannon1948}. This work encourages us to explore the nature of the transportation system from the perspective of information theory, which is the emphasis of this section.
 
 \subsection{Information of Transportation System}
 
@@ -503,11 +505,12 @@ As a very important expansion of the statistical thermodynamics, Shannon's entro
 \begin{equation}\label{equ:shannon}
 H(Y) = -\sum p_i \log_2 p_i
 \end{equation}
-Note that by using $2$ as the base of logarithm, the unit of the information \eqref{equ:shannon} is $\unit{bit}$.
+Note that the choice of a logarithmic base corresponds to the choice of a unit for measuring information. If the base 2 is used, the resulting units may be called binary digits, or more briefly bits.
 
 In transportation context, the most important information is the occupancy status of the traffic areas, which can infer the degree of crowdedness. Since the Shannon's entropy measures the information gained by necessary measurement, it means the Shannon's entropy represents the unknown information or in other words the unpredictability of the information. In the transportation system, if the vehicles move more fast, it is more difficult to predict the occupancy of certain traffic areas. Therefore, if the transportation system functions more smooth, the information measured by the Shannon's entropy will be greater.
 
-Now, consider a single spot of lane $i$, $\forall i\in\{1,\cdots,n\}$. Suppose that the queue length $x_i$ and the lane capacity $x_i^*$ are both known but there is no direct measurement on this specific spot. It can be inferred that the possibility that this spot is occupied is $\frac{x_i}{x_i^*}$, and the possibility of the otherwise case is $(1-\frac{x_i}{x_i^*})$. Hence, the information gained by measuring this spot is
+Now, consider a single spot of lane $i$, $\forall i\in\{1,\cdots,n\}$. Suppose that the queue length $x_i$ and the lane capacity $x_i^*$ are both known but there is no direct measurement on this specific spot. 
+In this lane, every spot has the same possibility to be occupied and hence the probability that this spot is to be occupied is $\frac{x_i}{x_i^*}$, and the probability of the otherwise case is $(1-\frac{x_i}{x_i^*})$. Hence, the information gained by measuring this spot is
 $$-[\frac{x_i}{x_i^*} \log_2 \frac{x_i}{x_i^*}+(1-\frac{x_i}{x_i^*})
 \log_2 (1-\frac{x_i}{x_i^*})]
 $$
@@ -524,7 +527,7 @@ H_i(x_i) &= -x_i^*[\frac{x_i}{x_i^*} \log_2
 &=-[x_i \log_2 \frac{x_i}{x_i^*}+(x_i^*-x_i) \log_2
 (1-\frac{x_i}{x_i^*})] \label{equ:info_lane}
 \end{align}
-By summarizing all lanes, we have the information of the entire system as follows
+If we consider all lanes, we have the information of the entire system as follows
 \begin{align}
 H(\vec{x}) &= \sum_{i=1}^n H_i(x_i)\nonumber\\
 &= - \sum_{i=1}^n [x_i \log_2 \frac{x_i}{x_i^*}+(x_i^*-x_i) \log_2
@@ -647,7 +650,8 @@ Apparently, the transportation entropy is more appropriate to be used in traffic
 
 \section{Conclusion}
 
-This paper has studied the transportation system from the thermodynamic and information theory perspectives. First, the comparison between the thermodynamic system and the transportation system showed that they are very similar by regarding the vehicles as the energy and regarding the traffic lanes as the thermodynamic subsystems. Hence, this paper has introduced the thermodynamic concepts into the transportation context. In particular, it has been demonstrated that the transportation system can have a similar notion of the entropy to measure the system disorder. By considering this notion as the storage function, this paper has presented a dissipativity law for the transportation system to decrease its disorder and hence render the system better organized. Though it is not verified naturally, it can be used as the objective of the traffic signal control. Furthermore, the equilibrium state was also introduced into the transportation context to represent the uniform distribution of the vehicles. Beside the classical thermodynamic approach, this paper also applied the Shannon's point of view to present the information of transportation system, which can measure the transportation functionality and hence can be a good means to evaluate the system.
+This paper has studied the transportation system from the thermodynamic and information theory perspectives. First, the comparison between the thermodynamic system and the transportation system showed that they are very similar by regarding the vehicles as the energy and regarding the traffic lanes as the thermodynamic subsystems. Hence, this paper has introduced the thermodynamic concepts into the transportation context. In particular, it has been demonstrated that the transportation system can have a similar notion of the entropy to measure the system disorder. By considering this notion as the storage function, this paper has presented a dissipativity law for the transportation system to decrease its disorder and hence render the system better organized. Though it is not verified naturally, it can be used as the objective of the traffic signal control. Furthermore, the equilibrium state was also introduced into the transportation context to represent the uniform distribution of the vehicles. Beside the 
+classical thermodynamic approach, this paper also applied the Shannon's point of view to present the information of transportation system, which can measure the transportation functionality and hence can be a good means to evaluate the system.
 
 In summary, this paper has constructed a novel thermodynamic and information theory point of view in traffic engineering. This work is a completely new attempt to discover the nature of the transportation system. The contributions of this paper provide a new approach to design better traffic signal control strategies.
 
