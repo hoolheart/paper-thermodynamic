@@ -130,7 +130,7 @@ The fundamental concept for analyzing the large-scale thermodynamic systems is t
 Let the energy stored by the subsystems be their state variables. The dynamic of these states is determined by the energy flows between the subsystems and their surroundings.
 % In this paper, the work done by either the system or the environment is not concerned, hence the energy flows have only the form of heat which is driven by the temperature differences.
 
-Now, according to the discrete-time thermodynamic model presented by \citet{haddad_thermodynamic_2005}, consider a thermodynamic system including $n$ subsystems as shown in Figure \ref{fig:Ther_Sys}. the $i$th subsystem is denoted by $\Psi_i$, $i\in \{1,\cdots,n\}$, and its stored energy is denoted by $E_i$. Let $E_i^*>0$ be the thermal capacity of $\Psi_i$, then the temperature of $\Psi_i$ is given by
+Now, according to the discrete-time thermodynamic model presented by \citet{haddad_thermodynamic_2005}, consider a thermodynamic system including $n$ subsystems as shown in Figure \ref{fig:Ther_Sys}. The $i$th subsystem is denoted by $\Psi_i$, $i\in \{1,\cdots,n\}$, and its stored energy is denoted by $E_i$. Let $E_i^*>0$ be the thermal capacity of $\Psi_i$, then the temperature of $\Psi_i$ is given by
 \begin{equation}\label{equ:temperature}
     T_i= {E_i}/{E^*_i}
 \end{equation}
@@ -397,7 +397,7 @@ Furthermore, according to the \citet{willems_dissipative_1972} and \citet{hill_d
   \label{fig:trans_dis}
 \end{figure}
 
-This dissipativity implies that the storage of the system disorder is always smaller than or equal to the supplied one from the outside. In other words, if this dissipative phenomenon exists in the transportation system, the system disorder will tend to decrease and hence the system will tend to become better organized.
+This dissipativity implies that the storage of the system disorder is always smaller than or equal to the supplied one from the outside. In other words, if this dissipativity phenomenon exists in the transportation system, the system disorder will tend to decrease and hence the system will tend to become better organized.
 
 This dissipativity does not exist naturally. But, it is known that the traffic signals have the ability to control the traffic flows. Therefore, it is possible that under certain control schemes, the traffic signals can verify the dissipation inequality \eqref{equ:dissipative}. This inequality can be considered as one of objectives for traffic signal control.
 
@@ -419,8 +419,7 @@ Note that \citet{de_oliveira_multi-agent_2010} have presented some effective pro
 
 Now, define the disturbances of the transportation system as the difference between the real input flows and the nominal ones, which is given by
 \begin{equation}
-\vec{\omega}(k)\triangleq\vec{r}(k)-\vec{r}^N, \quad \forall
-k\in\mathbb{N}
+\vec{\omega}(k)\triangleq\vec{r}(k)-\vec{r}^N, \quad \forall k\in\mathbb{N}
 \end{equation}
 Since the nominal situation of transportation system is similar to the closed status of thermodynamic system, the disturbances $\vec{\omega}$ are more appropriate than the input traffic flows $\vec{r}$ to present the input ``energy'' for the transportation system, specially when we consider the dissipativity phenomenon. Indeed, let
 \begin{equation}\label{equ:supply_omega}
@@ -432,8 +431,7 @@ be the new supply function with respect to $\vec{\omega}$. Consequently, the dis
 If the transportation system described by the difference equation \eqref{equ:mdl_gnl} is dissipative with respect to the storage function \eqref{equ:Tran_entropy} and the supply function \eqref{equ:supply_omega}, then the system is also dissipative with respect to the same storage function and the supply function \eqref{equ:supply}.
 \end{thm}
 \begin{proof}
-The dissipation inequality related with the storage function (\ref{equ:Tran_entropy}) and the supply function
-(\ref{equ:supply_omega}) is
+The dissipation inequality related with the storage function \eqref{equ:Tran_entropy} and the supply function \eqref{equ:supply_omega} is
 \begin{equation}\label{equ:dissipative_omega}
   \psi(\vec{x}(k+1))-\psi(\vec{x}(k)) \leq S_\omega(k)
 \end{equation}
@@ -458,16 +456,10 @@ This concept of equilibrium can be also introduced into the transportation conte
 where
 $$\alpha = \frac{\vec{\epsilon}^T\vec{x}}{\vec{\epsilon}^T\vec{x}^*}
 \in[0,1]$$
-It is clear that, the occupancy equilibrium  implies that no particular concentration of vehicles exists in the system and hence the possibility to emerge congestion is extremely low. This observation is demonstrated in the following theorem.
-
-
-% It can be easily proved that the transportation equilibrium
-% corresponds to the minimization of the transportation entropy with
-% certain amount of traffic.
-% The relationship between the transportation equilibrium and the transportation entropy is stated in the following theorem.
+It is clear that, the occupancy equilibrium implies that no particular concentration of vehicles exists in the system and hence the possibility to emerge congestion is extremely low. This observation is demonstrated in the following theorem.
 
 \begin{thm}\label{thm:entropy_equilibrium}
-Assume that the total amount of vehicles $N$ is given, the transportation entropy \eqref{equ:Tran_entropy} is minimized when the system reaches the equilibrium state \eqref{equ:equilibrium}.
+Assume that the total amount of vehicles $N$ is given, the transportation entropy \eqref{equ:Tran_entropy} is minimized when the system reaches the occupancy equilibrium state \eqref{equ:equilibrium}.
 \end{thm}
 \begin{proof}
 To minimize the entropy, consider the problem
@@ -476,8 +468,7 @@ To minimize the entropy, consider the problem
 s.t.\; &\sum_{i=1}^n x_i = N \nonumber
 \end{align}
 Since $\psi(\vec{x})$ is a convex function, by applying the method of Lagrange multipliers to solve the problem \eqref{equ:pro_min_psi}, we have the equivalent unconstrained problem:
-$$\min J(\vec{x},\beta) =
-\frac{1}{2}\vec{x}^T\mat{P}\vec{x}+\beta(\sum_{i=1}^n x_i - N)$$
+$$\min J(\vec{x},\beta) = \frac{1}{2}\vec{x}^T\mat{P}\vec{x}+\beta(\sum_{i=1}^n x_i - N)$$
 whose solution can be obtained by solving the equations
 \begin{align}
 \label{equ:tmp_min_J_1}
@@ -487,8 +478,7 @@ i\in\{1,\cdots,n\}\\
 \frac{\partial J}{\partial \beta} &= \sum_{i=1}^n x_i - N =0
 \end{align}
 Now, from \eqref{equ:tmp_min_J_1}, we have
-$$\frac{x_1}{x_1^*}=\cdots=\frac{x_n}{x_n^*}=-\beta
-$$
+$$\frac{x_1}{x_1^*}=\cdots=\frac{x_n}{x_n^*}=-\beta$$
 Apparently, $\beta$ can only equal to $-\alpha$, which completes the proof.
 \end{proof}
 
@@ -498,11 +488,11 @@ It follows immediately from the this theorem that the occupancy equilibrium lead
 
 This paper has presented a novel thermodynamic point of view for the transportation system. Indeed, the comparison between thermodynamic systems and transportation systems has shown that they are very similar by regarding the vehicles as the energy and regarding the traffic lanes as the thermodynamic subsystems. In addition, the concepts of thermal capacity and temperature are also introduced into transportation context to correspond to lane capacity and occupancy respectively. Based on the correspondence of concepts, it has been demonstrated that the first law of thermodynamics corresponds to the conservation of vehicles.
 Then, for introducing the important notion of entropy, it has been shown that the significations of order in transportation context and thermodynamic one is opposite. Hence, the transportation entropy is defined according to the thermodynamic ectropy that measures the order of thermodynamic systems. The transportation entropy has been proved to be proportional to the traffic densities and hence it is an appropriate measurement of system disorder.
-Consequently, by taking the transportation entropy as the storage function, certain dissipativity phenomenon has been presented to reduce the disorder and render the system better organized. The existence of this dissipativity depends on the traffic signals, hence it can be considered as one of objectives for designing control strategies.
+Consequently, by taking the transportation entropy as the storage function, certain dissipativity phenomenon has been presented to reduce the disorder and render the system better organized. The existence of such dissipativity depends on the traffic signals, hence it can be considered as one of objectives for designing control strategies.
 Furthermore, since temperature corresponds to occupancy, thermal equilibrium can be introduced into transportation context to represent the state when all traffic lanes share the same occupancy. It has been proven that the transportation entropy minimizes when the system reaches such occupancy equilibrium.
 Finally, though transportation network is always open, this paper has shown that the nominal situation in transportation systems is similar with the closed status in thermodynamic ones.
 
-By bring certain thermodynamic concepts and principles into transportation context, the work in this paper provides a completely new approach to get the view of transportation network. The results can be further applied to analyze the system performances and design traffic signal control strategies.
+By bring certain thermodynamic concepts and principles into transportation context, this paper provides a completely new approach to get the view of transportation network. The results can be further applied to analyze the system performances and design traffic signal control strategies.
 
 \bibliographystyle{model5-names}
 \bibliography{zhou_refs}
