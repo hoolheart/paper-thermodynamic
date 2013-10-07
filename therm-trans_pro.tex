@@ -51,6 +51,7 @@ Rue Thierry Mieg, 90010 Belfort Cedex, France}
 \cortext[cor]{Corresponding author.}
 
 \begin{abstract}
+
 The paper endeavors to reply the following question: if we consider
 the vehicles as the abstract energy supplied to the transportation
 network, it is possible to analyze transportation systems from
@@ -71,6 +72,26 @@ render the system better organized. Finally, though the
 transportation network is always open, it will be shown that the
 nominal situation in transportation systems is similar with the
 closed status in thermodynamic ones.
+
+
+%
+
+%This paper presents a novel thermodynamic point of view to discover
+%the nature of transportation systems. Indeed, if the vehicles are
+%regarded as the energy supplied to the system, transportation
+%systems are very similar with thermodynamic systems. Hence, the
+%thermodynamic concepts can be introduced into the transportation
+%context. In particular, transportation systems can have a similar
+%notion of entropy to measure the system disorder. By taking the
+%transportation entropy as the storage function, a dissipativity
+%phenomenon is then presented to reduce the disorder and render the
+%system better organized. Though this phenomenon doesn't exist
+%naturally, it can be considered as the objective of traffic signal
+%control. Furthermore, this paper also shows that the nominal
+%situation in transportation systems is similar with the closed
+%status in thermodynamic systems, and the equilibrium can be
+%introduced into the transportation context to represent the state
+%when all traffic lanes share the same occupancy.
 \end{abstract}
 
 \begin{keyword}
@@ -90,7 +111,7 @@ Beside the traffic flow theory, the applications of Petri nets (PNs) in modeling
 
 In this paper, we propose another way to study transportation network which, to the best of our knowledge,  has not been explored yet. Indeed, by regarding the vehicles as the abstract energy supplied to the network, we show that certain thermodynamic concepts can be applied to transportation systems. Among them, the most important notion is the entropy which measures system disorder and hence can be taken as a means to evaluate system performances.
 
-This paper is organized as follows: Section \ref{sec:concepts} will show the connections between transportation and thermodynamic systems. In particular, the basic concepts such as energy, temperature, thermal capacity can be introduced into the transportation context. Then, Section \ref{sec:entropy} will demonstrates that the transportation system can have a similar notion of entropy to measure the system disorder. By considering this new entropy notion as the storage function, a dissipativity phenomenon will be presented to reduce the disorder and hence render the system better organized. Finally, Section \ref{sec:nominal} will show that, though the transportation network is always open, the nominal situation in transportation systems is similar with the closed status in thermodynamic ones.
+This paper is organized as follows: Section \ref{sec:concepts} will show the connections between the transportation system and the thermodynamic system. In particular, the basic concepts such as energy, temperature, thermal capacity can be introduced into the transportation context. Then, Section \ref{sec:entropy} will demonstrates that the transportation system can have a similar notion of entropy to measure the system disorder. By considering this new entropy notion as the storage function, a dissipativity phenomenon will be presented to reduce the disorder and hence render the system better organized. Finally, Section \ref{sec:nominal} will show that, though the transportation network is always open, the nominal situation in transportation systems is similar with the closed status in thermodynamic ones.
 
 \section{Basic Concepts and Conservation of Vehicles}\label{sec:concepts}
 
@@ -341,7 +362,20 @@ Contrary to the energy, the entropy and the ectropy are both non-conservative no
 
 \subsection{Transportation Entropy}
 % The above section has analogized the transportation system to the thermodynamic system, which encourages us to introduce entropy concept into transportation context to be the evaluation of the system performance.
-The correspondence between transportation systems and thermodynamic systems encourages us to introduce the entropy concept into transportation context in order to evaluate the system performances. However, the problem is that there is no natural principle in transportation context that corresponds to the second law of thermodynamics. As a matter of fact, the directions of vehicles are determined by the drivers, there is no such rule that the vehicles only move from more crowded lanes to less crowded ones. Hence, we can not introduce transportation entropy based on certain principles as it is defined in the thermodynamic context. Nevertheless, based on the correspondences of certain concepts, such as energy and temperature, we can still simply introduce the formulas in the thermodynamic system to present the transportation entropy as the measure of the system disorder.
+The correspondence between transportation systems and thermodynamic
+systems encourages us to introduce the entropy concept into
+transportation context in order to evaluate the system performances.
+However, the problem is that there is no natural principle in
+transportation context that corresponds to the second law of
+thermodynamics. As a matter of fact, the directions of vehicles are
+determined by the drivers, there is no such rule that the vehicles
+only move from more crowded lanes to less crowded ones. Hence, we
+can not introduce transportation entropy based on certain principles
+as it is defined in the thermodynamic context. Nevertheless, based
+on the correspondences of certain concepts, such as energy and
+temperature, we can still simply introduce the formulas in the
+thermodynamic system to present the transportation entropy as the
+measure of the system disorder.
 
 To do this, the significations of orders in these two systems must be firstly compared. Indeed, in thermodynamic context, higher order means higher capacity to do useful work, which is related with bigger temperature differences between subsystems. For example, in a thermodynamic system including two subsystems, if more energy concentrates on one single subsystem to generate bigger temperature difference, the quantity of the potential energy movements is bigger, which means that the system can generate more useful work. In this case, the system is regarded as better organized and has higher order. But on the converse, the bigger differences between the occupancies correspond to lower order in transportation context. Indeed, for a general transportation network, if more vehicles concentrate in only a few lanes, it has bigger probability to generate congestions in these lanes and the other lanes are wasted. In this case, the system is regarded as worse organized and has lower order.
 
@@ -360,7 +394,7 @@ where $\psi(\vec{x})$ is transportation entropy, $\phi(\vec{x})$ is transportati
 
 % It is important to note that the entropy \eqref{equ:Tran_entropy} is a Lyapunov candidate function, which is much more useful in control issues than the ectropy \eqref{equ:Tran_ectropy}. Hence, it will be the major emphasis of the sequel.
 
-The formula of the transportation entropy \eqref{equ:Tran_entropy} comes only from the thermodynamic system, but we have not shown its signification in the transportation context. To do this, consider the transportation network as a service provider and consider the vehicles traveling within it as its customers. Hence, the order of transportation network should be the sum of the qualities of the services provided to all vehicles, and the disorder is, of course, the opposite. Clearly, the services that vehicles obtain from the urban transportation system are the traffic routes, and the qualities are evaluated by how fast the vehicles can pass these routes. Figure \ref{fig:d_q} shows the flow-density diagram based on kinetic wave theory, where $\rho_m$ is the jam density, $\nu$ is the speed and $\nu_m$ is the free-flow speed \citep{ukkusuri_robust_2010}. It is observed that the traffic flow and the speed can be considered as functions of the traffic density. More precisely, the bigger traffic density generates 
+The formula of the transportation entropy \eqref{equ:Tran_entropy} comes only from the thermodynamic system, but we have not shown its signification in the transportation context. To do this, consider the transportation network as a service provider and consider the vehicles traveling within it as its customers. Hence, the order of transportation network should be the sum of the qualities of the services provided to all vehicles, and the disorder is, of course, the opposite. Clearly, the services that vehicles obtain from the urban transportation system are the traffic routes, and the qualities are evaluated by how fast the vehicles can pass these routes. Figure \ref{fig:d_q} shows the flow-density diagram based on kinetic wave theory, where $\rho_m$ is the jam density, $\nu$ is the speed and $\nu_m$ is the free-flow speed \citep{ukkusuri_robust_2010}. It is observed that the traffic flow and the speed can be considered as functions of the traffic density. More precisely, the bigger traffic density generates
 the smaller speed and hence prolongs the delay. Indeed, despite the habits of drivers, any vehicle need spend more time to pass more crowded lanes. This indicates that the bigger traffic densities are opposite to the qualities of services provided by the transportation network, hence they correspond to the system disorder.
 
 \begin{figure}[ht]
@@ -514,13 +548,13 @@ transportation context to correspond to lane capacity and occupancy
 respectively. Then, it has been demonstrated that the first law of
 thermodynamics corresponds to the conservation of vehicles.
 
-However, though these two kinds of systems can be similar, the second
-thermodynamic principle does not work in transportation context. The
+However, though these two kind of systems can be similar, the second
+thermodinamic principle does not work in transportation context. The
 reason for this is that  the directions of vehicles are determined
 by the drivers, there is no rule that the vehicles only move from
 more crowded lanes to less crowded ones. Besides, the significations
 of order in two systems are opposite, which means that the
-thermodynamic ectropy corresponds to the transportation entropy. Such
+thermodynamic ectropy  corresponds to transportation entropy. Such
 transportation entropy is proportional to the traffic densities and
 hence may provide deep insight in the analysis of transportation
 control problems.
@@ -529,6 +563,87 @@ Finally, we would like to point out that, though transportation
 systems are always open, this paper has also shown that there exists
 a nominal situation in transportation systems that is similar with
 the closed status in thermodynamic ones.
+
+
+% This paper has compared transportation systems and thermodynamic systems in several aspects. In particular, these two systems are very similar if the vehicles are considered as the transportation ``energy'' supplied into the system.
+
+%This paper has presented a novel thermodynamic point of view for the
+%transportation system. Indeed, the comparison between thermodynamic
+%systems and transportation systems has shown that they are very
+%similar by regarding the vehicles as the energy and regarding the
+%traffic lanes as the thermodynamic subsystems. In addition, the
+%concepts of thermal capacity and temperature are also introduced
+%into transportation context to correspond to lane capacity and
+%occupancy respectively. Then, it has been demonstrated that the
+%first law of thermodynamics corresponds to the conservation of
+%vehicles.
+%
+%However, though these two kind of systems can be similar, the second
+%thermodynamic principle does not work in transportation context. The
+%reason for this is that  the directions of vehicles are determined
+%by the drivers, there is no  rule that the vehicles only move from
+%more crowded lanes to less crowded ones. Besides, the significations
+%of order in two systems are opposite, which means that the
+%thermodynamic ectropy  corresponds to transportation entropy. Such
+%transportation entropy is proportional to the traffic densities and
+%hence it is an appropriate measurement to evaluate system
+%performances.
+%
+%Though these two kind of systems can be similar, the second
+%thermodinamic principle does not work in transportation context. The
+%reason for this is that  the directions of vehicles are determined
+%by the drivers, there is no rule that the vehicles only move from
+%more crowded lanes to less crowded ones. Besides, the significations
+%of order in two systems are opposite, which means that the
+%thermodynamic ectropy  corresponds to transportation entropy. Such
+%transportation entropy is proportional to the traffic densities and
+%hence may provide deep insight in the analysis of transportation
+%control problems.
+%
+%
+%
+%Finally, we would like to point out tha, though transportation
+%systems are always open, this paper has also shown that there exists
+%the nominal situation in transportation systems that is similar with
+%the closed status in thermodynamic ones.
+%
+%
+%
+%However, transportation systems are not exactly the same with
+%thermodynamic systems. For one thing, the second law of
+%thermodynamics doesn't exist in transportation context. For another,
+%the significations of order in two systems are opposite. Hence, the
+%important notion of entropy can not be introduced directly. To this
+%end, this paper defined the transportation entropy by using the
+%formula of thermodynamic ectropy that measures the order in
+%thermodynamic context. Such transportation entropy is proportional
+%to the traffic densities and hence it is an appropriate measurement
+%of system performances.
+%% Then, for introducing the important notion of entropy, it has been shown that the significations of order in transportation context and thermodynamic one is opposite. Hence,
+%
+%This new concept can be also applied in control domain. Specially,
+%by taking it as the storage function, certain dissipativity
+%phenomenon has been presented to reduce the disorder and hence
+%render the system better organized. Though this dissipativity
+%doesn't exist naturally, it will be very useful if traffic signal
+%control takes it into account. In addition, the minimal entropy
+%corresponds to the occupancy equilibrium which represents the state
+%when all traffic lanes share the same occupancy. Clearly, such
+%occupancy equilibrium is the ideal state for transportation network
+%and the principal objective shared by all dynamic traffic signal
+%control strategies.
+%
+%% Furthermore, since temperature corresponds to occupancy, thermal equilibrium can be introduced into transportation context to represent the state when all traffic lanes share the same occupancy. It has been proven that the transportation entropy minimizes when the system reaches such occupancy equilibrium. Clearly, the occupancy equilibrium is the ideal state for transportation network and the principal objective shared by all dynamic traffic signal control strategies.
+%
+%Furthermore, another difference between two systems is that the
+%transportation network is always open. But, this paper has also
+%shown that there exists the nominal situation in transportation
+%systems, that is similar with the closed status in thermodynamic
+%ones. We define the disturbances as the difference between real
+%input flows and nominal ones. Such disturbances lead to a more
+%strict version of dissipativity.
+
+Finally, we would like to point out that, by bringing certain thermodynamic concepts and principles into transportation context, this paper provides a completely new view to transportation network. The results are applicable to analyze system performances and design traffic signal control strategies.
 
 \bibliographystyle{model5-names}
 \bibliography{zhou_refs}
