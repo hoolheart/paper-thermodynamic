@@ -1,7 +1,5 @@
 % This paper tries to present the thermodynamic point of view
 % for studying the transportation system.
-% To show the universe of this contribution,
-% a general transportation model is used instead of the previous linear one.
 
 % This new point of view is to analogize the transportation system
 % to the thermodynamic system.
@@ -12,7 +10,7 @@
 \documentclass[preprint,authoryear,12pt]{elsarticle}
 % final format
 % \documentclass[final,authoryear,5p,times,twocolumn]{elsarticle}
-\journal{Journal of Advanced Transportation}
+% \journal{}
 
 % postScript packages and setting
 \usepackage{graphicx}
@@ -185,22 +183,21 @@ based on both the current and the potential directions of vehicles).
 A street may correspond to more than one traffic signals, but a lane
 can only correspond to one. Hence, the traffic lanes are more
 appropriate to be considered as the units of the traffic areas
-instead of the streets. For each lane, the appropriate state variable
-is obviously the number of the vehicles within it, which, in this
-paper, is called the queue length of the traffic lane. By applying
-the traffic flow theory \citep{nathan_h_gartner_revised_2005}, for
-each lane, the dynamic of its queue length depends on the traffic
-flows connected with this lane.
+instead of the streets. For each lane, we choose the number of the
+vehicles within it as its state variable. By applying the traffic
+flow theory \citep{nathan_h_gartner_revised_2005}, for each lane, the
+dynamic of the number of vehicles depends on the traffic flows
+connected with this lane.
 
 Now, consider a transportation network including $n$ traffic lanes,
 $n>0$. Figure \ref{fig:flows} illustrates all traffic flows related
-with the lane $i$, $i\in\{1,\cdots,n\}$. $x_i$ is the queue length of
-lane $i$; the flow $r_i$ denotes the vehicles entering the lane $i$
-from the outside; the flow $\sigma_{i,j}$ (resp, $\sigma_{j,i}$),
-$j\neq i$, $j\in\{1,\cdots,n\}$, represents the vehicles travel from
-the lane $j$ (resp, $i$) queue to the lane $i$ (resp, $j$); the flow
-$d_{i}$ is the output flow denoting the vehicles which leave the
-transportation system from the lane $i$.
+with the lane $i$, $i\in\{1,\cdots,n\}$. $x_i$ is the number of
+vehicles within the lane $i$; the flow $r_i$ denotes the vehicles
+entering the lane $i$ from the outside; the flow $\sigma_{i,j}$
+(resp, $\sigma_{j,i}$), $j\neq i$, $j\in\{1,\cdots,n\}$, represents
+the vehicles travel from the lane $j$ (resp, $i$) to the lane $i$
+(resp, $j$); the flow $d_{i}$ is the output flow denoting the
+vehicles which leave the transportation system from the lane $i$.
 
 \begin{figure}[ht]
   \centering
@@ -209,8 +206,8 @@ transportation system from the lane $i$.
   \label{fig:flows}
 \end{figure}
 
-From discrete-time approach, the change of the queue length $x_i$
-during the interval $k$, $k\in\mathbb{N}$, is given by
+From discrete-time approach, the change of $x_i$ during the interval
+$k$, $k\in\mathbb{N}$, is given by
 \begin{equation}\label{equ:mdl_gnl_lane}
 \Delta x_i(k) = l_i(k)+r_i(k)-d_i(k)
 \end{equation}
@@ -226,8 +223,8 @@ represented by the following state-space difference equation
 \end{equation}
 where $\vec{x}=[x_1,\cdots,x_n]^T$, $\vec{l}=[l_1,\cdots,l_n]^T$,
 $\vec{r}=[r_1,\cdots,r_n]^T$, $\vec{d}=[d_1,\cdots,d_n]^T$, and
-$x_i(k)$ is the queue length of lane $i$ at the beginning of the
-interval $k$.
+$x_i(k)$ is the number of vehicles within the lane $i$ at the
+beginning of the interval $k$.
 
 It is important to note that without any specific assumption,
 \eqref{equ:mdl_gnl} is a general model, which fits any kind of
@@ -310,7 +307,7 @@ vehicles move between the connected lanes or between a lane and the
 outside. Obviously, the lanes are like the subsystems in the
 thermodynamic context, which store energy and exchange energy with
 their surroundings. Hence, the traffic lane is the corresponding
-notion of the thermodynamic subsystem and the queue lengths $x_i$
+notion of the thermodynamic subsystem and the vehicle numbers $x_i$
 correspond to the energy stored in subsystems $E_i$,
 $i\in\{1,\cdots,n\}$.
 
@@ -323,7 +320,7 @@ $x_i^*$, $i\in\{1,\cdots,n\}$, be the capacity of the lane $i$. It is
 not difficult to observe that the appropriate corresponding notion of
 the thermal capacity $E_i^*$ is the lane capacity $x_i^*$.
 Furthermore, we can define the occupancy of a lane as the proportion
-of the queue length to the capacity, which is given by
+of the vehicle number to the capacity, which is given by
 \begin{equation}\label{equ:occupancy}
 f_i = \frac{x_i}{x_i^*},\quad i\in\{1,\cdots,n\}
 \end{equation}
@@ -346,7 +343,7 @@ principles into transportation context as well.
   \hline
   energy & vehicle \\
   subsystem & traffic lane \\
-  energy stored in subsystems & queue lengths \\
+  energy stored in a subsystem & number of vehicles \\
   thermal capacity & lane capacity \\
   temperature & occupancy \\
   \hline
@@ -449,23 +446,23 @@ This principle is usually connected with a special concept of
 \textbf{entropy}. The second law of thermodynamics can be also
 described by the way how the entropy of thermodynamic system changes.
 In particular, Clausius proposed that the increase of the system
-entropy due to the input energy $Q$ from the environment is $Q/T^a$,
-where $T^a$ is the absolute temperature at the spot where the energy
-transmission happens \citep{clausius_mechanical_1867}. However, for
-any thermodynamic system, the actual increase of entropy is bigger
-than or equals to the one supplied by the environment. In other
-words, any thermodynamic system is creating entropy itself. This
-phenomenon can be presented by the following inequality
+entropy due to the input energy $Q_e$ from the environment is
+$Q_e/T^a$, where $T^a$ is the absolute temperature at the spot where
+the energy transmission happens \citep{clausius_mechanical_1867}.
+However, for any thermodynamic system, the actual increase of entropy
+is bigger than or equals to the one supplied by the environment. In
+other words, any thermodynamic system is creating entropy itself.
+This phenomenon can be presented by the following inequality
 \begin{equation}\label{equ:clausius_ther_gnl}
-\Delta \psi \ge \int\frac{dQ}{T^a}
+\Delta \psi \ge \int\frac{dQ_e}{T^a}
 \end{equation}
 or its discrete-time version \citep{haddad_thermodynamic_2005}
 \begin{equation}\label{equ:clausius_ther}
-\psi(k+1) \ge \psi(k)+\sum_{i=1}^{n}\frac{Q_i(k)}{T^a_i(k+1)},
+\psi(k+1) \ge \psi(k)+\sum_{i=1}^{n}\frac{Q_{ei}(k)}{T^a_i(k+1)},
 \forall k\in\mathbb{N}
 \end{equation}
-where $\psi$ is the entropy of the thermodynamic system, $Q_i(k)$ is
-the net energy that the $i$th subsystem absorbs from the outside
+where $\psi$ is the entropy of the thermodynamic system, $Q_{ei}(k)$
+is the net energy that the $i$th subsystem absorbs from the outside
 during the interval $k$, and $T^a_i(k+1)$ is the absolute temperature
 of the $i$th subsystem at the end of interval $k$,
 $i\in\{1,\cdots,n\}$. \eqref{equ:clausius_ther_gnl} and
@@ -537,16 +534,16 @@ introduced a dual notion to entropy, called ectropy, to measure the
 system order. The dual inequality to \eqref{equ:clausius_ther} is
 given by
 \begin{equation}\label{equ:anti_clausius}
-\phi(k+1)-\phi(k)\le \sum_{i=0}^n Q_i(k)T_i(k+1),
+\phi(k+1)-\phi(k)\le \sum_{i=0}^n Q_{ei}(k)T_i(k+1),
 \forall k\in\mathbb{N}
 \end{equation}
 where $\phi$ is the ectropy of the thermodynamic system,
-$Q_i(k)T_i(k+1)$ is the input ectropy of $i$th subsystem supplied by
-the environment with the net input energy $Q_i(k)$, and $T_i(k+1)$ is
-the temperature of $i$th subsystem at the end of interval $k$. This
-inequality is also called anti-Clausius inequality, which, like
-Clausius inequality, is consistent with the second law of
-thermodynamics.
+$Q_{ei}(k)T_i(k+1)$ is the input ectropy of $i$th subsystem supplied
+by the environment with the net input energy $Q_{ei}(k)$, and
+$T_i(k+1)$ is the temperature of $i$th subsystem at the end of
+interval $k$. This inequality is also called anti-Clausius
+inequality, which, like Clausius inequality, is consistent with the
+second law of thermodynamics.
 
 Anti-Clausius inequality indicates that in any circumstance, any
 thermodynamic system is destroying its ectropy so that the increase
@@ -596,9 +593,9 @@ concentrates on one single subsystem to generate bigger temperature
 difference, the quantity of the potential energy movements is bigger,
 which means that the system can generate more useful work. In this
 case, the system is regarded as better organized and has higher
-order. But on the converse, the bigger differences between the
-occupancies correspond to lower order in transportation context.
-Indeed, for a general transportation network, if more vehicles
+order. But on the converse, if the differences between the lane
+occupancies is bigger, the order of the transportation system is
+lower. Indeed, for a general transportation network, if more vehicles
 concentrate in only a few lanes, it has bigger probability to
 generate congestions in these lanes and the other lanes are wasted.
 In this case, the system is regarded as worse organized and has lower
@@ -651,10 +648,10 @@ observed that the traffic flow and the speed can be considered as
 functions of the traffic density. More precisely, the bigger traffic
 density generates the smaller speed and hence prolongs the delay.
 Indeed, despite the habits of drivers, any vehicle need spend more
-time to pass more crowded lanes. This indicates that the bigger
-traffic densities are opposite to the qualities of services provided
-by the transportation network, hence they correspond to the system
-disorder.
+time to pass more crowded lanes. This indicates that, for a vehicle,
+if the traffic density at its position is bigger, the service that it
+receives from the transportation system is considered worse. Hence,
+the traffic density can be used to evaluate the service quality.
 
 \begin{figure}[ht]
   \centering
@@ -663,32 +660,38 @@ disorder.
   \label{fig:d_q}
 \end{figure}
 
-Now, let $I(k)$ be the sum of the traffic densities that all vehicles
-meet at the instant $k$. For vehicles in the lane $i$, $\forall i\in
-\{1,\cdots,n\}$, let $\rho_i(k)$ denote their traffic density at time
-$k$. Hence, we have
-$$I(k)=\sum_{i=1}^{n} x_i(k)\rho_i(k)$$
-Furthermore, since $\rho_i(k)=x_i(k)/h_i$ where $h_i$ is the length
-of the lane $i$, $i\in \{1,\cdots,n\}$, the sum of the traffic
-densities of all vehicles is finally restated as
+Now, consider the lane $i$ with $x_i(k)$ vehicles at the instant $k$,
+suppose they share the same traffic density:
+$$\rho_i(k)=x_i(k)/h_i$$
+where $h_i$ is the length of the lane $i$, $i\in \{1,\cdots,n\}$.
+Hence, the sum of the service qualities of these $x_i$ vehicles can
+be evaluated by $x_i(k)\rho_i(k)$. Let $I(k)$ be the evaluation of
+the service qualities of all vehicles at the instant $k$, we have
 \begin{equation}
 \label{equ:quality_service}
-I(k)=\sum_{i=1}^{n}
-\frac{x_i(k)^2}{h_i}=\vec{x}(k)^T\mat{P}_h\vec{x}(k)
+\begin{split}
+I(k)&=\sum_{i=1}^{n} x_i(k)\rho_i(k)\\
+&=\sum_{i=1}^{n}\frac{x_i(k)^2}{h_i}\\
+&=\vec{x}(k)^T\mat{P}_h\vec{x}(k)
+\end{split}
 \end{equation}
 where $\mat{P}_h$ is the diagonal matrix with the diagonal elements
-$1/h_i$. Since $x_i^*=\frac{h_i}{h_{veh}}$, where $h_{veh}$ is the
-average car length, it follows
+$1/h_i$. Note that since the bigger traffic density corresponds to
+worse quality of the service, $I(k)$ is opposite to the overall
+quality of the service that the transportation system provides to all
+vehicles.
+
+Since $x_i^*=\frac{h_i}{h_{veh}}$, where $h_{veh}$ is the average car
+length, it follows
 \begin{equation}
 I(k) = \sum_{i=1}^{n}\frac{x_i(k)^2}{h_{veh} x_i^*}
 = \frac{2}{h_{veh}} \frac{1}{2}\vec{x}(k)^T\mat{P}\vec{x}(k)
 = \frac{2}{h_{veh}} \psi(k)
 \end{equation}
-
-This indicates that the transportation entropy is proportional to the
-traffic densities $I(k)$ and hence it becomes now clear that this
-transportation entropy is an appropriate measurement of system
-disorder.
+This indicates that the transportation entropy is proportional to
+$I(k)$ and hence is also opposite to the overall service quality. It
+becomes now clear that this transportation entropy is an appropriate
+measurement of the system disorder.
 
 Now, in transportation context, the input vehicles bring disorder to
 the system. This supplied disorder depends on not only the number of
@@ -763,15 +766,17 @@ Lyapunov function, the closed thermodynamic system is Lyapunov stable
 \citep{haddad_thermodynamic_2005}.
 
 Unfortunately, the transportation system is always open. Indeed, the
-openness is imposed by the transportation functionality. However,
+openness is imposed by the transportation functionality. Though some
+systems seem to have a closed structure, such as a ring road, these
+systems, in our opinion, are still open for the vehicles. However,
 there exists a nominal situation \citep{diakaki_multivariable_2002}
 in the transportation network which has some common features with the
 closed thermodynamic system. The nominal situation means that with
 certain traffic demands and certain traffic signal settings, the
 input vehicles equals the output vehicles for each traffic lane, in
-other words, the queue lengths of all traffic lanes keep constant. In
-this paper, these certain traffic demands are called nominal inputs
-from the outside, denoted by
+other words, the number of vehicles in all traffic lanes keep
+constant. In this paper, these certain traffic demands are called
+nominal inputs from the outside, denoted by
 $$\vec{r}^N=\{r_1^N,\cdots,r_n^N\}$$
 Obviously, in the nominal situation, the net exchange between the
 transportation system and the outside equals zero in each cycle, that
@@ -833,8 +838,8 @@ Since $\vec{\omega}(k)=\vec{r}(k)-\vec{r}^N$, it follows
 S_\omega(k) &= \vec{x}(k+1)^T \mat{P} (\vec{r}(k)-\vec{r}^N)\\
     &= \vec{x}(k+1)^T \mat{P} \vec{r}(k)-\vec{x}(k+1)^T\mat{P}\vec{r}^N
 \end{align*}
-Since the nominal inputs and all queue lengths are non-negative, this
-infers
+Since the nominal inputs and the vehicle numbers are non-negative,
+this infers
 $$S_\omega(k)\leq \vec{x}(k+1)^T \mat{P} \vec{r}(k) = S(k)$$
 So, the conclusion follows.
 \end{proof}
@@ -902,10 +907,10 @@ proof.
 \end{proof}
 
 It follows immediately from the this theorem that the occupancy
-equilibrium leads to the minimal disorder in the network. Hence, the
-occupancy equilibrium is actually the ideal state for the
-transportation network and the principal objective shared by all
-dynamic traffic signal control strategies.
+equilibrium leads to the minimal disorder in the network. However, it
+must be noted that this equilibrium comes only from the
+correspondence between temperature and occupancy. There is no proof
+that this is a stable state for the transportation system.
 
 \section{Conclusion}
 
@@ -926,14 +931,20 @@ the drivers, there is no rule that the vehicles only move from more
 crowded lanes to less crowded ones. Besides, the significations of
 order in two systems are opposite, which means that the thermodynamic
 ectropy corresponds to the transportation entropy. Such
-transportation entropy is proportional to the traffic densities and
-hence may provide deep insight in the analysis of transportation
+transportation entropy is opposite to the overall service qualities
+and hence may provide deep insight in the analysis of transportation
 control problems.
 
-Finally, we would like to point out that, though transportation
-systems are always open, this paper has also shown that there exists
-a nominal situation in transportation systems that is similar with
-the closed status in thermodynamic ones.
+%Finally, we would like to point out that, though transportation
+%systems are always open, this paper has also shown that there exists
+%a nominal situation in transportation systems that is similar with
+%the closed status in thermodynamic ones.
+
+In summary, the results of this paper provides an alternate way to
+study transportation systems. They allow us to consider other
+transportation phenomenons by introducing more thermodynamic concepts
+in the future. In our opinion, this approach has the potential to
+design better control strategies.
 
 \bibliographystyle{model5-names}
 \bibliography{zhou_refs}
