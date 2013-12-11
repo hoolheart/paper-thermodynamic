@@ -73,7 +73,7 @@ taking this entropy as the storage function, a dissipativity
 phenomenon is presented to reduce the disorder and render the system
 better organized. Finally, though the transportation network is
 always open, it will be shown that the nominal situation in
-transportation systems is similar with the closed status in
+transportation systems is similar with the isolated status in
 thermodynamic ones.
 \end{abstract}
 
@@ -147,8 +147,8 @@ entropy notion as the storage function, a dissipativity phenomenon
 will be presented to reduce the disorder and hence render the system
 better organized. Finally, Section \ref{sec:nominal} will show that,
 though the transportation network is always open, the nominal
-situation in transportation systems is similar with the closed status
-in thermodynamic ones.
+situation in transportation systems is similar with the isolated
+status in thermodynamic ones.
 
 \section{Basic Concepts and Conservation of Vehicles}\label{sec:concepts}
 
@@ -343,7 +343,7 @@ principles into transportation context as well.
   \hline
   energy & vehicle \\
   subsystem & traffic lane \\
-  energy stored in a subsystem & number of vehicles \\
+  energy stored in a subsystem & number of vehicles in a lane \\
   thermal capacity & lane capacity \\
   temperature & occupancy \\
   \hline
@@ -594,7 +594,7 @@ difference, the quantity of the potential energy movements is bigger,
 which means that the system can generate more useful work. In this
 case, the system is regarded as better organized and has higher
 order. But on the converse, if the differences between the lane
-occupancies is bigger, the order of the transportation system is
+occupancies are bigger, the order of the transportation system is
 lower. Indeed, for a general transportation network, if more vehicles
 concentrate in only a few lanes, it has bigger probability to
 generate congestions in these lanes and the other lanes are wasted.
@@ -681,8 +681,8 @@ worse quality of the service, $I(k)$ is opposite to the overall
 quality of the service that the transportation system provides to all
 vehicles.
 
-Since $x_i^*=\frac{h_i}{h_{veh}}$, where $h_{veh}$ is the average car
-length, it follows
+Then, according to $x_i^*=\frac{h_i}{h_{veh}}$, where $h_{veh}$ is
+the average car length, it follows
 \begin{equation}
 I(k) = \sum_{i=1}^{n}\frac{x_i(k)^2}{h_{veh} x_i^*}
 = \frac{2}{h_{veh}} \frac{1}{2}\vec{x}(k)^T\mat{P}\vec{x}(k)
@@ -754,29 +754,30 @@ objectives for traffic signal control.
 
 \section{Nominal Situation and Occupancy Equilibrium}\label{sec:nominal}
 
-In the researches about thermodynamic systems, the closed system,
+In the researches about thermodynamic systems, the isolated system,
 which has no exchange with the environment, is one of the most
-studied subjects. Indeed, the closed thermodynamic system has special
-features. For example, in any closed thermodynamic system, the
-ectropy (resp, entropy) keeps decreasing (resp, increasing) until
+studied subjects. Indeed, the isolated thermodynamic system has
+special features. For example, in any isolated thermodynamic system,
+the ectropy (resp, entropy) keeps decreasing (resp, increasing) until
 reaching the equilibrium state when all connected subsystems have the
 same temperature. The equilibrium also corresponds to the minimal
 possible ectropy and maximal possible entropy. Since the ectropy is a
-Lyapunov function, the closed thermodynamic system is Lyapunov stable
-\citep{haddad_thermodynamic_2005}.
+Lyapunov function, the isolated thermodynamic system is Lyapunov
+stable \citep{haddad_thermodynamic_2005}.
 
 Unfortunately, the transportation system is always open. Indeed, the
-openness is imposed by the transportation functionality. Though some
-systems seem to have a closed structure, such as a ring road, these
-systems, in our opinion, are still open for the vehicles. However,
-there exists a nominal situation \citep{diakaki_multivariable_2002}
-in the transportation network which has some common features with the
-closed thermodynamic system. The nominal situation means that with
-certain traffic demands and certain traffic signal settings, the
-input vehicles equals the output vehicles for each traffic lane, in
-other words, the number of vehicles in all traffic lanes keep
-constant. In this paper, these certain traffic demands are called
-nominal inputs from the outside, denoted by
+openness is imposed by the transportation functionality.
+%Though some systems seem to have a closed structure, such as a ring
+%road, these systems, in our opinion, are still open for the vehicles.
+However, there exists a nominal situation
+\citep{diakaki_multivariable_2002} in the transportation network
+which has some common features with the isolated thermodynamic
+system. The nominal situation means that with certain traffic demands
+and certain traffic signal settings, the input vehicles equals the
+output vehicles for each traffic lane, in other words, the number of
+vehicles in all traffic lanes keep constant. In this paper, these
+certain traffic demands are called nominal inputs from the outside,
+denoted by
 $$\vec{r}^N=\{r_1^N,\cdots,r_n^N\}$$
 Obviously, in the nominal situation, the net exchange between the
 transportation system and the outside equals zero in each cycle, that
@@ -789,7 +790,7 @@ Since the transportation system is lossless with the storage function
 $U$ and the supply function $Q$, \eqref{equ:nominal_exchange} infers
 that the total amount of vehicles $U$ within the whole system keeps
 constant in the nominal situation. This is very similar with the
-closed thermodynamic system which has zero exchange of energy with
+isolated thermodynamic system which has zero exchange of energy with
 the environment.
 
 Note that \citet{de_oliveira_multi-agent_2010} have presented some
@@ -804,7 +805,7 @@ is given by
 \vec{\omega}(k)\triangleq\vec{r}(k)-\vec{r}^N, \quad \forall k\in\mathbb{N}
 \end{equation}
 Since the nominal situation of transportation system is similar to
-the closed status of thermodynamic system, the disturbances
+the isolated status of thermodynamic system, the disturbances
 $\vec{\omega}$ are more appropriate than the input traffic flows
 $\vec{r}$ to present the input ``energy'' for the transportation
 system, specially when we consider the dissipativity phenomenon.
@@ -850,7 +851,7 @@ function $S(k)$. Hence, by taking the new dissipation inequality
 signal control can generate better performances.
 
 Finally, we close this section by introducing the concept of thermal
-equilibrium into the transportation context. For a closed
+equilibrium into the transportation context. For an isolated
 thermodynamic system, if a pair of connected subsystems have
 different temperatures, the energy transmission will emerge between
 them so that their temperatures tend to approximate. After enough
@@ -859,7 +860,7 @@ no energy movement can emerge any more. In other words, the system
 loses all its capacity to do useful work in this moment. This
 particular state is called thermal equilibrium state
 \citep{cengel_thermodynamics:_2001}, which also corresponds to the
-maximal entropy and minimal ectropy in the closed thermodynamic
+maximal entropy and minimal ectropy in the isolated thermodynamic
 system.
 
 This concept of equilibrium can be also introduced into the
@@ -940,11 +941,10 @@ control problems.
 %a nominal situation in transportation systems that is similar with
 %the closed status in thermodynamic ones.
 
-In summary, the results of this paper provides an alternate way to
-study transportation systems. They allow us to consider other
-transportation phenomenons by introducing more thermodynamic concepts
-in the future. In our opinion, this approach has the potential to
-design better control strategies.
+Finally, we would like to point out that the results of this paper
+allow us to consider other transportation phenomenons by introducing
+more thermodynamic concepts in the future. In our opinion, this
+approach has the potential to design better control strategies.
 
 \bibliographystyle{model5-names}
 \bibliography{zhou_refs}

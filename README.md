@@ -19,3 +19,13 @@ The initial version includes all major aspects of this paper. Specially, the con
 ### Reduction
 
 The information theory point of view, which comes from Shannon's entropy, has truned out to be not solid. Besides, it has few connections with the thermodynamic point of view, which is the major content and proved to be solid. Hence, it is not appropriate to contain this material in this particular paper. The information theory point of view should be deleted. Maybe later, after it is improved, another paper can developed to present the idea.
+
+### Revision after rejection
+
+The rejection comments and the relative revision plan are stated in `review_comments.md`. The major revisions are
+
+1. change `queue length` to `number of vehicles`;
+2. `I(k)` is **NOT** the sum of densities, it is the evaluation of service quality;
+3. change `closed status` to `isolated status`;
+4. note that the occupancy equilibrium is not a real stable state;
+5. discuss a little about the future work in Conclusion.
