@@ -71,10 +71,11 @@ thermodynamic notion, which is the entropy, can be also defined in
 order to measure the disorder of transportation systems. Then, by
 taking this entropy as the storage function, a dissipativity
 phenomenon is presented to reduce the disorder and render the system
-better organized. Finally, though the transportation network is
-always open, it will be shown that the nominal situation in
-transportation systems is similar with the isolated status in
-thermodynamic ones.
+better organized.
+%Finally, though the transportation network is
+%always open, it will be shown that the nominal situation in
+%transportation systems is similar with the isolated status in
+%thermodynamic ones.
 \end{abstract}
 
 \begin{keyword}
@@ -145,10 +146,9 @@ demonstrates that the transportation system can have a similar notion
 of entropy to measure the system disorder. By considering this new
 entropy notion as the storage function, a dissipativity phenomenon
 will be presented to reduce the disorder and hence render the system
-better organized. Finally, Section \ref{sec:nominal} will show that,
-though the transportation network is always open, the nominal
-situation in transportation systems is similar with the isolated
-status in thermodynamic ones.
+better organized. Finally, Section \ref{sec:equilibrium} will show
+that the thermal equilibrium can be also introduced to corresponds to
+the state when all lanes share the same occupancy.
 
 \section{Basic Concepts and Conservation of Vehicles}\label{sec:concepts}
 
@@ -648,10 +648,13 @@ observed that the traffic flow and the speed can be considered as
 functions of the traffic density. More precisely, the bigger traffic
 density generates the smaller speed and hence prolongs the delay.
 Indeed, despite the habits of drivers, any vehicle need spend more
-time to pass more crowded lanes. This indicates that, for a vehicle,
-if the traffic density at its position is bigger, the service that it
-receives from the transportation system is considered worse. Hence,
-the traffic density can be used to evaluate the service quality.
+time to pass more crowded lanes. Hence, for a vehicle, the traffic
+density at its position can measure the opposite of its service
+quality.
+%This indicates that, for a vehicle,
+%if the traffic density at its position is bigger, the service that it
+%receives from the transportation system is considered worse. Hence,
+%the traffic density can be used to evaluate the service quality.
 
 \begin{figure}[ht]
   \centering
@@ -661,12 +664,13 @@ the traffic density can be used to evaluate the service quality.
 \end{figure}
 
 Now, consider the lane $i$ with $x_i(k)$ vehicles at the instant $k$,
-suppose they share the same traffic density:
+suppose these vehicles share the same traffic density:
 $$\rho_i(k)=x_i(k)/h_i$$
 where $h_i$ is the length of the lane $i$, $i\in \{1,\cdots,n\}$.
-Hence, the sum of the service qualities of these $x_i$ vehicles can
-be evaluated by $x_i(k)\rho_i(k)$. Let $I(k)$ be the evaluation of
-the service qualities of all vehicles at the instant $k$, we have
+Hence, the opposite of the service qualities of all $x_i$ vehicles
+can be evaluated by $x_i(k)\rho_i(k)$. Let $I(k)$ be the evaluation
+of the opposite of the service qualities for all vehicles at the
+instant $k$, we have
 \begin{equation}
 \label{equ:quality_service}
 \begin{split}
@@ -692,6 +696,8 @@ This indicates that the transportation entropy is proportional to
 $I(k)$ and hence is also opposite to the overall service quality. It
 becomes now clear that this transportation entropy is an appropriate
 measurement of the system disorder.
+
+%\subsection{Dissipativity}
 
 Now, in transportation context, the input vehicles bring disorder to
 the system. This supplied disorder depends on not only the number of
@@ -752,7 +758,9 @@ traffic signals can verify the dissipation inequality
 \eqref{equ:dissipative}. This inequality can be considered as one of
 objectives for traffic signal control.
 
-\section{Nominal Situation and Occupancy Equilibrium}\label{sec:nominal}
+\section{Occupancy Equilibrium}\label{sec:equilibrium}
+
+\iffalse
 
 In the researches about thermodynamic systems, the isolated system,
 which has no exchange with the environment, is one of the most
@@ -850,70 +858,122 @@ function $S(k)$. Hence, by taking the new dissipation inequality
 \eqref{equ:dissipative_omega} as the control objective, the traffic
 signal control can generate better performances.
 
-Finally, we close this section by introducing the concept of thermal
-equilibrium into the transportation context. For an isolated
-thermodynamic system, if a pair of connected subsystems have
-different temperatures, the energy transmission will emerge between
-them so that their temperatures tend to approximate. After enough
-time, all connected subsystems will have the same temperature so that
-no energy movement can emerge any more. In other words, the system
-loses all its capacity to do useful work in this moment. This
-particular state is called thermal equilibrium state
-\citep{cengel_thermodynamics:_2001}, which also corresponds to the
-maximal entropy and minimal ectropy in the isolated thermodynamic
-system.
+\fi
 
-This concept of equilibrium can be also introduced into the
+For an isolated thermodynamic system without any input
+($\vec{r}^e(k)\equiv 0$) and output ($\vec{d}^e(k)\equiv 0$) energy
+flows, if a pair of connected subsystems have different temperatures,
+the energy transmission will emerge between them so that their
+temperatures tend to approximate. After enough amount of time, the
+isolated system will reach certain state when the temperature is
+spatially and temporally uniform. In this state, the system will lose
+all its capacity to produce any useful work. Such particular state is
+called thermal equilibrium \citep{cengel_thermodynamics:_2001}. For
+an isolated thermodynamic system in thermal equilibrium, its ectropy
+would be a minimum and entropy would be a maximum giving rise to a
+state of absolute disorder.
+
+Since the lane occupancies correspond to the temperatures, this
+concept of thermal equilibrium can be easily introduced into the
 transportation context to denote the state when the occupancies of
-all traffic lanes are the same. Mathematically, this occupancy
-equilibrium means
+all traffic lanes are the same. Such state is called the occupancy
+equilibrium in this paper. It can be denoted by the following
+mathematical expression
 \begin{equation}\label{equ:equilibrium}
-\frac{x_1}{x_1^*}=\cdots=\frac{x_n}{x_n^*}=\alpha
+\frac{\bar{x}_1}{x_1^*}=\cdots=\frac{\bar{x}_n}{x_n^*}=\bar{f}=\text{constant}
 \end{equation}
-where
-$$\alpha = \frac{\vec{\epsilon}^T\vec{x}}{\vec{\epsilon}^T\vec{x}^*}\in[0,1]$$
-It is clear that, the occupancy equilibrium implies that no
-particular concentration of vehicles exists in the system and hence
-the possibility to emerge congestion is extremely low. This
+The occupancy equilibrium implies that no particular concentration of
+vehicles exists in the system and hence the possibility to emerge
+congestion is extremely low. Suppose a transportation network can be
+isolated, its entropy (resp, ectropy) is minimal (resp, maximal) when
+the system reaches the occupancy equilibrium. In other words, this
+state corresponds to the best organization of the system. This
 observation is demonstrated in the following theorem.
 
 \begin{thm}\label{thm:entropy_equilibrium}
-Assume that the total amount of vehicles $N$ is given, the
-transportation entropy \eqref{equ:Tran_entropy} is minimized when the
-system reaches the occupancy equilibrium state
-\eqref{equ:equilibrium}.
+Suppose a transportation network is isolated. Let $N$ be the total
+number of vehicles in this system, let $\psi(\vec{x})$ and
+$\phi(\vec{x})$ denote the entropy and ectropy of system and be given
+by \eqref{equ:Tran_entropy} and \eqref{equ:Tran_ectropy},
+respectively, and define $\mathbb{D}\triangleq
+\{\vec{x}\in\mathbb{R}^n/\vec{\epsilon}^T\vec{x}=N\}$. Then,
+\begin{equation}\label{equ:entropy_equilibrium}
+\arg\min_{\vec{x}\in\mathbb{D}}(\psi(\vec{x})) =
+\arg\max_{\vec{x}\in\mathbb{D}}(\phi(\vec{x})) = \bar{\vec{x}} =
+\frac{N}{\vec{\epsilon}^T\vec{x}^*}\vec{x}^*
+\end{equation}
 \end{thm}
 \begin{proof}
-To minimize the entropy, consider the problem
+The existence and uniqueness of $\bar{\vec{x}}$ come from the fact
+that $\psi(\vec{x})$ and $-\phi(\vec{x})$ are strictly convex
+functions on the compact set $\mathbb{D}$. Now, to find the minimal
+$\psi(\vec{x})$ on $\mathbb{D}$, consider the problem
 \begin{align}\label{equ:pro_min_psi}
 \min\; &\psi(\vec{x}) = \frac{1}{2}\vec{x}^T\mat{P}\vec{x}\\
-s.t.\; &\sum_{i=1}^n x_i = N \nonumber
+s.t.\; &\vec{\epsilon}^T\vec{x}=N \nonumber
 \end{align}
-Since $\psi(\vec{x})$ is a convex function, by applying the method of
-Lagrange multipliers to solve the problem \eqref{equ:pro_min_psi}, we
-have the equivalent unconstrained problem:
-$$\min J(\vec{x},\beta) = \frac{1}{2}\vec{x}^T\mat{P}\vec{x}+\beta(\sum_{i=1}^n x_i - N)$$
-whose solution can be obtained by solving the equations
+By using the Karush-Kuhn-Tucker (KKT) conditions
+\citep{boyd_convex_2004}, we have the Lagrangian
+$$J(\vec{x},\lambda) = \frac{1}{2}\vec{x}^T\mat{P}\vec{x}+\lambda(\vec{\epsilon}^T\vec{x} - N)$$
+If $\bar{\vec{x}}$ is the solution, there exists a scalar
+$\bar{\lambda}\in\mathbb{R}$ such that
 \begin{align}
 \label{equ:tmp_min_J_1}
-\frac{\partial J}{\partial x_i} &= \frac{x_i}{x_i^*}+\beta =0,
-i\in\{1,\cdots,n\}\\
+\frac{\partial J}{\partial \vec{x}} &= \bar{\vec{x}}^T\mat{P}+\bar{\lambda}\vec{\epsilon}^T =0 \\
 \label{equ:tmp_min_J_2}
-\frac{\partial J}{\partial \beta} &= \sum_{i=1}^n x_i - N =0
+\frac{\partial J}{\partial \lambda} &= \vec{\epsilon}^T\bar{\vec{x}} - N =0
 \end{align}
-Now, from \eqref{equ:tmp_min_J_1}, we have
-$$\frac{x_1}{x_1^*}=\cdots=\frac{x_n}{x_n^*}=-\beta$$
-Apparently, $\beta$ can only equal to $-\alpha$, which completes the
-proof.
-\end{proof}
+From \eqref{equ:tmp_min_J_1}, we have
+$\bar{\vec{x}}=-\bar{\lambda}\mat{P}^{-1}\vec{\epsilon}$. Now, it
+follows from \eqref{equ:tmp_min_J_2} that
+$\bar{\lambda}=-\frac{N}{\vec{\epsilon}^T\mat{P}^{-1}\vec{\epsilon}}$
+which implies that $\bar{\vec{x}} =
+\frac{N}{\vec{\epsilon}^T\vec{x}^*}\vec{x}^*$. Since the Hessian of
+the entropy is $\mat{P}$ which is always positive definite, we have
+the conclusion that $\bar{\vec{x}}$ minimizes the entropy on the
+compact set $\mathbb{D}$.
 
+Analogously, to maximize $\phi(\vec{x})$ on $\mathbb{D}$, form the
+Lagrangian:
+$$J(\vec{x},\lambda) =
+{\vec{x}^*}^T \ln(a\vec{\epsilon}+\mat{P}\vec{x})
+-\vec{\epsilon}^T\vec{x}^*\ln a
++\lambda(\vec{\epsilon}^T\vec{x} - N)
+$$
+If $\bar{\vec{x}}$ solves this problem, there exists a scalar
+$\bar{\lambda}\in\mathbb{R}$ such that
+\begin{align}
+\label{equ:tmp_min_J_3}
+\frac{\partial J}{\partial \vec{x}} &= \Bigl[
+\frac{1}{a+\frac{\bar{x}_1}{x_1^*}}+\bar{\lambda},\cdots,
+\frac{1}{a+\frac{\bar{x}_n}{x_n^*}}+\bar{\lambda} \Bigr] =0 \\
+\label{equ:tmp_min_J_4}
+\frac{\partial J}{\partial \lambda} &= \vec{\epsilon}^T\bar{\vec{x}} - N =0
+\end{align}
+Thus, \eqref{equ:tmp_min_J_3} infers
+$$\bar{\lambda}=-\frac{1}{a+\frac{\bar{x}_i}{x_i^*}},\;i\in\{1,\cdots,n\}
+$$
+If $\bar{\lambda}=0$, then the only value of $\bar{\vec{x}}=\infty$
+which doesn't satisfy \eqref{equ:tmp_min_J_4}. Hence,
+$\bar{\lambda}\neq 0$ and $\bar{x}_i = -(1/\bar{\lambda}+a)x_i^*$,
+which implies $\bar{\vec{x}}=-(1/\bar{\lambda}+a)\vec{x}^*$. It
+follows from \eqref{equ:tmp_min_J_4} that
+$$-(1/\bar{\lambda}+a)=\frac{N}{\vec{\epsilon}^T\vec{x}^*}$$
+which implies $\bar{\vec{x}} =
+\frac{N}{\vec{\epsilon}^T\vec{x}^*}\vec{x}^*$. The fact that
+$\bar{\vec{x}}$ maximizes the ectropy on the compact set $\mathbb{D}$
+can be shown by computing the Hessian and showing that it is negative
+definite at $\bar{\vec{x}}$. The proof is completed.
+\end{proof}
 It follows immediately from the this theorem that the occupancy
-equilibrium leads to the minimal disorder in the network. It is
-interesting to consider the possibility that certain control strategy
-can render the system approximate to such state. However, it must be
-noted that this equilibrium comes only from the correspondence
-between temperature and occupancy. There is no proof that this would
-be a stable state for the transportation system.
+equilibrium leads to the minimal disorder (resp, maximal order) in
+the network.
+
+We close this section by mentioning that the thermal equilibrium is
+the stable state for isolated thermodynamic systems. But,
+transportation systems are seldom isolated. For a open transportation
+network, it is difficult to render the system in such occupancy
+equilibrium, which may be further considered in control strategies.
 
 \section{Conclusion}
 
@@ -938,14 +998,10 @@ transportation entropy is opposite to the overall service qualities
 and hence may provide deep insight in the analysis of transportation
 control problems.
 
-%Finally, we would like to point out that, though transportation
-%systems are always open, this paper has also shown that there exists
-%a nominal situation in transportation systems that is similar with
-%the closed status in thermodynamic ones.
-
-In further investigations, we would explore more applications of
-thermodynamic concepts in transportation context. In our opinion,
-this approach has the potential to design better control strategies.
+From the results of this paper, other transportation phenomenons may
+also be studied by using thermodynamic concepts in the future work.
+In our opinion, this approach has the potential to further improve
+the traffic efficiency.
 
 \bibliographystyle{model5-names}
 \bibliography{zhou_refs}
