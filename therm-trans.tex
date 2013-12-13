@@ -697,7 +697,38 @@ $I(k)$ and hence is also opposite to the overall service quality. It
 becomes now clear that this transportation entropy is an appropriate
 measurement of the system disorder.
 
-%\subsection{Dissipativity}
+Furthermore, the transportation entropy $\psi(\vec{x})$ given by
+\eqref{equ:Tran_entropy} can be restated as
+$$\psi(\vec{x}) = \frac{1}{2}\sum_{i=1}^{n} \frac{x_i^2}{x_i^*}$$
+which infers
+$$\min(\frac{1}{2x_i^*})\|\vec{x}\|_2^2
+\le\min(\frac{1}{2x_i^*})\sum_{i=1}^{n}x_i^2
+\psi(\vec{x})\le\max(\frac{1}{2x_i^*})\sum_{i=1}^{n}x_i^2
+\le\max(\frac{1}{2x_i^*})\|\vec{x}\|_2^2
+$$
+Let
+\begin{align*}
+\alpha &= \max(\frac{1}{2x_i^*}) = \frac{1}{2\min{x_i^*}}>0\\
+\beta &= \min(\frac{1}{2x_i^*}) = \frac{1}{2\max{x_i^*}}>0
+\end{align*}
+we have
+\begin{equation}\label{equ:range_entropy}
+\beta\|\vec{x}\|_2^2 \le\psi(\vec{x})\le \alpha\|\vec{x}\|_2^2
+\end{equation}
+Since the capacities are determined by the lane lengths, $\alpha$ and
+$\beta$ are both fixed for a certain system. Hence, the inequality
+\eqref{equ:range_entropy} indicates that the norm of the vector
+$\vec{x}$ (number of vehicles) determines the range of the admissible
+values of the entropy $\psi(\vec{x})$. Though it cannot be proved
+that bigger $\|\vec{x}\|_2$ always leads to bigger $\psi(\vec{x})$,
+it is certain that, once the number of vehicles increase, the upper
+$\alpha\|\vec{x}\|_2^2$ and lower $\beta\|\vec{x}\|_2^2$ bounds of
+admissible values of $\psi(\vec{x})$ both increase as well. In
+general, large number of vehicles means bad traffic situation.
+Therefore, from this approach, we can also get rise the conclusion
+that the transportation entropy corresponds to the system disorder.
+
+\subsection{Dissipativity}
 
 Now, in transportation context, the input vehicles bring disorder to
 the system. This supplied disorder depends on not only the number of
@@ -995,13 +1026,16 @@ crowded lanes to less crowded ones. Besides, the significations of
 order in two systems are opposite, which means that the thermodynamic
 ectropy corresponds to the transportation entropy. Such
 transportation entropy is opposite to the overall service qualities
-and hence may provide deep insight in the analysis of transportation
-control problems.
+for vehicles and hence may provide deep insight in the analysis of
+transportation control problems.
 
-From the results of this paper, other transportation phenomenons may
-also be studied by using thermodynamic concepts in the future work.
-In our opinion, this approach has the potential to further improve
-the traffic efficiency.
+Finally, we would like to point out that, though the traffic lanes
+are chosen as the units of transportation systems in this paper, the
+thermodynamic point of view can also be applied to other units of
+analysis, e.g streets or road segments. This may enable us to study
+other transportation phenomenons, like lane-changing, routing, etc in
+the future. In our opinion, this new approach has the potential to
+further improve the traffic efficiency.
 
 \bibliographystyle{model5-names}
 \bibliography{zhou_refs}

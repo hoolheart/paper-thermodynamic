@@ -29,3 +29,9 @@ The rejection comments and the relative revision plan are stated in `review_comm
 3. change `closed status` to `isolated status`;
 4. note that the occupancy equilibrium is not a real stable state;
 5. discuss a little about the future work in Conclusion.
+
+### Improvements
+*December 13th, 2013*
+
+1. The occupancy equilibrium corresponds to the minimal transportation entropy and minimal ectropy. Theorem 3 is devoted to show this relationship, the proof is improved by using more mathmatical language. The signification is also corrected according to the thermal equilibrium.
+2. The second way to show the signification of transportation entropy explores its relationship with the number of vehicles ||x||_2.
