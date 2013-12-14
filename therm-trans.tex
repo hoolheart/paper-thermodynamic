@@ -147,7 +147,7 @@ of entropy to measure the system disorder. By considering this new
 entropy notion as the storage function, a dissipativity phenomenon
 will be presented to reduce the disorder and hence render the system
 better organized. Finally, Section \ref{sec:equilibrium} will show
-that the thermal equilibrium can be also introduced to corresponds to
+that the thermal equilibrium can be also introduced to correspond to
 the state when all lanes share the same occupancy.
 
 \section{Basic Concepts and Conservation of Vehicles}\label{sec:concepts}
@@ -648,9 +648,10 @@ observed that the traffic flow and the speed can be considered as
 functions of the traffic density. More precisely, the bigger traffic
 density generates the smaller speed and hence prolongs the delay.
 Indeed, despite the habits of drivers, any vehicle need spend more
-time to pass more crowded lanes. Hence, for a vehicle, the traffic
-density at its position can measure the opposite of its service
-quality.
+time to pass more crowded lanes. This indicates that the traffic
+density at the position of a vehicles measures the opposite of the
+service quality for such vehicle and hence corresponds to the
+disorder.
 %This indicates that, for a vehicle,
 %if the traffic density at its position is bigger, the service that it
 %receives from the transportation system is considered worse. Hence,
@@ -663,14 +664,13 @@ quality.
   \label{fig:d_q}
 \end{figure}
 
-Now, consider the lane $i$ with $x_i(k)$ vehicles at the instant $k$,
-suppose these vehicles share the same traffic density:
+Now, consider the $x_i(k)$ vehicles in the lane $i$ at the instant
+$k$, suppose they share the same traffic density:
 $$\rho_i(k)=x_i(k)/h_i$$
 where $h_i$ is the length of the lane $i$, $i\in \{1,\cdots,n\}$.
 Hence, the opposite of the service qualities of all $x_i$ vehicles
 can be evaluated by $x_i(k)\rho_i(k)$. Let $I(k)$ be the evaluation
-of the opposite of the service qualities for all vehicles at the
-instant $k$, we have
+of the opposite of the service qualities for all vehicles, we have
 \begin{equation}
 \label{equ:quality_service}
 \begin{split}
@@ -701,9 +701,10 @@ Furthermore, the transportation entropy $\psi(\vec{x})$ given by
 \eqref{equ:Tran_entropy} can be restated as
 $$\psi(\vec{x}) = \frac{1}{2}\sum_{i=1}^{n} \frac{x_i^2}{x_i^*}$$
 which infers
-$$\min(\frac{1}{2x_i^*})\|\vec{x}\|_2^2
-\le\min(\frac{1}{2x_i^*})\sum_{i=1}^{n}x_i^2
-\psi(\vec{x})\le\max(\frac{1}{2x_i^*})\sum_{i=1}^{n}x_i^2
+$$\min(\frac{1}{2x_i^*})\|\vec{x}\|_2^2\le
+%\min(\frac{1}{2x_i^*})\sum_{i=1}^{n}x_i^2\le
+\psi(\vec{x})
+%\le\max(\frac{1}{2x_i^*})\sum_{i=1}^{n}x_i^2
 \le\max(\frac{1}{2x_i^*})\|\vec{x}\|_2^2
 $$
 Let
@@ -722,8 +723,8 @@ $\vec{x}$ (number of vehicles) determines the range of the admissible
 values of the entropy $\psi(\vec{x})$. Though it cannot be proved
 that bigger $\|\vec{x}\|_2$ always leads to bigger $\psi(\vec{x})$,
 it is certain that, once the number of vehicles increase, the upper
-$\alpha\|\vec{x}\|_2^2$ and lower $\beta\|\vec{x}\|_2^2$ bounds of
-admissible values of $\psi(\vec{x})$ both increase as well. In
+($\alpha\|\vec{x}\|_2^2$) and lower ($\beta\|\vec{x}\|_2^2$) bounds
+of admissible values of $\psi(\vec{x})$ both increase as well. In
 general, large number of vehicles means bad traffic situation.
 Therefore, from this approach, we can also get rise the conclusion
 that the transportation entropy corresponds to the system disorder.
@@ -1025,8 +1026,8 @@ the drivers, there is no rule that the vehicles only move from more
 crowded lanes to less crowded ones. Besides, the significations of
 order in two systems are opposite, which means that the thermodynamic
 ectropy corresponds to the transportation entropy. Such
-transportation entropy is opposite to the overall service qualities
-for vehicles and hence may provide deep insight in the analysis of
+transportation entropy is opposite to the service quality for all
+vehicles and hence may provide deep insight in the analysis of
 transportation control problems.
 
 Finally, we would like to point out that, though the traffic lanes
