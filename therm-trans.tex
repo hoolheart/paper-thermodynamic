@@ -668,9 +668,9 @@ Now, consider the $x_i(k)$ vehicles in the lane $i$ at the instant
 $k$, suppose they share the same traffic density:
 $$\rho_i(k)=x_i(k)/h_i$$
 where $h_i$ is the length of the lane $i$, $i\in \{1,\cdots,n\}$.
-Hence, the opposite of the service qualities of all $x_i$ vehicles
-can be evaluated by $x_i(k)\rho_i(k)$. Let $I(k)$ be the evaluation
-of the opposite of the service qualities for all vehicles, we have
+Hence, the service qualities for these $x_i$ vehicles can be evaluated
+by $x_i(k)\rho_i(k)$. Let $I(k)$ be the evaluation of the service
+qualities for all vehicles in the network, we have
 \begin{equation}
 \label{equ:quality_service}
 \begin{split}
@@ -722,7 +722,7 @@ $\beta$ are both fixed for a certain system. Hence, the inequality
 $\vec{x}$ (number of vehicles) determines the range of the admissible
 values of the entropy $\psi(\vec{x})$. Though it cannot be proved
 that bigger $\|\vec{x}\|_2$ always leads to bigger $\psi(\vec{x})$,
-it is certain that, once the number of vehicles increase, the upper
+it is certain that, once the number of vehicles increases, the upper
 ($\alpha\|\vec{x}\|_2^2$) and lower ($\beta\|\vec{x}\|_2^2$) bounds
 of admissible values of $\psi(\vec{x})$ both increase as well. In
 general, large number of vehicles means bad traffic situation.
@@ -998,8 +998,8 @@ can be shown by computing the Hessian and showing that it is negative
 definite at $\bar{\vec{x}}$. The proof is completed.
 \end{proof}
 It follows immediately from the this theorem that the occupancy
-equilibrium leads to the minimal disorder (resp, maximal order) in
-the network.
+equilibrium leads to the minimal disorder and maximal order in
+the transportation network.
 
 We close this section by mentioning that the thermal equilibrium is
 the stable state for isolated thermodynamic systems. But,
