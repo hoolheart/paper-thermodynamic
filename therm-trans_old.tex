@@ -1,4 +1,12 @@
+% This paper tries to present the thermodynamic point of view
+% for studying the transportation system.
 
+% This new point of view is to analogize the transportation system
+% to the thermodynamic system.
+% The fundamental pair of correspondent concepts are the vehicle and the energy.
+% The principles are introduced as well.
+
+% preprint format
 \documentclass[preprint,authoryear,12pt]{elsarticle}
 % final format
 % \documentclass[final,authoryear,5p,times,twocolumn]{elsarticle}
@@ -29,9 +37,6 @@
 \newtheorem{rmk}{Remark}
 \newtheorem{dfn}{Definition}
 \newtheorem{prpn}{Proposition}
-\newtheorem{proposition}{Proposition}
-\newproof{pf}{Proof}
-
 
 \begin{document}
 
@@ -50,7 +55,6 @@ Rue Thierry Mieg, 90010 Belfort Cedex, France}
 \cortext[cor]{Corresponding author.}
 
 \begin{abstract}
-\iffalse
 The paper endeavors to reply the following question: if we consider
 the vehicles as the abstract energy supplied to the transportation
 network, it is possible to analyze transportation systems from
@@ -68,33 +72,14 @@ order to measure the disorder of transportation systems. Then, by
 taking this entropy as the storage function, a dissipativity
 phenomenon is presented to reduce the disorder and render the system
 better organized.
-In addition, we show that the thermal equilibrium arising in isolated thermodynamic system can be also introduced to correspond to
-the state when all lanes share the same occupancy.  Contrary  to the second law of thermodynamic, this equilibrium occupancy leads  to a minimum entropy rather than to a maximum.
-
-\vspace{1cm}
-\fi
-
-The paper  explores the application of thermodynamic  formalism to transportation
-network. In particular, by considering
-the vehicles as the abstract energy supplied to the system, we show  in
-certain circumstances that  certain thermodynamic
-concepts such as  temperature, thermal capacity, thermal
-equilibrium can have the corresponding notions in transportation
-context. In addition, despite the lack  of the existence  of a natural principle in transportation context that corresponds to the second law of thermodynamics as we will show,  the most important
-thermodynamic notion, which is the entropy, can be also defined in
-order to measure the disorder of transportation systems. Then, by
-taking this entropy as the storage function, a dissipativity
-phenomenon is presented to reduce the disorder and render the system
-better organized.
-In addition, we show that the thermal equilibrium arising in isolated thermodynamic system can be also introduced to correspond to
-the state when all lanes share the same occupancy.  Contrary  to the second law of thermodynamic, this equilibrium occupancy leads  to a minimum entropy rather than to a maximum.
-
-
-
+%Finally, though the transportation network is
+%always open, it will be shown that the nominal situation in
+%transportation systems is similar with the isolated status in
+%thermodynamic ones.
 \end{abstract}
 
 \begin{keyword}
-Transportation systems\sep thermodynamic systems\sep  entropy\sep.
+Transportation systems\sep thermodynamic systems \sep entropy\sep
 dissipativity theory.
 \end{keyword}
 
@@ -192,7 +177,7 @@ Based on the directions of vehicles, a street can be further
 separated into several traffic lanes. For example, the 4 streets in
 the intersection illustrated by Figure \ref{fig:int4leg} are all
 split into two lanes corresponding to two opposite directions. On the
-other hand, in Figure \ref{fig:int3leg}, all streets  consist of
+other hand, in Figure \ref{fig:int3leg}, the streets all consist of
 three lanes (Note that in this intersection, the lanes are split
 based on both the current and the potential directions of vehicles).
 A street may correspond to more than one traffic signals, but a lane
@@ -221,7 +206,7 @@ vehicles which leave the transportation system from the lane $i$.
   \label{fig:flows}
 \end{figure}
 
-Hence, the change of $x_i$ during the interval
+From discrete-time approach, the change of $x_i$ during the interval
 $k$, $k\in\mathbb{N}$, is given by
 \begin{equation}\label{equ:mdl_gnl_lane}
 \Delta x_i(k) = l_i(k)+r_i(k)-d_i(k)
@@ -231,22 +216,6 @@ which means
 \begin{equation}\label{equ:exchange_vehicle}
  l_i(k)=\sum_{j=1,j\neq i}^{n}(\sigma_{i,j}(k)-\sigma_{j,i}(k))
 \end{equation}
-It is important to note that, only the terms corresponding to actual
-links between lanes  of the network are made explicit in  equation
-\eqref{equ:exchange_vehicle}. Otherwise, all the $\sigma_{i,j}$ for
-non-existing links do not appear in the equations.
-
-
-The model \eqref{equ:mdl_gnl_lane} makes sense only if the state
-variables $x_i(k)$ remain non-negative for all $k\in \mathbb{N}$. The
-flows $r_i$, $d_{i}$ and $\sigma_{i,j}$ are also defined to be
-non-negative on the non-negative orthant. Moreover, it is obvious
-that $\sigma_{i,j}=0$ and $d_{j}=0$ if and only if $x_j=0$,
-$j\in\{1,\cdots,n\}$. This implies that if the $j$th lane
-possesses no vehicles, then it cannot dissipate vehicles to its
-surroundings. Conversely, if the $j$th lane does not dissipate
-vehicles to its surroundings, then this lane has no vehicle.
-
 Equivalently, in vector form, the transportation system can be
 represented by the following state-space difference equation
 \begin{equation}\label{equ:mdl_gnl}
@@ -265,7 +234,7 @@ thermodynamic point of view in the sequel.
 
 \subsection{Introduction to Thermodynamic System}
 
-The fundamental concept for analyzing   thermodynamic
+The fundamental concept for analyzing the large-scale thermodynamic
 systems is the concept of energy. Indeed, assume that a matter with
 an unique temperature is called a subsystem, the thermodynamic system
 consists of a set of connected subsystems. Each of them can store
@@ -393,11 +362,14 @@ exchange with its surroundings.
 This principle also holds for the transportation system, because the
 change of vehicles within a system equals exactly the amount of the
 net traffic flows between the system and the outside. To show this
-principle more clearly, 
-let $\vec{\epsilon} \triangleq [1,\cdots,1]^T$ be the vector whose
+principle more clearly, the following theorem is presented and proved
+based on the general transportation model \eqref{equ:mdl_gnl}.
+
+\begin{thm}\label{thm:conservation}
+Let $\vec{\epsilon} \triangleq [1,\cdots,1]^T$ be the vector whose
 all components are equal to $1$, and define
 \begin{equation}\label{equ:total_vehicle}
-U \triangleq \vec{\epsilon}^T\vec{x}=\sum_{i=1}^n x_i
+U \triangleq \vec{\epsilon}^T\vec{x}
 \end{equation}
 as the total number of the vehicles within the transportation
 network. Let
@@ -405,17 +377,20 @@ network. Let
 Q \triangleq \vec{\epsilon}^T(\vec{r}-\vec{d})
 \end{equation}
 be the number of the net vehicles moving from the outside into the
-transportation network. Then, we have $\forall k\in\mathbb{N}$
+transportation network. Then, the following statement holds $\forall
+k\in\mathbb{N}$
 \begin{equation}\label{equ:conservation}
 \Delta U(k) = Q(k)
 \end{equation}
 where $\Delta U(k)=U(k+1)-U(k)$.
-Indeed, from \eqref{equ:mdl_gnl}, we have
+\end{thm}
+\begin{proof}
+From \eqref{equ:mdl_gnl}, we have
 \begin{align*}
 U(k+1) &= \vec{\epsilon}^T\vec{x}(k+1)\\
        &=
-\vec{\epsilon}^T\vec{x}(k)+\vec{\epsilon}^T\vec{l}(k)
-+\vec{\epsilon}^T(\vec{r}(k)-\vec{d}(k))\\
+\vec{\epsilon}^T\vec{x}(k)+\vec{\epsilon}^T\vec{l}(k)+\vec{\epsilon}
+^T(\vec{r}(k)-\vec{d}(k))\\
        &= U(k)+\vec{\epsilon}^T\vec{l}(k)+Q(k)
 \end{align*}
 It follows
@@ -426,8 +401,8 @@ i}^{n}(\sigma_{i,j}(k)-\sigma_{j,i}(k))$ in view of
 \eqref{equ:exchange_vehicle}, it follows
 \begin{align*}
 \vec{\epsilon}^T\vec{l}(k)
-    &= \sum_{i=1}^n \Bigl(\sum_{j=1,j\neq i}^{n} \sigma_{i,j}(k)
-       -\sum_{j=1,j\neq i}^{n} \sigma_{j,i}(k)\Bigr)\\
+    &= \sum_{i=1}^n (\sum_{j=1,j\neq i}^{n} \sigma_{i,j}(k)
+       -\sum_{j=1,j\neq i}^{n} \sigma_{j,i}(k))\\
     &= \sum_{i=1}^n \sum_{j=1,j\neq i}^{n} \sigma_{i,j}(k)
        -\sum_{i=1}^n \sum_{j=1,j\neq i}^{n} \sigma_{j,i}(k)\\
     &= \sum_{i=1}^n \sum_{j=1,j\neq i}^{n} \sigma_{i,j}(k)
@@ -435,8 +410,9 @@ i}^{n}(\sigma_{i,j}(k)-\sigma_{j,i}(k))$ in view of
     &= 0
 \end{align*}
 which is the desired result.
+\end{proof}
 
-This result indicates that the total vehicles in the transportation
+This theorem indicates that the total vehicles in the transportation
 system depends only on the traffic flows between the system and the
 outside, the exchange flows between different lanes can not change
 the total number of the vehicles within the network. Furthermore,
@@ -515,10 +491,44 @@ temperature defined in \eqref{equ:temperature} such that
 $T^a_i=a+T_i$, $i\in\{1,\cdots,n\}$, and $\mat{P}_e$ is a diagonal
 matrix with diagonal elements $1/E^*_i$. Here, the logarithm of a
 vector is the vector of the logarithm of each component.
-Note that this formula is identical with the Boltzmann entropy
-expression for statistical thermodynamics. 
 
-Since the entropy \eqref{equ:Ther_entropy} is not easy
+Note that this formula is identical with the Boltzmann entropy
+expression for statistical thermodynamics. Indeed, for any subsystem
+without phase transition, the entropies in different absolute
+temperatures ($T1$, $T2$) satisfy the following relationship
+\citep{cengel_thermodynamics:_2001}
+\begin{equation}\label{equ:entropy_temperature}
+\psi_i(T1)-\psi_i(T2)=E_i^* \ln \frac{T1}{T2},\quad \forall
+i\in\{1,\cdots,n\}
+\end{equation}
+It is known that the absolute temperature of the $i$th subsystem
+equals $a+\frac{E_i}{E_i^*}$. Specially, when the subsystem stores no
+energy ($E_i=0$), its absolute temperature becomes $a$. Hence,
+\eqref{equ:entropy_temperature} implies
+\begin{align}
+\psi_i(E_i)&=\psi_i(0)+E_i^* \ln \frac{a+\frac{E_i}{E_i^*}}{a}
+\nonumber\\
+&=\psi_i(0)+E_i^* \ln (a+\frac{E_i}{E_i^*})-E_i^* \ln{a}
+\label{equ:tmp_psi_1}
+\end{align}
+Now, according to the third law of thermodynamics, the entropy
+approaches zero when the stored energy approaches zero, which means
+\begin{equation}\label{equ:entropy_zero}
+\psi_i(0)=\lim_{E_i\rightarrow 0}\psi_i(E_i)=0
+\end{equation}
+Therefore, we have
+\begin{equation}
+\psi_i(E_i)=E_i^* \ln (a+\frac{E_i}{E_i^*})-E_i^* \ln{a}
+\end{equation}
+By summarizing all subsystems, the entropy of the whole system is
+given by
+\begin{equation}
+\psi(\vec{E})=\sum_{i=0}^n E_i^*\ln(a+\frac{E_i}{E_i^*})-E_i^*\ln a
+\end{equation}
+which infers the Haddad's formula of entropy
+\eqref{equ:Ther_entropy}.
+
+Furthermore, since the entropy \eqref{equ:Ther_entropy} is not easy
 to apply in control issues, \citet{haddad_thermodynamic_2005} also
 introduced a dual notion to entropy, called ectropy, to measure the
 system order. The dual inequality to \eqref{equ:clausius_ther} is
@@ -602,7 +612,7 @@ vehicle input, the system will keep dissipating the present vehicles
 and consequently become better organized.
 
 In conclusion, the order significations of these two systems are
-opposite, which means that the disorder in the transportation system
+opposite, which means the disorder in the transportation system
 corresponds to the order in the thermodynamic system. In other words,
 the transportation entropy (resp, ectropy) should correspond to the
 thermodynamic ectropy (resp, entropy). Therefore, according to the
@@ -639,8 +649,9 @@ functions of the traffic density. More precisely, the bigger traffic
 density generates the smaller speed and hence prolongs the delay.
 Indeed, despite the habits of drivers, any vehicle need spend more
 time to pass more crowded lanes. This indicates that the traffic
-density is a parameter for evaluating service quality and hence
-bigger density corresponds to the disorder.
+density at the position of a vehicles measures the opposite of the
+service quality for such vehicle and hence corresponds to the
+disorder.
 %This indicates that, for a vehicle,
 %if the traffic density at its position is bigger, the service that it
 %receives from the transportation system is considered worse. Hence,
@@ -653,13 +664,13 @@ bigger density corresponds to the disorder.
   \label{fig:d_q}
 \end{figure}
 
-With this in mind, denote the traffic density of the lane $i$ at the
-instant $k$ by $\rho_i(k)=x_i(k)/h_i$, where $h_i$ is the length of
-the lane $i$. Hence, each vehicle has a density $\rho_i(k)$ as a
-service from lane $i$. This is somehow the service that the lane 
-provides. Therefore, if $x_i(k)$ is the number of vehicles in lane
-$i$, then this lane provides $x_i(k)\rho_i(k)$ services.
-Let $I(k)$ be the total service of the network, we have then
+Now, consider the $x_i(k)$ vehicles in the lane $i$ at the instant
+$k$, suppose they share the same traffic density:
+$$\rho_i(k)=x_i(k)/h_i$$
+where $h_i$ is the length of the lane $i$, $i\in \{1,\cdots,n\}$.
+Hence, the service qualities for these $x_i$ vehicles can be evaluated
+by $x_i(k)\rho_i(k)$. Let $I(k)$ be the evaluation of the service
+qualities for all vehicles in the network, we have
 \begin{equation}
 \label{equ:quality_service}
 \begin{split}
@@ -669,29 +680,22 @@ I(k)&=\sum_{i=1}^{n} x_i(k)\rho_i(k)\\
 \end{split}
 \end{equation}
 where $\mat{P}_h$ is the diagonal matrix with the diagonal elements
-$1/h_i$. Note that, since the quality of the service is a decreasing 
-function with respect to the density, $I(k)$ is opposite to the
-overall quality of the service that the transportation system provides
-to all vehicles.
+$1/h_i$. Note that since the bigger traffic density corresponds to
+worse quality of the service, $I(k)$ is opposite to the overall
+quality of the service that the transportation system provides to all
+vehicles.
 
-Now, since $x_i^*=\frac{h_i}{h_{veh}}$ where $h_{veh}$ is the average
-car length, it follows
+Then, according to $x_i^*=\frac{h_i}{h_{veh}}$, where $h_{veh}$ is
+the average car length, it follows
 \begin{equation}
 I(k) = \sum_{i=1}^{n}\frac{x_i(k)^2}{h_{veh} x_i^*}
 = \frac{2}{h_{veh}} \frac{1}{2}\vec{x}(k)^T\mat{P}\vec{x}(k)
 = \frac{2}{h_{veh}} \psi(k)
 \end{equation}
 This indicates that the transportation entropy is proportional to
-$I(k)$ and hence it is also opposite to the overall service quality. It
+$I(k)$ and hence is also opposite to the overall service quality. It
 becomes now clear that this transportation entropy is an appropriate
-measurement of the system disorder. Indeed, when the number of
-vehicles increases the entropy and hence $I(k)$ increases. This
-implies that the speed of vehicles decreases and consequently the
-greater disorder.
-
-Indeed, the bigger number of vehicles increases the entropy and hence
-increases $I(k)$, which implies the smaller speed of vehicles and
-consequently the greater disorder.
+measurement of the system disorder.
 
 Furthermore, the transportation entropy $\psi(\vec{x})$ given by
 \eqref{equ:Tran_entropy} can be restated as
@@ -713,7 +717,7 @@ we have
 \beta\|\vec{x}\|_2^2 \le\psi(\vec{x})\le \alpha\|\vec{x}\|_2^2
 \end{equation}
 Since the capacities are determined by the lane lengths, $\alpha$ and
-$\beta$ are both fixed. Hence, the inequality
+$\beta$ are both fixed for a certain system. Hence, the inequality
 \eqref{equ:range_entropy} indicates that the norm of the vector
 $\vec{x}$ (number of vehicles) determines the range of the admissible
 values of the entropy $\psi(\vec{x})$. Though it cannot be proved
@@ -722,29 +726,29 @@ it is certain that, once the number of vehicles increases, the upper
 ($\alpha\|\vec{x}\|_2^2$) and lower ($\beta\|\vec{x}\|_2^2$) bounds
 of admissible values of $\psi(\vec{x})$ both increase as well. In
 general, large number of vehicles means bad traffic situation.
-Therefore,  we can also get rise the conclusion that the
-transportation entropy can be thought of as a measure of the system
-disorder.
+Therefore, from this approach, we can also get rise the conclusion
+that the transportation entropy corresponds to the system disorder.
 
-\subsection{Dissipativity based control of the entropy}
+\subsection{Dissipativity}
 
 Now, in transportation context, the input vehicles bring disorder to
-the system. This supplied disorder depends not only on  the  net vehicles exchange between the network and the outside  $\vec{r}(k)-\vec{d}(k)$, but also on the distribution of them. The vehicles
+the system. This supplied disorder depends on not only the number of
+the input vehicles, but also the distribution of them. The vehicles
 which enter the more crowded lanes bring more disorder than the ones
-with the same quantity which enter the less crowded lanes. Since the
+with same quantity which enter the less crowded lanes. Since the
 occupancies represent how the lanes are crowed, it is natural to
-measure the supplied entropy with respect to the input flows $\vec{r}(k)-\vec{d}(k)$ and 
+measure the supplied entropy with respect to the input flows and the
 occupancy factors. Let $\vec{f}=[f_1,\cdots,f_n]^T$ be the vector of
 all occupancies. Note that because $\vec{f}(k)$ corresponds to the
 beginning of the interval $k$ while $\vec{f}(k+1)$ corresponds to the
-end of it, the supplied entropy in the interval $k$ should be with respect 
+end of it, the supplied entropy in the interval $k$ should correspond
 to $\vec{f}(k+1)$ rather than $\vec{f}(k)$. So, we define
-$$S(k)=\vec{f}^T(k+1)\Bigl(\vec{r}(k)-d(k)\Bigr)$$
+$$S(k)=\vec{f}(k+1)^T\vec{r}(k)$$
 as the supplied entropy in the interval $k$. Furthermore, since
-$\vec{f}=\mat{P}\vec{x}$ in view of \eqref{equ:occupancy}, the
+$\vec{f}=\mat{P}_x\vec{x}$ in view of \eqref{equ:occupancy}, the
 supplied entropy is restated as
 \begin{equation}\label{equ:supply}
-    S(k)=\vec{x}^T(k+1) \mat{P} \Bigl(\vec{r}(k)-\vec{d}(k)\Bigr)
+    S(k)=\vec{x}(k+1)^T \mat{P} \vec{r}(k)
 \end{equation}
 Now, as in the anti-Clausius inequality \eqref{equ:anti_clausius}, we
 propose its corresponding version in transportation context as
@@ -758,9 +762,9 @@ tendency to decrease its disorder and become better organized.
 
 Furthermore, according to the \citet{willems_dissipative_1972} and
 \citet{hill_dissipative_1980}, \eqref{equ:dissipative} also implies
-the dissipativity of the system with the entropy \eqref{equ:Tran_entropy} as the
+the dissipativity with the entropy \eqref{equ:Tran_entropy} as the
 storage function and with \eqref{equ:supply} as the supply function.
-In this case, \eqref{equ:dissipative} is called the dissipation  
+In this case, \eqref{equ:dissipative} is called dissipation
 inequality. Figure \ref{fig:trans_dis} illustrates this dissipativity
 of system disorder. Indeed, the input flows bring disorder to the
 transportation system to make it worse organized. At the same time,
@@ -777,494 +781,16 @@ This dissipativity implies that the storage of the system disorder is
 always smaller than or equal to the supplied one from the outside. In
 other words, if this dissipativity phenomenon exists in the
 transportation system, the system disorder will tend to decrease and
-hence the system will tend to become better organized. 
-However, this dissipativity does not exist naturally. To show this, 
-observe that 
-\begin{align*}
-\Delta\psi(\vec{x}(k))
-&=\frac{1}{2}\vec{x}^T(k+1)\mat{P}\vec{x}(k+1)
--\frac{1}{2}\vec{x}^T(k)\mat{P}\vec{x}(k)\\
-&=\vec{x}^T(k+1)\mat{P}
-\Bigl(\vec{x}(k+1)-\vec{x}(k)-\vec{l}(k)\Bigr)\\
-&-\frac{1}{2}\Bigl(\vec{x}(k+1)-\vec{x}(k)\Bigr)^T
-\mat{P}\Bigl(\vec{x}(k+1)-\vec{x}(k)\Bigr)\\
-&+\vec{x}^T(k+1)\mat{P}\vec{l}(k)\\
-\end{align*}
-Since $\mat{P}$ is positive definite and
-$\vec{x}(k+1)-\vec{x}(k)-\vec{l}(k)=\vec{r}(k)-\vec{d}(k)$, it follows
-\begin{equation}\label{equ:dissipative1}
-\Delta\psi(\vec{x}(k))\leq S(k)+\vec{x}^T(k+1)\mat{P}\vec{l}(k)
-\end{equation}
-Let $g(\vec{x}(k))=\vec{x}^T(k+1)P\vec{l}(k)$ and since
-$l_i(k)=\sum_{j=1,j\neq i}^{n}(\sigma_{i,j}(k)-\sigma_{j,i}(k))$, it
-follows
-\begin{align}\label{eq:g}
-g(\vec{x}(k))&=\sum_{i=1}^{n}
-\frac{x_i(k+1)l_i(k)}{x_i^*}=
-\sum_{i=1}^{n}\sum_{j=1,j\neq i}^{n}
-\frac{x_i(k+1)(\sigma_{i,j}(k)-\sigma_{j,i}(k))}{x_i^*}
-\nonumber\\
-&=\sum_{i=1}^{n-1}\sum_{j=i+1}^{n}
-\Bigl(\frac{x_i(k+1)}{x_i^*}-\frac{x_j(k+1)}{x_j^*}\Bigr)
-\Bigl(\sigma_{i,j}(k)-\sigma_{j,i}(k)\Bigl)\nonumber\\
- \end{align}
-Now, if we suppose that
-$\bigl(\frac{x_i(k+1)}{x_i^*}-\frac{x_j(k+1)}{x_j^*}\bigr)
-\bigl(\sigma_{i,j}(k)-\sigma_{j,i}(k)\bigl)\le 0$ for all $i\neq j$
-and for all $k\in\mathbb{N}$,
-then $\Delta\psi(\vec{x}(k)) \leq S(k)$, $\forall k\in\mathbb{N}$, and
-hence the transportation system is dissipative. Unfortunately, this 
-assumption does not exist in reality because it implies that the more
-occupied lanes give  more vehicles to the less occupied ones which is
-not realistic in transportation systems. Even the situation that
-$\sigma_{i,j}(k)=\sigma_{j,i}(k)$ (lanes $i$ and $j$ have the same  
-exchange between them) for all $k\in\mathbb{N}$ is not realistic
-either because the directions of vehicles are determined by the
-drivers. However, it is known that the traffic signals have the
-ability to control the traffic flows.
+hence the system will tend to become better organized.
+
+This dissipativity does not exist naturally. But, it is known that
+the traffic signals have the ability to control the traffic flows.
 Therefore, it is possible that under certain control schemes, the
 traffic signals can verify the dissipation inequality
-\eqref{equ:dissipative} without verifying this assumption. This is the
-main concern in the following.
-
-First observe that, if $d_{i}(x)$ is differentiable and since
-$d_{i}(x)=0$ if and only if $x_i=0, i=1,\cdots,n$, it can be written
-as $d_{i}(x)=\hat{d}_{i}(x)x_i$ with $\hat{d}_{i}(x)\geq0$
-\citep{Jacquez1993}.
-On the other hand, the exchanges $\sigma_{i,j}$ are determined by the
-traffic signals. Indeed, for certain cycle $k$, $\sigma_{i,j}$ can be
-considered proportional to the corresponding effective green time
-$u_j$ as follows $\forall i,j\in\{1,\cdots,n\}$, $i\neq j$
-$$\sigma_{i,j}(k)=\lambda_{i,j}(x) s_j(x) u_j(k)$$
-where $s_j>0$ is the average rate of leaving flow from lane $j$, and
-$\lambda_{i,j}\le 0$ is the proportion of $\sigma_{i,j}$ to such
-leaving flow. This infers that
-\begin{equation}
-\label{eql}
-\begin{split}
-l_i(k)&=\sum_{j=1,j\neq i}^{n} \sigma_{i,j}(k)
-         -\sum_{j=1,j\neq i}^{n} \sigma_{j,i}(k)\\
-      &=\sum_{j=1,j\neq i}^{n} s_j(x) u_{j}(k) \lambda_{i,j}(x)
-        -\sum_{j=1,j\neq i}^{n} s_i(x) u_{i}(k) \lambda_{j,i}(x)\\
-      &=\sum_{j=1,j\neq i}^{n} s_j(x) u_{j}(k) \lambda_{i,j}(x)
-        -s_iu_{i}(k)\sum_{j=1,j\neq i}^{n}  \lambda_{j,i}(x)
-\end{split}
-\end{equation}
-Let $\vec{u} = [u_1,\cdots,u_n]^T$ and define a vector
-$\vec{B}_i(x)=[B_{i,1}(x),\cdots,B_{i,n}(x)]^T$ in the following
-manner
-\begin{equation*}
- B_{i,j}(x)= \left\{ \begin{array}{l@{\,:\,}r}
-            - s_i(x) \sum_{j=1,j\neq i}^{n}  \lambda_{j,i}(x)
-            &\quad \text{for}\; i= j\\
-              s_j(x) \lambda_{i,j}(x)&\quad
-             \text{for}\;i\neq j
-            \end{array}\right.
-\end{equation*}
-Then equation \eqref{eql} can be rewritten as
-\begin{equation}
-\label{equ:Con_li}
-\begin{split}
-l_i(k)&=\sum_{j=1,j\neq i}^{n} B_{i,j} u_{j}(k)
-        +B_{i,i} u_{i}(k)\\
-        &=\sum_{j=1}^{n} B_{i,j} g_{j}(k)\\
-      &=\vec{B}_i^T\vec{u}(k)
-\end{split}
-\end{equation}
-
-Let $D=diag\{\hat{d}_{1}(x),\cdots,\hat{d}_{n}(x)\}$,
-$\mat{A}(x)=\mat{I}-\mat{D}(x)$ and let $\mat{B}(x) =
-[\vec{B}_1(x),\cdots,\vec{B}_n(x)]^T$. In this case, equation
-\eqref{equ:mdl_gnl} becomes
-$$\vec{x}(k+1)=\mat{A}(x)\vec{x}(k)+\mat{B}(x)\vec{u}(k)+\vec{r}(k)$$
-
-Now, the dissipativity based control problem is stated as follows:
-find $\vec{u}(x)$ such that the closed loop system is dissipative. In
-other words, find $\vec{u}(x)$ such that
-\begin{align*}
-g(\vec{u}(k))&=\vec{x}^T(k+1)\mat{P}\vec{l}(k)\\
-&=\vec{u}^T(k)\mat{B}^T\mat{P}\mat{B}\vec{u}(k)
-+\vec{u}^T(k)\mat{B}^T\mat{P}(\mat{A}\vec{x}(k)+\vec{r}(k))\leq 0
-\end{align*}
-In the following, we will provide the way to construct a feedback
-control law that achieves the dissipassivity. To make the idea clear, 
-put $\mat{M}=\mat{B}^T\mat{P}\mat{B}$ and
-$\vec{y}=\frac{1}{2}\mat{B}^T\mat{P}(\mat{A}\vec{x}+\vec{r})$ it
-follows
-\begin{equation}\label{pbc}
-g(\vec{u})=\vec{u}^T\mat{M}\vec{u}+2\vec{u}^T\vec{y}\leq0
-\end{equation}
-the problem now is to find $\vec{u}$ such that this inequality is
-satisfied. Let $\vec{\theta} =\mat{M}^{-1}\vec{y}$, it follows
-that
-$$g(\vec{u})=\vec{u}^T\mat{M}\vec{u}+2\vec{u}^T\vec{y}=(\vec{u}
-+\vec{\theta})^T \mat{M} (\vec{u}+\vec{\theta}) -\vec{\theta}^T
-\mat{M}\vec{\theta}$$
-Let $\mat{H}\in\mathbb{R}^{n\times n}$ and put
-$\vec{u}=\mat{H}\vec{\theta}$, it follows
-$$g(\vec{\theta})= \vec{\theta}^T\Bigl[(\mat{H}+\mat{I})^T \mat{M}
-(\mat{H}+\mat{I})-\mat{M}\Bigr]\vec{\theta}
-$$
-Hence, $\mat{H}$ must be chosen such that the matrix
-$(\mat{H}+\mat{I})^T \mat{M} (\mat{H}+\mat{I})-\mat{M}$ is negative
-semidefinite, which is equivalent to
-$$\mat{M}-(\mat{H}+\mat{I})^T \mat{M} (\mat{H}+\mat{I})\geq0$$
-The solution is given by the following LMI
-$$\begin{pmatrix}
-\mat{M}& (\mat{H}+\mat{I})^T \mat{M} \\
-\mat{M} (\mat{H}+\mat{I})  & \mat{M}
-\end{pmatrix}\geq 0$$
-
-In particular, if we chose $\mat{H}=h\mat{I}$, $h\in \mathbb{R}$, then
-for any matrix $\mat{M}$, $g(\vec{\theta})$ is negative if and only if
-$|h+1|\leq 1$. Indeed, with $\mat{H}=h\mat{I}$ it follows
-$g(\vec{\theta})=\Bigl[(h+1)^2-1\Bigr]
-\vec{\theta}^T\mat{M}\vec{\theta}$, which is obviously negative if and
-only if $|h+1|\leq 1$ in view of positive definiteness of the matrix
-$\mat{M}$.
-Summarizing, we have the following theorem. 
-
-\begin{thm}\label{thm:pbc}
-For the transportation system, the feedback control law  
-$\vec{u}=\frac{1}{2}\mat{H}\mat{M}^{-1}\mat{B}^T\mat{P}(\mat{A}
-\vec{x}+\vec{r})$ renders the system dissipative with respect to
-entropy \eqref{equ:Tran_entropy} as the storage function and the
-supply function \eqref{equ:supply} if $\mat{H}$ is a solution of the
-following LMI
-$$\begin{pmatrix}
-\mat{M}& (\mat{H}+\mat{I})^T \mat{M} \\
-\mat{M} (\mat{H}+\mat{I})  & \mat{M}
-\end{pmatrix}\geq 0$$
-Moreover, if $\mat{H}=h\mat{I}$ with $h\in \mathbb{R}$, then the
-feedback control law $\vec{u}=\frac{h}{2} \mat{M}^{-1}\mat{B}^T
-\mat{P} (\mat{A}\vec{x}+\vec{r})$ renders the system dissipative if
-and only if $|h+1|\leq 1$.
-\end{thm}
-
-\begin{rmk}
-If the matrix $\mat{B}$ is invertible, then the control law can be
-simplified to
-\begin{equation}
-\label{equ:feedback}
-\vec{u}=\frac{1}{2}\mat{H}\mat{B}^{-1}(\mat{A}\vec{x}+\vec{r})
-\end{equation}
-\end{rmk}
-
-It follows immediately from theorem \ref{thm:pbc} that, for any
-arbitrarily selected $h$ that satisfies $|h+1|\leq 1$, the feedback
-control defined by $\vec{u}=\frac{h}{2} \mat{M}^{-1}\mat{B}^T \mat{P}
-(\mat{A}\vec{x}+\vec{r})$ belongs to the class of control laws
-which render the system dissipative. Hence, theorem \ref{thm:pbc} 
-gives explicit but non-unique solutions of the the dissipativity based
-control problem.
-
-Furthermore, the application of the control $\vec{u}$ in real
-transportation systems must concern the physical limitations on the
-traffic signals. For example, if the constraint on $\vec{u}$ is given
-by
-$$u_{i,min}\le u_i\le u_{i,max},\quad i\in\{1,\cdots,n\}
-$$
-then one possible solution is to apply the following saturation law
-\begin{equation}
-sat(u_i) = \left\{ \begin{array}{l@{\quad\text{for}\quad}c}
-        u_{i,min} & u_i\le u_{i,min}\\
-        u_i & u_{i,min}\le u_i\le u_{i,max}\\
-        u_{i,max} & u_i\ge u_{i,max}
-        \end{array}\right.
-\end{equation}
-where $u_i$ is the value derived from the feedback
-\eqref{equ:feedback}, and $sat(u_i)$ is the actual control applied to
-real system.
-
-\newpage
-
-\section{Occupancy Equilibrium}\label{sec:equilibrium}
-
-For an isolated thermodynamic system without any input
-($\vec{r}^e(k)\equiv 0$) and output ($\vec{d}^e(k)\equiv 0$) energy
-flows, if a pair of connected subsystems have different temperatures,
-the energy transmission will emerge between them so that their
-temperatures tend to approximate. After enough amount of time, the
-isolated system will reach certain state when the temperature is
-spatially and temporally uniform. In this state, the system will lose
-all its capacity to produce any useful work. Such particular state is
-called thermal equilibrium \citep{cengel_thermodynamics:_2001}. For
-an isolated thermodynamic system in thermal equilibrium, its ectropy
-would be a minimum and entropy would be a maximum giving rise to a
-state of absolute disorder.
-
-Since the lane occupancies correspond to the temperatures, this
-concept of thermal equilibrium can be easily introduced into the
-transportation context to denote the state when the occupancies of
-all traffic lanes are the same. Such state is called the occupancy
-equilibrium in this paper. It can be denoted by the following
-mathematical expression
-\begin{equation}\label{equ:equilibrium}
-\frac{\bar{x}_1}{x_1^*}=\cdots=\frac{\bar{x}_n}{x_n^*}=\bar{f}=\text{constant}
-\end{equation}
-The occupancy equilibrium implies that no particular concentration of
-vehicles exists in the system and hence the possibility to emerge
-congestion is extremely low.
-% Contrary  to the second law of thermodynamic, for an isolated
-% transportation network,
-If a transportation network can be isolated in certain circumstances,
-its entropy (resp, ectropy) is minimal (resp, maximal) when
-the system reaches the occupancy equilibrium. In other words, for
-isolated network, this state corresponds to the best organization of
-the system. This observation is stated in the following theorem.
-
-\begin{thm}\label{thm:entropy_equilibrium}
-Suppose the transportation network is isolated. Let $N$ be the total
-number of vehicles in the system. Let $\psi(\vec{x})$ and
-$\phi(\vec{x})$ denote the entropy and ectropy of the system  given
-by \eqref{equ:Tran_entropy} and \eqref{equ:Tran_ectropy}
-respectively, and define $\mathbb{D}\triangleq
-\{\vec{x}\in\mathbb{R}^n_+/\vec{\epsilon}^T\vec{x}=N\}$. Then,
-\begin{equation}\label{equ:entropy_equilibrium}
-\arg\min_{\vec{x}\in\mathbb{D}}(\psi(\vec{x})) =
-\arg\max_{\vec{x}\in\mathbb{D}}(\phi(\vec{x})) = \bar{\vec{x}} =
-\frac{N}{\vec{\epsilon}^T\vec{x}^*}\vec{x}^*
-\end{equation}
-\end{thm}
-\begin{proof}  The proof is identical to the proof of Proposition 3.17 of \citet{haddad_thermodynamic_2005} with $N$ as the total energy of the system 
-and $x^*_i$ as the reciprocal of the specific heat of the $i$th subsystem. Hence it is omitted here.
-\end{proof}%The proof is essentially contained in
-
-Now, observe that if the state $ \bar{\vec{x}}$ is reached, then
-$\frac{\bar{x}_i}{x_i^*}=\frac{N}{\vec{\epsilon}^T\vec{x}^*}=\bar{f}$,
-for all $i=1,\cdots, n$, which corresponds to the occupancy
-equilibrium. This occupancy equilibrium leads to the minimal disorder
-and maximal order for the transportation network. Hence, the study of
-control problems should concern this state as an important objective.
-
-
-Now, if we assume that $\sigma_{i,j}=\sigma_{j,i}$ if and only if
-$\frac{x_i}{x_i^*}=\frac{x_j}{x_j^*}$, then $ \bar{\vec{x}}$  is an
-equilibrium state Lyapunov stable. Indeed, since the system is
-isolated $S(k)=0$. It follows from equation \eqref{eq:g} that $g(k)=0$
-and hence $\Delta\psi(\vec{x}(k))\leq0$ in view of
-\eqref{equ:dissipative1}.
-
-\section{Conclusion}
-
-This paper has presented a novel thermodynamic point of view for the
-transportation network. Indeed, the comparison between thermodynamic
-and transportation systems has shown that they are very similar by
-regarding the vehicles as the energy and regarding the traffic lanes
-as the thermodynamic subsystems. In addition, the concepts of thermal
-capacity and temperature are also introduced into transportation
-context to correspond to lane capacity and occupancy respectively.
-Then, it has been demonstrated that the first law of thermodynamics
-corresponds to the conservation of vehicles.
-
-However, though these two kinds of systems can be similar, the second
-thermodynamic principle does not work in transportation context. The
-reason for this is that  the directions of vehicles are determined by
-the drivers, there is no rule that the vehicles only move from more
-crowded lanes to less crowded ones. Besides, the significations of
-order in two systems are opposite, which means that the thermodynamic
-ectropy corresponds to the transportation entropy. Such
-transportation entropy is a measure of disorder of the system and
-hence may provide deep insight in the analysis of transportation
-control problems.
-
-Finally, we would like to point out that, though the traffic lanes
-are chosen as the units of transportation systems in this paper, the
-thermodynamic point of view can also be applied to other units of
-analysis, e.g intersections or road segments. This may enable us to
-study other transportation phenomenons like lane-changing, routing,
-etc in the future.
-
-\bibliographystyle{model5-names}
-\bibliography{zhou_refs}
-
-\end{document}
-
-
-
-Now, let $l_i$ be the sum of all exchange flows related to the $i$th
-queue. According to Figure \ref{fig:flows}, in $k$th cycle we have
-\begin{align*}
-l_i(k)&=\sum_{j=1,j\neq i}^{n} \sigma_{i,j}(k)
-         -\sum_{j=1,j\neq i}^{n} \sigma_{j,i}(k)\\
-      &=\sum_{j=1,j\neq i}^{n} s_j g_{j}(k) \lambda_{i,j}
-        -\sum_{j=1,j\neq i}^{n} s_i g_{i}(k) \lambda_{j,i}\\
-        &=\sum_{j=1,j\neq i}^{n} s_j g_{j}(k) \lambda_{i,j}
-        -s_ig_{i}(k)\sum_{j=1,j\neq i}^{n}  \lambda_{j,i}
-\end{align*}
-With $\sum_{j=1}^{n} \lambda_{j,i}=1$, it follows
-\begin{equation}\label{eql}
-l_i(k)=\sum_{j=1,j\neq i}^{n} s_j g_{j}(k) \lambda_{i,j}
-        -s_ig_{i}(k)(1- \lambda_{i,i})
-\end{equation}
- Define a  vector
-$\vec{L}_i=[L_{i,1},\cdots,L_{i,n}]^T$ in the following manner
-\begin{equation*}
- L_{i,j}= \left\{ \begin{array}{l@{\,:\,}r}
-            - s_i (1- \lambda_{i,i})&\quad \text{for}\; i= j\\
-              s_j \lambda_{i,j}&\quad
-             \text{for}\;i\neq j
-            \end{array}\right.
-\end{equation*}
-Then equation \eqref{eql} can be rewritten as
-\begin{equation}
-\label{equ:Con_li}
-\begin{split}
-l_i(k)&=\sum_{j=1,j\neq i}^{n} L_{i,j} g_{j}(k)
-        +L_{i,i} g_{i}(k)\\
-        &=\sum_{j=1}^{n} L_{i,j} g_{j}(k)\\
-      &=\vec{L}_i^T\vec{g}(k)
-\end{split}
-\end{equation}
-
-\begin{align}
-    \vec{x}(k+1)&=\vec{x}(k)+\vec{q}(k) c 
-+(L-D)(G\vec{u}(k)+\vec{\xi})\nonumber\\
-    &=\vec{x}(k)+\vec{q}(k) c 
-+(L-D)G\vec{u}(k)+(L-D)\vec{\xi}\nonumber\\
-     &=\vec{x}(k)+\vec{q}(k) c  +B\vec{u}(k)+\vec{h}
-\label{equ:Trans_Detail}
-\end{align}
-
-
- 
- If now we impose that $g(k)=0$, we can find an other control that satisfies this condition. Indeed, 
-since $M$ is symmetric positive definite, all its eigenvalues  are positive and there exists an orthogonal matrix $K$ such that $K^TMK=C$, where $C$ is diagonal with the eigenvalues $\xi_i$ of $M$ and the orthonormal columns of $K$  are the corresponding eigenvectors. Since $\xi_i>0$, the matrix $C^{\frac{1}{2}}=diag(\sqrt{\xi_1},\cdots,\sqrt{\xi_n})$ is well defined. Define now $M^{\frac{1}{2}}=KC^{\frac{1}{2}}K^T$, then 
-$$M^{\frac{1}{2}}M^{\frac{1}{2}}=KC^{\frac{1}{2}}K^TKC^{\frac{1}{2}}K^T=KC^{\frac{1}{2}}C^{\frac{1}{2}}K^T=KCK^T=M$$
-
-Now, let $\vec{\mu}$ be a real unit vector, i.e., $\vec{\mu}^T\vec{\mu}=1$ and define 
-\begin{equation}\label{pbc0}
-u=(y^TM^{-1}y)^{\frac{1}{2}}M^{-\frac{1}{2}}\vec{\mu}-M^{-1}y
-\end{equation}
-we will show that this vector is a solution of  \eqref{pbc}. Indeed, observe first that  $M^{\frac{1}{2}}=(M^{\frac{1}{2}})^T$, $M^{\frac{1}{2}}$ is symmetric and invertible, hence $(M^{-\frac{1}{2}})^T=M^{-\frac{1}{2}}$. With this in mind, from equation \eqref{pbc} we have
-\begin{align}\label{pbc1}
-u^TMu+2z^Ty&=\Bigl[(y^TM^{-1}y)^{\frac{1}{2}}\vec{\mu}^T M^{-\frac{1}{2}}-y^T M^{-1}\Bigl]M\Bigl[(y^TM^{-1}y)^{\frac{1}{2}}M^{-\frac{1}{2}}\vec{\mu}-M^{-1}y\Bigr]\nonumber\\
-&+2\Bigl[(y^TM^{-1}y)^{\frac{1}{2}}\vec{\mu}^TM^{-\frac{1}{2}}-y^T M^{-1}\Bigl]y\nonumber\\
-&=\Bigl[(y^TM^{-1}y)^{\frac{1}{2}}\vec{\mu}^T M^{\frac{1}{2}}-y^T\Bigl]\Bigl[(y^TM^{-1}y)^{\frac{1}{2}}M^{-\frac{1}{2}}\vec{\mu}-M^{-1}y\Bigr]\nonumber\\
-&+2\Bigl[(y^TM^{-1}y)^{\frac{1}{2}}\vec{\mu}^T M^{-\frac{1}{2}}y-y^T M^{-1}y\Bigl]\nonumber\\
-&= 2\Bigl[y^TM^{-1}y -(y^TM^{-1}y)^{\frac{1}{2}}\vec{\mu}^T M^{-\frac{1}{2}}y \Bigl]\nonumber\\
-&+2\Bigl[(y^TM^{-1}y)^{\frac{1}{2}}\vec{\mu}^T M^{-\frac{1}{2}}y-y^T M^{-1}y\Bigl]=0
-\end{align}
-which completes the proof.
-
- 
- 
- Hence, this inequality can be considered as one of
+\eqref{equ:dissipative}. This inequality can be considered as one of
 objectives for traffic signal control.
 
- 
-One natural question that one could ask is
-
-Distinguishing features between the traffic flow and equilibrium physical systems have been outlined
-
-This paper only clarifies the interconnection between these approaches
-
-it is possible to analyze transportation systems from
-thermodynamic point of view. The discussion starts by drawing a thermodynamic analogy between
-
-This article explores the application of thermodynamic and statistical thermodynamic formalism to information theory problems. In particular, the applicability of the transformation theory of thermodynamics is investigated. After a brief tutorial discussion of thermodynamic and statistical thermodynamic methods and concepts, their information theory analogues are developed. Besides information theory entropy, the information theory counterparts of temperature, chemical potential, Helmholtz free energy, etc., are developed and related to conventional information theory concepts such as channel capacity, matching of source and channel, etc. Information theory theorems are proved via the statistical thermodynamic analogue method; and, finally, several problems are formulated and solved using thermodynamic-like transformations. This article is aimed chiefly at bridging the interface between the two disciplines, and is intended to be provocative. Therefore, no attempt has been made to have it be all inclusive.
-
-
-
- In this case, its stability depends on wether the assumption $\bigl(\frac{\vec{x}_i(k+1)}{\vec{x}_i^*}-\frac{\vec{x}_j(k+1)}{\vec{x}_j^*}\bigr)\bigl(\sigma_{i,j}(k)-\sigma_{j,i}(k)\bigl)<0$ for all $i\neq j$ and for all $
-k\in\mathbb{N}$, is verified or not. Indeed, if this assumption is verified it flows from \label{equ:dissipative1}
-
-
-
-
-
-It is important to stress that, if $r=0$, then  the transportation system is called an inflow-closed. In this case,  the system possesses a dissipation property
-since the total vehicles $\vec{\epsilon}^T\vec{x}$ in the network is non-increasing along the  trajectories of system \eqref{equ:mdl_gnl}. Indeed, with $V (x(k)) = \vec{\epsilon}^T\vec{x}$ it follows that 
-$$V (x(k+1-))V (x(k))= \vec{\epsilon}^T \Bigl(x(k)+\ell(k)-d(k)\Bigr)- \vec{\epsilon}^T\vec{x}x(k)
- inequality \eqref{equ:dissipative} yield the following  inequality
-\begin{equation}\label{equ:dissipative1}
-\psi(\vec{x}(k_2))\leq\psi(\vec{x}(k_1)) ,\quad \forall
-k_2\geq k_1
-\end{equation}
-This implies that, for any dynamical change in an isolated transportation system, the entropy of the final state is always less than or equal to the entropy of the initial state.
-
-then the nonnegative system (2.1) is called an inflow-closed compartmental system [10, 11, 12]. Recall that an inflow-closed compartmental system possesses a dissipation property and hence is Lyapunov-stable since the total mass in the system given by the sum of all components of the state x(k), k ? N, is nonincreasing along the forward trajectories of (2.1). In particular, with V (x) = eTx, where e = [1,1,...,1]T, it follows that
-
-
-
-
-
-
-
-
-
-
-In our opinion, this new approach has the potential
-to further improve the traffic efficiency.
-
-
-We close this section by mentioning that the thermal equilibrium is
-the stable state for isolated thermodynamic systems. But,
-transportation systems are seldom isolated. For a open transportation
-network, the system may be difficult to stay in occupancy equilibrium.
-
-The existence and uniqueness of $\bar{\vec{x}}$ come from the fact
-that $\psi(\vec{x})$ and $-\phi(\vec{x})$ are strictly convex
-functions on the compact set $\mathbb{D}$. Now, to find the minimal
-$\psi(\vec{x})$ on $\mathbb{D}$, consider the problem
-\begin{align}\label{equ:pro_min_psi}
-\min\; &\psi(\vec{x}) = \frac{1}{2}\vec{x}^T\mat{P}\vec{x}\\
-s.t.\; &\vec{\epsilon}^T\vec{x}=N \nonumber
-\end{align}
-By using the Karush-Kuhn-Tucker (KKT) conditions
-\citep{boyd_convex_2004}, we have the Lagrangian
-$$J(\vec{x},\lambda) = \frac{1}{2}\vec{x}^T\mat{P}\vec{x}+\lambda(\vec{\epsilon}^T\vec{x} - N)$$
-If $\bar{\vec{x}}$ is the solution, there exists a scalar
-$\bar{\lambda}\in\mathbb{R}$ such that
-\begin{align}
-\label{equ:tmp_min_J_1}
-\frac{\partial J}{\partial \vec{x}} &= \bar{\vec{x}}^T\mat{P}+\bar{\lambda}\vec{\epsilon}^T =0 \\
-\label{equ:tmp_min_J_2}
-\frac{\partial J}{\partial \lambda} &= \vec{\epsilon}^T\bar{\vec{x}} - N =0
-\end{align}
-From \eqref{equ:tmp_min_J_1}, we have
-$\bar{\vec{x}}=-\bar{\lambda}\mat{P}^{-1}\vec{\epsilon}$. Now, it
-follows from \eqref{equ:tmp_min_J_2} that
-$\bar{\lambda}=-\frac{N}{\vec{\epsilon}^T\mat{P}^{-1}\vec{\epsilon}}$
-which implies that $\bar{\vec{x}} =
-\frac{N}{\vec{\epsilon}^T\vec{x}^*}\vec{x}^*$. Since the Hessian of
-the entropy is $\mat{P}$ which is always positive definite, we have
-the conclusion that $\bar{\vec{x}}$ minimizes the entropy on the
-compact set $\mathbb{D}$.
-
-Analogously, to maximize $\phi(\vec{x})$ on $\mathbb{D}$, form the
-Lagrangian:
-$$J(\vec{x},\lambda) =
-{\vec{x}^*}^T \ln(a\vec{\epsilon}+\mat{P}\vec{x})
--\vec{\epsilon}^T\vec{x}^*\ln a
-+\lambda(\vec{\epsilon}^T\vec{x} - N)
-$$
-If $\bar{\vec{x}}$ solves this problem, there exists a scalar
-$\bar{\lambda}\in\mathbb{R}$ such that
-\begin{align}
-\label{equ:tmp_min_J_3}
-\frac{\partial J}{\partial \vec{x}} &= \Bigl[
-\frac{1}{a+\frac{\bar{x}_1}{x_1^*}}+\bar{\lambda},\cdots,
-\frac{1}{a+\frac{\bar{x}_n}{x_n^*}}+\bar{\lambda} \Bigr] =0 \\
-\label{equ:tmp_min_J_4}
-\frac{\partial J}{\partial \lambda} &= \vec{\epsilon}^T\bar{\vec{x}} - N =0
-\end{align}
-Thus, \eqref{equ:tmp_min_J_3} infers
-$$\bar{\lambda}=-\frac{1}{a+\frac{\bar{x}_i}{x_i^*}},\;i\in\{1,\cdots,n\}
-$$
-If $\bar{\lambda}=0$, then the only value of $\bar{\vec{x}}=\infty$
-which doesn't satisfy \eqref{equ:tmp_min_J_4}. Hence,
-$\bar{\lambda}\neq 0$ and $\bar{x}_i = -(1/\bar{\lambda}+a)x_i^*$,
-which implies $\bar{\vec{x}}=-(1/\bar{\lambda}+a)\vec{x}^*$. It
-follows from \eqref{equ:tmp_min_J_4} that
-$$-(1/\bar{\lambda}+a)=\frac{N}{\vec{\epsilon}^T\vec{x}^*}$$
-which implies $\bar{\vec{x}} =
-\frac{N}{\vec{\epsilon}^T\vec{x}^*}\vec{x}^*$. The fact that
-$\bar{\vec{x}}$ maximizes the ectropy on the compact set $\mathbb{D}$
-can be shown by computing the Hessian and showing that it is negative
-definite at $\bar{\vec{x}}$. The proof is completed.
-\end{proof}
-
+\section{Occupancy Equilibrium}\label{sec:equilibrium}
 
 \iffalse
 
@@ -1366,198 +892,153 @@ signal control can generate better performances.
 
 \fi
 
+For an isolated thermodynamic system without any input
+($\vec{r}^e(k)\equiv 0$) and output ($\vec{d}^e(k)\equiv 0$) energy
+flows, if a pair of connected subsystems have different temperatures,
+the energy transmission will emerge between them so that their
+temperatures tend to approximate. After enough amount of time, the
+isolated system will reach certain state when the temperature is
+spatially and temporally uniform. In this state, the system will lose
+all its capacity to produce any useful work. Such particular state is
+called thermal equilibrium \citep{cengel_thermodynamics:_2001}. For
+an isolated thermodynamic system in thermal equilibrium, its ectropy
+would be a minimum and entropy would be a maximum giving rise to a
+state of absolute disorder.
 
-Indeed, for any subsystem
-without phase transition, the entropies in different absolute
-temperatures ($T1$, $T2$) satisfy the following relationship
-\citep{cengel_thermodynamics:_2001}
-\begin{equation}\label{equ:entropy_temperature}
-\psi_i(T1)-\psi_i(T2)=E_i^* \ln \frac{T1}{T2},\quad \forall
-i\in\{1,\cdots,n\}
+Since the lane occupancies correspond to the temperatures, this
+concept of thermal equilibrium can be easily introduced into the
+transportation context to denote the state when the occupancies of
+all traffic lanes are the same. Such state is called the occupancy
+equilibrium in this paper. It can be denoted by the following
+mathematical expression
+\begin{equation}\label{equ:equilibrium}
+\frac{\bar{x}_1}{x_1^*}=\cdots=\frac{\bar{x}_n}{x_n^*}=\bar{f}=\text{constant}
 \end{equation}
-It is known that the absolute temperature of the $i$th subsystem
-equals $a+\frac{E_i}{E_i^*}$. Specially, when the subsystem stores no
-energy ($E_i=0$), its absolute temperature becomes $a$. Hence,
-\eqref{equ:entropy_temperature} implies
-\begin{align}
-\psi_i(E_i)&=\psi_i(0)+E_i^* \ln \frac{a+\frac{E_i}{E_i^*}}{a}
-\nonumber\\
-&=\psi_i(0)+E_i^* \ln (a+\frac{E_i}{E_i^*})-E_i^* \ln{a}
-\label{equ:tmp_psi_1}
+The occupancy equilibrium implies that no particular concentration of
+vehicles exists in the system and hence the possibility to emerge
+congestion is extremely low. Suppose a transportation network can be
+isolated, its entropy (resp, ectropy) is minimal (resp, maximal) when
+the system reaches the occupancy equilibrium. In other words, this
+state corresponds to the best organization of the system. This
+observation is demonstrated in the following theorem.
+
+\begin{thm}\label{thm:entropy_equilibrium}
+Suppose a transportation network is isolated. Let $N$ be the total
+number of vehicles in this system, let $\psi(\vec{x})$ and
+$\phi(\vec{x})$ denote the entropy and ectropy of system and be given
+by \eqref{equ:Tran_entropy} and \eqref{equ:Tran_ectropy},
+respectively, and define $\mathbb{D}\triangleq
+\{\vec{x}\in\mathbb{R}^n/\vec{\epsilon}^T\vec{x}=N\}$. Then,
+\begin{equation}\label{equ:entropy_equilibrium}
+\arg\min_{\vec{x}\in\mathbb{D}}(\psi(\vec{x})) =
+\arg\max_{\vec{x}\in\mathbb{D}}(\phi(\vec{x})) = \bar{\vec{x}} =
+\frac{N}{\vec{\epsilon}^T\vec{x}^*}\vec{x}^*
+\end{equation}
+\end{thm}
+\begin{proof}
+The existence and uniqueness of $\bar{\vec{x}}$ come from the fact
+that $\psi(\vec{x})$ and $-\phi(\vec{x})$ are strictly convex
+functions on the compact set $\mathbb{D}$. Now, to find the minimal
+$\psi(\vec{x})$ on $\mathbb{D}$, consider the problem
+\begin{align}\label{equ:pro_min_psi}
+\min\; &\psi(\vec{x}) = \frac{1}{2}\vec{x}^T\mat{P}\vec{x}\\
+s.t.\; &\vec{\epsilon}^T\vec{x}=N \nonumber
 \end{align}
-Now, according to the third law of thermodynamics, the entropy
-approaches zero when the stored energy approaches zero, which means
-\begin{equation}\label{equ:entropy_zero}
-\psi_i(0)=\lim_{E_i\rightarrow 0}\psi_i(E_i)=0
-\end{equation}
-Therefore, we have
-\begin{equation}
-\psi_i(E_i)=E_i^* \ln (a+\frac{E_i}{E_i^*})-E_i^* \ln{a}
-\end{equation}
-By summarizing all subsystems, the entropy of the whole system is
-given by
-\begin{equation}
-\psi(\vec{E})=\sum_{i=0}^n E_i^*\ln(a+\frac{E_i}{E_i^*})-E_i^*\ln a
-\end{equation}
-which infers the Haddad's formula of entropy
-\eqref{equ:Ther_entropy}.
-
-
-
-
-\section{linear}
-
-Saturation flow rate $s_i$ is the rate of leaving flow from the
-$i$th queue without interruption in unit time during effective green
-time \citep{motawej_dissipativity_2011}. The saturation flow rates
-depend on the conditions of transportation systems, which can be
-considered constant in general situations. So the number of vehicles
-leaving $i$th queue in one cycle is $s_i g_i$. Some of these vehicles
-move to other queues and the other leave the system. Hence, for $k$th
-cycle we have:
+By using the Karush-Kuhn-Tucker (KKT) conditions
+\citep{boyd_convex_2004}, we have the Lagrangian
+$$J(\vec{x},\lambda) = \frac{1}{2}\vec{x}^T\mat{P}\vec{x}+\lambda(\vec{\epsilon}^T\vec{x} - N)$$
+If $\bar{\vec{x}}$ is the solution, there exists a scalar
+$\bar{\lambda}\in\mathbb{R}$ such that
 \begin{align}
-  \sigma_{i,i}(k) &= s_i g_{i}(k) \lambda_{i,i}\label{equ:Con_di}\\
-  \sigma_{i,j}(k) &= s_j g_{j}(k) \lambda_{i,j}\\
-  \sigma_{j,i}(k) &= s_i g_{i}(k) \lambda_{j,i}
+\label{equ:tmp_min_J_1}
+\frac{\partial J}{\partial \vec{x}} &= \bar{\vec{x}}^T\mat{P}+\bar{\lambda}\vec{\epsilon}^T =0 \\
+\label{equ:tmp_min_J_2}
+\frac{\partial J}{\partial \lambda} &= \vec{\epsilon}^T\bar{\vec{x}} - N =0
 \end{align}
-where $i,j\in \{1,\cdots,n\}$, the exit rate $\lambda_{i,i}$ is the
-proportion of $\sigma_{i,i}$ to the leaving flow from $i$th queue,
-the exchange rate $\lambda_{j,i}$ (resp, $\lambda_{i,j}$) is the
-proportion of $\sigma_{j,i}$ (resp, $\sigma_{i,j}$) to the leaving
-flow from $i$th queue (resp, leaving flow from $j$th queue), and
-$\sum_{j=1}^{n} \lambda_{j,i}=1$. These rates can be considered fixed
-and known \citep{diakaki_multivariable_2002}.
+From \eqref{equ:tmp_min_J_1}, we have
+$\bar{\vec{x}}=-\bar{\lambda}\mat{P}^{-1}\vec{\epsilon}$. Now, it
+follows from \eqref{equ:tmp_min_J_2} that
+$\bar{\lambda}=-\frac{N}{\vec{\epsilon}^T\mat{P}^{-1}\vec{\epsilon}}$
+which implies that $\bar{\vec{x}} =
+\frac{N}{\vec{\epsilon}^T\vec{x}^*}\vec{x}^*$. Since the Hessian of
+the entropy is $\mat{P}$ which is always positive definite, we have
+the conclusion that $\bar{\vec{x}}$ minimizes the entropy on the
+compact set $\mathbb{D}$.
 
-Now, let $l_i$ be the sum of all exchange flows related to the $i$th
-queue. According to Figure \ref{fig:flows}, in $k$th cycle we have
-\begin{align*}
-l_i(k)&=\sum_{j=1,j\neq i}^{n} \sigma_{i,j}(k)
-         -\sum_{j=1,j\neq i}^{n} \sigma_{j,i}(k)\\
-      &=\sum_{j=1,j\neq i}^{n} s_j g_{j}(k) \lambda_{i,j}
-        -\sum_{j=1,j\neq i}^{n} s_i g_{i}(k) \lambda_{j,i}\\
-        &=\sum_{j=1,j\neq i}^{n} s_j g_{j}(k) \lambda_{i,j}
-        -s_ig_{i}(k)\sum_{j=1,j\neq i}^{n}  \lambda_{j,i}
-\end{align*}
-With $\sum_{j=1}^{n} \lambda_{j,i}=1$, it follows
-\begin{equation}\label{eql}
-l_i(k)=\sum_{j=1,j\neq i}^{n} s_j g_{j}(k) \lambda_{i,j}
-        -s_ig_{i}(k)(1- \lambda_{i,i})
-\end{equation}
- Define a  vector
-$\vec{L}_i=[L_{i,1},\cdots,L_{i,n}]^T$ in the following manner
-\begin{equation*}
- L_{i,j}= \left\{ \begin{array}{l@{\,:\,}r}
-            - s_i (1- \lambda_{i,i})&\quad \text{for}\; i= j\\
-              s_j \lambda_{i,j}&\quad
-             \text{for}\;i\neq j
-            \end{array}\right.
-\end{equation*}
-Then equation \eqref{eql} can be rewritten as
-\begin{equation}
-\label{equ:Con_li}
-\begin{split}
-l_i(k)&=\sum_{j=1,j\neq i}^{n} L_{i,j} g_{j}(k)
-        +L_{i,i} g_{i}(k)\\
-        &=\sum_{j=1}^{n} L_{i,j} g_{j}(k)\\
-      &=\vec{L}_i^T\vec{g}(k)
-\end{split}
-\end{equation}
-
-
-\begin{align*}
-    \vec{x}(k+1)&=\vec{x}(k) +L\vec{g}(k)+\vec{q}(k) c-D\vec{g}(k)\nonumber\\
-    &=\vec{x}(k)+\vec{q}(k) c  +(L-D)\vec{g}(k)
-\end{align*}
-where $L$ is a matrix whose $i$th rows is  $\vec{L}_i^T$ and
- $D$ is  a diagonal matrix with diagonal elements $d_{i}$. Since
- $\vec{g}=G\vec{u}+ \vec{\xi}$ in view of \eqref{equ:green_u}, it follows
+Analogously, to maximize $\phi(\vec{x})$ on $\mathbb{D}$, form the
+Lagrangian:
+$$J(\vec{x},\lambda) =
+{\vec{x}^*}^T \ln(a\vec{\epsilon}+\mat{P}\vec{x})
+-\vec{\epsilon}^T\vec{x}^*\ln a
++\lambda(\vec{\epsilon}^T\vec{x} - N)
+$$
+If $\bar{\vec{x}}$ solves this problem, there exists a scalar
+$\bar{\lambda}\in\mathbb{R}$ such that
 \begin{align}
-    \vec{x}(k+1)&=\vec{x}(k)+\vec{q}(k) c  +(L-D)(G\vec{u}(k)+\vec{\xi})\nonumber\\
-    &=\vec{x}(k)+\vec{q}(k) c  +(L-D)G\vec{u}(k)+(L-D)\vec{\xi}\nonumber\\
-     &=\vec{x}(k)+\vec{q}(k) c  +B\vec{u}(k)+\vec{h}
-\label{equ:Trans_Detail}
+\label{equ:tmp_min_J_3}
+\frac{\partial J}{\partial \vec{x}} &= \Bigl[
+\frac{1}{a+\frac{\bar{x}_1}{x_1^*}}+\bar{\lambda},\cdots,
+\frac{1}{a+\frac{\bar{x}_n}{x_n^*}}+\bar{\lambda} \Bigr] =0 \\
+\label{equ:tmp_min_J_4}
+\frac{\partial J}{\partial \lambda} &= \vec{\epsilon}^T\bar{\vec{x}} - N =0
 \end{align}
-where $B=(L-D)G$ and $\vec{h}=(L-D)\vec{\xi}$. Now, according to
-\citet{diakaki_multivariable_2002}, there exists a \textbf{nominal
-situation} where the input of each queue equals its output.
-Mathematically, this means that
-\begin{equation*}
-  \vec{q}^N c  +B\vec{u}^N+\vec{h}=0
-\end{equation*}
-where  $\vec{q}^N$ is the nominal input flow rates and $\vec{u}^N$
-represents the nominal control variables. This yields
-$\vec{h}=-\vec{q}^N c-B\vec{u}^N$, and hence the equation
-\eqref{equ:Trans_Detail} can be restated as
-\begin{align*}
-    \vec{x}(k+1)&=\vec{x}(k)+\vec{q}(k) c  +B\vec{u}(k)-\vec{q}^N c  -B\vec{u}^N\nonumber\\
-    &=\vec{x}(k)+(\vec{q}(k)-\vec{q}^N) c  +B(\vec{u}(k)-\vec{u}^N)
-\end{align*}
+Thus, \eqref{equ:tmp_min_J_3} infers
+$$\bar{\lambda}=-\frac{1}{a+\frac{\bar{x}_i}{x_i^*}},\;i\in\{1,\cdots,n\}
+$$
+If $\bar{\lambda}=0$, then the only value of $\bar{\vec{x}}=\infty$
+which doesn't satisfy \eqref{equ:tmp_min_J_4}. Hence,
+$\bar{\lambda}\neq 0$ and $\bar{x}_i = -(1/\bar{\lambda}+a)x_i^*$,
+which implies $\bar{\vec{x}}=-(1/\bar{\lambda}+a)\vec{x}^*$. It
+follows from \eqref{equ:tmp_min_J_4} that
+$$-(1/\bar{\lambda}+a)=\frac{N}{\vec{\epsilon}^T\vec{x}^*}$$
+which implies $\bar{\vec{x}} =
+\frac{N}{\vec{\epsilon}^T\vec{x}^*}\vec{x}^*$. The fact that
+$\bar{\vec{x}}$ maximizes the ectropy on the compact set $\mathbb{D}$
+can be shown by computing the Hessian and showing that it is negative
+definite at $\bar{\vec{x}}$. The proof is completed.
+\end{proof}
+It follows immediately from the this theorem that the occupancy
+equilibrium leads to the minimal disorder and maximal order in
+the transportation network. Hence, the study of control problems
+should concern this state as an important objective.
 
-\begin{equation}\label{equ:Tran_Model}
-    \vec{x}(k+1)=\vec{x}(k)+B\vec{v}(k)+\vec{\omega}(k)
-\end{equation}
-And the control constraint becomes
-\begin{equation}\label{equ:constraint}
-\mathbb{U}= \{\vec{v}\in \mathbb{R}^m/\quad  -\vec{v}_2\leq
-\vec{v}\leq \vec{v}_1,\quad \vec{v}_1,\vec{v}_2>\vec{0}\}
-\end{equation}
-where
-$$\vec{v}_1=\vec{u}_{max}-\vec{u}^N;\quad \vec{v}_2=\vec{u}^N-\vec{u}_{min}$$
-Since $\vec{q}(k)$ is unknown vector, $\vec{\omega}(k)$ is
-the difference between the real input and the nominal one, which can
-be considered as disturbance vector.
+We close this section by mentioning that the thermal equilibrium is
+the stable state for isolated thermodynamic systems. But,
+transportation systems are seldom isolated. For a open transportation
+network, the system may be difficult to stay in occupancy equilibrium.
 
-Note that, it makes no sense to speak of negative queue. Hence, the
-state $\vec{x}(k)\geq\vec{0}$ for all $k\in \mathbb{N}$. On the other
-hand, our model doesn't consider the congestion situation, hence
- the queue lengths are never beyond their capacities. Let
-$x_i^*$, $i\in \{1,\cdots,n\}$ be the capacity of $i$th queue
-length. Therefore, the system \eqref{equ:Tran_Model} has physical
-meaning only if $\vec{x}$ belongs to the region of admissible states
-\begin{equation} \label{equ:domain-x}
- \mathbb{X}=\{\vec{x}\in\mathbb{R}^n/ \quad
-     \vec{0}\le\vec{x}\le\vec{x}^*\}
-\end{equation}
-where $\vec{x}^*=[x_1^*,\cdots,x_n^*]^T$ is the vector of all queue
-capacities.
+\section{Conclusion}
 
+This paper has presented a novel thermodynamic point of view for the
+transportation network. Indeed, the comparison between thermodynamic
+and transportation systems has shown that they are very similar by
+regarding the vehicles as the energy and regarding the traffic lanes
+as the thermodynamic subsystems. In addition, the concepts of thermal
+capacity and temperature are also introduced into transportation
+context to correspond to lane capacity and occupancy respectively.
+Then, it has been demonstrated that the first law of thermodynamics
+corresponds to the conservation of vehicles.
 
+However, though these two kinds of systems can be similar, the second
+thermodynamic principle does not work in transportation context. The
+reason for this is that  the directions of vehicles are determined by
+the drivers, there is no rule that the vehicles only move from more
+crowded lanes to less crowded ones. Besides, the significations of
+order in two systems are opposite, which means that the thermodynamic
+ectropy corresponds to the transportation entropy. Such
+transportation entropy is opposite to the service quality for all
+vehicles and hence may provide deep insight in the analysis of
+transportation control problems.
 
-\subsection{Control Solution}
-\label{subsec:con_solve} In this section, we provide a way to
-construct a feedback control law that achieves the dissipativity and
-respects the constraint on control. For a while, we state
-a result which is needed in the subsequent development.
-\begin{proposition}
-Let
-\begin{equation}\label{equ:Supply_Omega}
-  S_\omega(k) = \vec{x}(k+1)^T P_x \vec{\omega}(k)
-\end{equation}
-then ,if the transportation system described by the difference
-equation \eqref{equ:Tran_Model} is dissipative with respect to the
-storage function \eqref{equ:Tran_entropy} and the supply function
-\eqref{equ:Supply_Omega}, the system is also dissipative with
-respect to the same storage function and the supply function
-\eqref{equ:Supply}.
-\end{proposition}
+Finally, we would like to point out that, though the traffic lanes
+are chosen as the units of transportation systems in this paper, the
+thermodynamic point of view can also be applied to other units of
+analysis, e.g intersections or road segments. This may enable us to
+study other transportation phenomenons like lane-changing, routing,
+etc in the future. In our opinion, this new approach has the potential
+to further improve the traffic efficiency.
 
-\begin{pf}
-The dissipation inequality related to the storage function
-(\ref{equ:Tran_entropy}) and the supply function
-(\ref{equ:Supply_Omega}) is
-\begin{equation}\label{equ:Obj_Omega}
-  \psi(\vec{x}(k+1))-\psi(\vec{x}(k)) \leq S_\omega(k)
-\end{equation}
-According to the modelling above, it is known that
-$\vec{\omega}(k)=\vec{r}(k)-\vec{r}^N$, where $\vec{r}^N$ is the
-vector of nominal input flows. So we have
-\begin{align*}
-S_\omega(k) &= \vec{x}(k+1)^T P_x (\vec{r}(k)-\vec{r}^N(k))\\
-    &= \vec{x}(k+1)^T P_x \vec{r}(k)-\vec{x}(k+1)^T P_x \vec{r}^N(k)
-\end{align*}
-Since the nominal inputs and all queue lengths are non-negative, it
-yields
-$$S_\omega(k)\leq \vec{x}(k+1)^T P_x \vec{r}(k) = S(k)$$
-So the conclusion follows.\qed
-\end{pf}
+\bibliographystyle{model5-names}
+\bibliography{zhou_refs}
 
+\end{document}
