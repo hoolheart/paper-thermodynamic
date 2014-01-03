@@ -86,8 +86,11 @@ order to measure the disorder of transportation systems. Then, by
 taking this entropy as the storage function, a dissipativity
 phenomenon is presented to reduce the disorder and render the system
 better organized.
-In addition, we show that the thermal equilibrium arising in isolated thermodynamic system can be also introduced to correspond to
-the state when all lanes share the same occupancy.  Contrary  to the second law of thermodynamic, this equilibrium occupancy leads  to a minimum entropy rather than to a maximum.
+Finally, we show that the thermal equilibrium arising in isolated
+thermodynamic system can be also introduced to correspond to
+the state when all lanes share the same occupancy.
+Contrary  to the second law of thermodynamic, this equilibrium
+occupancy leads  to a minimum entropy rather than to a maximum.
 
 
 
@@ -239,9 +242,10 @@ non-existing links do not appear in the equations.
 
 The model \eqref{equ:mdl_gnl_lane} makes sense only if the state
 variables $x_i(k)$ remain non-negative for all $k\in \mathbb{N}$. The
-flows $r_i$, $d_{i}$ and $\sigma_{i,j}$ are also defined to be
-non-negative on the non-negative orthant. Moreover, it is obvious
-that $\sigma_{i,j}=0$ and $d_{j}=0$ if and only if $x_j=0$,
+flows $r_i$, $d_{i}$ and $\sigma_{i,j}$ are also defined
+% to be non-negative
+on the non-negative orthant. Moreover, it is obvious
+that all $\sigma_{i,j}=0$ and $d_{j}=0$ if and only if $x_j=0$,
 $j\in\{1,\cdots,n\}$. This implies that if the $j$th lane
 possesses no vehicles, then it cannot dissipate vehicles to its
 surroundings. Conversely, if the $j$th lane does not dissipate
@@ -837,7 +841,7 @@ considered proportional to the corresponding effective green time
 $u_j$ as follows $\forall i,j\in\{1,\cdots,n\}$, $i\neq j$
 $$\sigma_{i,j}(k)=\lambda_{i,j}(x) s_j(x) u_j(k)$$
 where $s_j>0$ is the average rate of leaving flow from lane $j$, and
-$\lambda_{i,j}\le 0$ is the proportion of $\sigma_{i,j}$ to such
+$\lambda_{i,j}\in[0,1]$ is the proportion of $\sigma_{i,j}$ to such
 leaving flow. This infers that
 \begin{equation}
 \label{eql}
@@ -847,7 +851,7 @@ l_i(k)&=\sum_{j=1,j\neq i}^{n} \sigma_{i,j}(k)
       &=\sum_{j=1,j\neq i}^{n} s_j(x) u_{j}(k) \lambda_{i,j}(x)
         -\sum_{j=1,j\neq i}^{n} s_i(x) u_{i}(k) \lambda_{j,i}(x)\\
       &=\sum_{j=1,j\neq i}^{n} s_j(x) u_{j}(k) \lambda_{i,j}(x)
-        -s_iu_{i}(k)\sum_{j=1,j\neq i}^{n}  \lambda_{j,i}(x)
+        -s_i(x)u_{i}(k)\sum_{j=1,j\neq i}^{n}  \lambda_{j,i}(x)
 \end{split}
 \end{equation}
 Let $\vec{u} = [u_1,\cdots,u_n]^T$ and define a vector
@@ -867,14 +871,14 @@ Then equation \eqref{eql} can be rewritten as
 \begin{split}
 l_i(k)&=\sum_{j=1,j\neq i}^{n} B_{i,j} u_{j}(k)
         +B_{i,i} u_{i}(k)\\
-        &=\sum_{j=1}^{n} B_{i,j} g_{j}(k)\\
+        &=\sum_{j=1}^{n} B_{i,j} u_{j}(k)\\
       &=\vec{B}_i^T\vec{u}(k)
 \end{split}
 \end{equation}
 
-Let $D=diag\{\hat{d}_{1}(x),\cdots,\hat{d}_{n}(x)\}$,
-$\mat{A}(x)=\mat{I}-\mat{D}(x)$ and let $\mat{B}(x) =
-[\vec{B}_1(x),\cdots,\vec{B}_n(x)]^T$. In this case, equation
+Let $\mat{D}(x)=diag\{\hat{d}_{1}(x),\cdots,\hat{d}_{n}(x)\}$,
+$\mat{A}(x)=\mat{I}-\mat{D}(x)$ and $\mat{B}(x) =
+[\vec{B}_1(x),\cdots,\vec{B}_n(x)]^T$. In this case, the equation
 \eqref{equ:mdl_gnl} becomes
 $$\vec{x}(k+1)=\mat{A}(x)\vec{x}(k)+\mat{B}(x)\vec{u}(k)+\vec{r}(k)$$
 
@@ -889,7 +893,7 @@ g(\vec{u}(k))&=\vec{x}^T(k+1)\mat{P}\vec{l}(k)\\
 In the following, we will provide the way to construct a feedback
 control law that achieves the dissipassivity. To make the idea clear, 
 put $\mat{M}=\mat{B}^T\mat{P}\mat{B}$ and
-$\vec{y}=\frac{1}{2}\mat{B}^T\mat{P}(\mat{A}\vec{x}+\vec{r})$ it
+$\vec{y}=\frac{1}{2}\mat{B}^T\mat{P}(\mat{A}\vec{x}+\vec{r})$, it
 follows
 \begin{equation}\label{pbc}
 g(\vec{u})=\vec{u}^T\mat{M}\vec{u}+2\vec{u}^T\vec{y}\leq0
@@ -908,33 +912,39 @@ $$
 Hence, $\mat{H}$ must be chosen such that the matrix
 $(\mat{H}+\mat{I})^T \mat{M} (\mat{H}+\mat{I})-\mat{M}$ is negative
 semidefinite, which is equivalent to
-$$\mat{M}-(\mat{H}+\mat{I})^T \mat{M} (\mat{H}+\mat{I})\geq0$$
-The solution is given by the following LMI
+$$\mat{M}-(\mat{H}+\mat{I})^T \mat{M} (\mat{H}+\mat{I})\succeq 0$$
+where $\succeq$ means the matrix is positive semidefinite.
+The solution is given by the following LMI by applying Schur
+complement lemma \citep{boyd_linear_1994}
 $$\begin{pmatrix}
 \mat{M}& (\mat{H}+\mat{I})^T \mat{M} \\
 \mat{M} (\mat{H}+\mat{I})  & \mat{M}
-\end{pmatrix}\geq 0$$
+\end{pmatrix}\succeq 0$$
 
 In particular, if we chose $\mat{H}=h\mat{I}$, $h\in \mathbb{R}$, then
-for any matrix $\mat{M}$, $g(\vec{\theta})$ is negative if and only if
-$|h+1|\leq 1$. Indeed, with $\mat{H}=h\mat{I}$ it follows
+for any vector $\vec{\theta}$, $g(\vec{\theta})$ is non-positive if
+and only if $|h+1|\leq 1$. Indeed, with $\mat{H}=h\mat{I}$ it follows
 $g(\vec{\theta})=\Bigl[(h+1)^2-1\Bigr]
-\vec{\theta}^T\mat{M}\vec{\theta}$, which is obviously negative if and
-only if $|h+1|\leq 1$ in view of positive definiteness of the matrix
-$\mat{M}$.
+\vec{\theta}^T\mat{M}\vec{\theta}$, which is obviously non-positive if
+and only if $|h+1|\leq 1$ in view of positive definiteness of the
+matrix $\mat{M}$.
 Summarizing, we have the following theorem. 
 
 \begin{thm}\label{thm:pbc}
-For the transportation system, the feedback control law  
-$\vec{u}=\frac{1}{2}\mat{H}\mat{M}^{-1}\mat{B}^T\mat{P}(\mat{A}
-\vec{x}+\vec{r})$ renders the system dissipative with respect to
+For the transportation system, the feedback control law
+\begin{equation}
+\label{equ:feedback}
+\vec{u}=\frac{1}{2}\mat{H}\mat{M}^{-1}\mat{B}^T\mat{P}(\mat{A}
+\vec{x}+\vec{r})
+\end{equation}
+renders the system dissipative with respect to
 entropy \eqref{equ:Tran_entropy} as the storage function and the
 supply function \eqref{equ:supply} if $\mat{H}$ is a solution of the
 following LMI
 $$\begin{pmatrix}
 \mat{M}& (\mat{H}+\mat{I})^T \mat{M} \\
 \mat{M} (\mat{H}+\mat{I})  & \mat{M}
-\end{pmatrix}\geq 0$$
+\end{pmatrix}\succeq 0$$
 Moreover, if $\mat{H}=h\mat{I}$ with $h\in \mathbb{R}$, then the
 feedback control law $\vec{u}=\frac{h}{2} \mat{M}^{-1}\mat{B}^T
 \mat{P} (\mat{A}\vec{x}+\vec{r})$ renders the system dissipative if
@@ -945,7 +955,6 @@ and only if $|h+1|\leq 1$.
 If the matrix $\mat{B}$ is invertible, then the control law can be
 simplified to
 \begin{equation}
-\label{equ:feedback}
 \vec{u}=\frac{1}{2}\mat{H}\mat{B}^{-1}(\mat{A}\vec{x}+\vec{r})
 \end{equation}
 \end{rmk}
@@ -953,7 +962,7 @@ simplified to
 It follows immediately from theorem \ref{thm:pbc} that, for any
 arbitrarily selected $h$ that satisfies $|h+1|\leq 1$, the feedback
 control defined by $\vec{u}=\frac{h}{2} \mat{M}^{-1}\mat{B}^T \mat{P}
-(\mat{A}\vec{x}+\vec{r})$ belongs to the class of control laws
+(\mat{A}\vec{x}+\vec{r})$ exhausts the class of control laws
 which render the system dissipative. Hence, theorem \ref{thm:pbc} 
 gives explicit but non-unique solutions of the the dissipativity based
 control problem.
@@ -966,14 +975,15 @@ $$u_{i,min}\le u_i\le u_{i,max},\quad i\in\{1,\cdots,n\}
 $$
 then one possible solution is to apply the following saturation law
 \begin{equation}
-sat(u_i) = \left\{ \begin{array}{l@{\quad\text{for}\quad}c}
-        u_{i,min} & u_i\le u_{i,min}\\
-        u_i & u_{i,min}\le u_i\le u_{i,max}\\
-        u_{i,max} & u_i\ge u_{i,max}
+sat(u_i^*) = \left\{ \begin{array}{l@{\quad:\quad}c}
+        u_{i,min} & u_i^*\le u_{i,min}\\
+        u_i^* & u_{i,min}\le u_i^*\le u_{i,max}\\
+        u_{i,max} & u_i^*\ge u_{i,max}
         \end{array}\right.
 \end{equation}
-where $u_i$ is the value derived from the feedback
-\eqref{equ:feedback}, and $sat(u_i)$ is the actual control applied to
+where $u_i^*$ is the value derived from the feedback
+\eqref{equ:feedback}, and $sat(u_i^*)$ is the actual control applied
+to
 real system.
 
 \newpage
@@ -1067,6 +1077,9 @@ ectropy corresponds to the transportation entropy. Such
 transportation entropy is a measure of disorder of the system and
 hence may provide deep insight in the analysis of transportation
 control problems.
+In particular, this paper has presented a dissipassivity phenomenon
+of transportation entropy to reduce the system disorder, and proposed
+a possible control scheme to achieve such objective.
 
 Finally, we would like to point out that, though the traffic lanes
 are chosen as the units of transportation systems in this paper, the
@@ -1176,7 +1189,7 @@ k\in\mathbb{N}$, is verified or not. Indeed, if this assumption is verified it f
 It is important to stress that, if $r=0$, then  the transportation system is called an inflow-closed. In this case,  the system possesses a dissipation property
 since the total vehicles $\vec{\epsilon}^T\vec{x}$ in the network is non-increasing along the  trajectories of system \eqref{equ:mdl_gnl}. Indeed, with $V (x(k)) = \vec{\epsilon}^T\vec{x}$ it follows that 
 $$V (x(k+1-))V (x(k))= \vec{\epsilon}^T \Bigl(x(k)+\ell(k)-d(k)\Bigr)- \vec{\epsilon}^T\vec{x}x(k)
- inequality \eqref{equ:dissipative} yield the following  inequality
+ inequality $$ yield the following  inequality
 \begin{equation}\label{equ:dissipative1}
 \psi(\vec{x}(k_2))\leq\psi(\vec{x}(k_1)) ,\quad \forall
 k_2\geq k_1
