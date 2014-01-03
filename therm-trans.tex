@@ -89,7 +89,7 @@ better organized.
 Finally, we show that the thermal equilibrium arising in isolated
 thermodynamic system can be also introduced to correspond to
 the state when all lanes share the same occupancy.
-Contrary  to the second law of thermodynamic, this equilibrium
+Contrary to the second law of thermodynamic, this equilibrium
 occupancy leads  to a minimum entropy rather than to a maximum.
 
 
@@ -243,10 +243,9 @@ non-existing links do not appear in the equations.
 The model \eqref{equ:mdl_gnl_lane} makes sense only if the state
 variables $x_i(k)$ remain non-negative for all $k\in \mathbb{N}$. The
 flows $r_i$, $d_{i}$ and $\sigma_{i,j}$ are also defined
-% to be non-negative
-on the non-negative orthant. Moreover, it is obvious
-that all $\sigma_{i,j}=0$ and $d_{j}=0$ if and only if $x_j=0$,
-$j\in\{1,\cdots,n\}$. This implies that if the $j$th lane
+to be non-negative on the non-negative orthant. Moreover, it is
+obvious that all $\sigma_{i,j}=0$ and $d_{j}=0$ if and only if
+$x_j=0$, $j\in\{1,\cdots,n\}$. This implies that if the $j$th lane
 possesses no vehicles, then it cannot dissipate vehicles to its
 surroundings. Conversely, if the $j$th lane does not dissipate
 vehicles to its surroundings, then this lane has no vehicle.
@@ -693,9 +692,9 @@ vehicles increases the entropy and hence $I(k)$ increases. This
 implies that the speed of vehicles decreases and consequently the
 greater disorder.
 
-Indeed, the bigger number of vehicles increases the entropy and hence
-increases $I(k)$, which implies the smaller speed of vehicles and
-consequently the greater disorder.
+% Indeed, the bigger number of vehicles increases the entropy and hence
+% increases $I(k)$, which implies the smaller speed of vehicles and
+% consequently the greater disorder.
 
 Furthermore, the transportation entropy $\psi(\vec{x})$ given by
 \eqref{equ:Tran_entropy} can be restated as
@@ -835,14 +834,15 @@ First observe that, if $d_{i}(x)$ is differentiable and since
 $d_{i}(x)=0$ if and only if $x_i=0, i=1,\cdots,n$, it can be written
 as $d_{i}(x)=\hat{d}_{i}(x)x_i$ with $\hat{d}_{i}(x)\geq0$
 \citep{Jacquez1993}.
-On the other hand, the exchanges $\sigma_{i,j}$ are determined by the
+On the other hand, the exchange traffic flows are determined by the
 traffic signals. Indeed, for certain cycle $k$, $\sigma_{i,j}$ can be
 considered proportional to the corresponding effective green time
 $u_j$ as follows $\forall i,j\in\{1,\cdots,n\}$, $i\neq j$
+\citep{diakaki_multivariable_2002}
 $$\sigma_{i,j}(k)=\lambda_{i,j}(x) s_j(x) u_j(k)$$
 where $s_j>0$ is the average rate of leaving flow from lane $j$, and
-$\lambda_{i,j}\in[0,1]$ is the proportion of $\sigma_{i,j}$ to such
-leaving flow. This infers that
+$\lambda_{i,j}\in[0,1]$ is the turning rate from lane $j$ towards
+lane $i$. This infers that
 \begin{equation}
 \label{eql}
 \begin{split}
@@ -855,8 +855,8 @@ l_i(k)&=\sum_{j=1,j\neq i}^{n} \sigma_{i,j}(k)
 \end{split}
 \end{equation}
 Let $\vec{u} = [u_1,\cdots,u_n]^T$ and define a vector
-$\vec{B}_i(x)=[B_{i,1}(x),\cdots,B_{i,n}(x)]^T$ in the following
-manner
+$\vec{B}_i(x)=[B_{i,1}(x),\cdots,B_{i,n}(x)]^T\in\mathbb{R}^{n\times
+n}$ in the following manner
 \begin{equation*}
  B_{i,j}(x)= \left\{ \begin{array}{l@{\,:\,}r}
             - s_i(x) \sum_{j=1,j\neq i}^{n}  \lambda_{j,i}(x)
@@ -914,16 +914,18 @@ $(\mat{H}+\mat{I})^T \mat{M} (\mat{H}+\mat{I})-\mat{M}$ is negative
 semidefinite, which is equivalent to
 $$\mat{M}-(\mat{H}+\mat{I})^T \mat{M} (\mat{H}+\mat{I})\succeq 0$$
 where $\succeq$ means the matrix is positive semidefinite.
-The solution is given by the following LMI by applying Schur
+This inequality is equivalent to the following LMI by applying Schur
 complement lemma \citep{boyd_linear_1994}
 $$\begin{pmatrix}
 \mat{M}& (\mat{H}+\mat{I})^T \mat{M} \\
 \mat{M} (\mat{H}+\mat{I})  & \mat{M}
 \end{pmatrix}\succeq 0$$
 
-In particular, if we chose $\mat{H}=h\mat{I}$, $h\in \mathbb{R}$, then
-for any vector $\vec{\theta}$, $g(\vec{\theta})$ is non-positive if
-and only if $|h+1|\leq 1$. Indeed, with $\mat{H}=h\mat{I}$ it follows
+In the particular situation where $\mat{H}=h\mat{I}$, $h\in
+\mathbb{R}$,
+for any vector $\vec{\theta}$ and any positive definite matrix
+$\mat{M}$, $g(\vec{\theta})$ is non-positive if and only if $|h+1|\leq
+1$. Indeed, with $\mat{H}=h\mat{I}$ it follows
 $g(\vec{\theta})=\Bigl[(h+1)^2-1\Bigr]
 \vec{\theta}^T\mat{M}\vec{\theta}$, which is obviously non-positive if
 and only if $|h+1|\leq 1$ in view of positive definiteness of the
@@ -1047,13 +1049,14 @@ equilibrium. This occupancy equilibrium leads to the minimal disorder
 and maximal order for the transportation network. Hence, the study of
 control problems should concern this state as an important objective.
 
-
+\iffalse
 Now, if we assume that $\sigma_{i,j}=\sigma_{j,i}$ if and only if
 $\frac{x_i}{x_i^*}=\frac{x_j}{x_j^*}$, then $ \bar{\vec{x}}$  is an
 equilibrium state Lyapunov stable. Indeed, since the system is
 isolated $S(k)=0$. It follows from equation \eqref{eq:g} that $g(k)=0$
 and hence $\Delta\psi(\vec{x}(k))\leq0$ in view of
 \eqref{equ:dissipative1}.
+\fi
 
 \section{Conclusion}
 
