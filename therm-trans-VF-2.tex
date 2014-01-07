@@ -27,6 +27,7 @@
 \newtheorem{ass}{Assumption}
 \newtheorem{rmk}{Remark}
 \newtheorem{dfn}{Definition}
+\newtheorem{cor}{Corollary}
 \newtheorem{prpn}{Proposition}
 \newtheorem{proposition}{Proposition}
 \newproof{pf}{Proof}
@@ -56,18 +57,19 @@ concepts such as  temperature, thermal capacity, thermal
 equilibrium can have the corresponding notions in transportation
 context. In addition, despite the lack  of the existence  of a natural principle in transportation context that corresponds to the second law of thermodynamics as we will show,  the most important
 thermodynamic notion, which is the entropy, can be also defined in
-order to measure the disorder of transportation systems. Then, by
-taking this entropy as the storage function, a dissipativity
-phenomenon is presented to reduce the disorder and render the system
-better organized.
-Finally, we show that the thermal equilibrium arising in isolated
+order to measure the disorder of transportation systems.
+Then, we show that the thermal equilibrium arising in isolated
 thermodynamic system can be also introduced to correspond to
 the state when all lanes share the same occupancy. This equilibrium
-occupancy leads  to a minimum entropy which corresponds to a minimal disorder.
+occupancy leads to a minimum entropy which corresponds to a minimal
+disorder.
+Finally, by taking the transportation entropy as the storage function,
+a dissipativity phenomenon is presented to reduce the disorder and
+render the system better organized.
 \end{abstract}
 
 \begin{keyword}
-Transportation systems\sep thermodynamic systems\sep  entropy\sep.
+Transportation systems\sep thermodynamic systems\sep  entropy\sep
 dissipativity theory.
 \end{keyword}
 
@@ -131,12 +133,14 @@ systems. In particular, the basic concepts such as energy,
 temperature, thermal capacity can be introduced into the
 transportation context. Then, Section \ref{sec:entropy} will
 demonstrates that the transportation system can have a similar notion
-of entropy to measure the system disorder. By considering this new
-entropy notion as the storage function, a dissipativity phenomenon
-will be presented to reduce the disorder and hence render the system
-better organized. Finally, Section \ref{sec:equilibrium} will show
-that the thermal equilibrium can be also introduced to correspond to
-the state when all lanes share the same occupancy.
+of entropy to measure the system disorder.
+Section \ref{sec:equilibrium} will show that the thermal equilibrium
+can be also introduced to correspond to the state when all lanes share
+the same occupancy.
+Finally, by considering the transportation entropy as the storage
+function, a dissipativity phenomenon will be presented in Section
+\ref{sec:dissipativity} to reduce the disorder and hence render the
+system better organized.
 
 \section{Basic Concepts and Conservation of Vehicles}\label{sec:concepts}
 
@@ -424,7 +428,7 @@ implies that the transportation system \eqref{equ:mdl_gnl} is
 lossless with respect to the storage function
 \eqref{equ:total_vehicle} and the supply function \eqref{equ:all_io}.
 
-\section{Transportation Entropy and Dissipativity}\label{sec:entropy}
+\section{Transportation Entropy}\label{sec:entropy}
 
 \subsection{Second Law of Thermodynamics}
 
@@ -610,8 +614,6 @@ the ones in the others lanes decrease, we should consider the average
 performance of all vehicles in the entire network to evaluate the
 system disorder.
 
-\newpage
-
 To do this, consider the
 transportation network as a service provider and consider the
 vehicles traveling within it as its customers. Hence, the order of
@@ -667,17 +669,85 @@ I(k) = \sum_{i=1}^{n}\frac{x_i(k)^2}{h_{veh} x_i^*}
 This indicates that the transportation entropy is proportional to
 $I(k)$ and hence it is also opposite to the overall service quality. It
 becomes now clear that this transportation entropy is an appropriate
-measurement of the system disorder. Indeed, when he total service of the network  $I(k)$ increases the entropy   increases. This
+measurement of the system disorder. Indeed, when he total service of
+the network  $I(k)$ increases the entropy increases. This
 implies that the average speed of vehicles in the network decreases and consequently the
 greater disorder in the system.
 
+\section{Occupancy Equilibrium}\label{sec:equilibrium}
 
+For an isolated thermodynamic system without any input
+($\vec{r}^e(k)\equiv 0$) and output ($\vec{d}^e(k)\equiv 0$) energy
+flows, if a pair of connected subsystems have different temperatures,
+the energy transmission will emerge between them so that their
+temperatures tend to approximate. After enough amount of time, the
+isolated system will reach certain state when the temperature is
+spatially and temporally uniform. In this state, the system will lose
+all its capacity to produce any useful work. Such particular state is
+called thermal equilibrium \citep{cengel_thermodynamics:_2001}. For
+an isolated thermodynamic system in thermal equilibrium, its ectropy
+would be a minimum and entropy would be a maximum giving rise to a
+state of absolute disorder.
 
+Since the lane occupancies correspond to the temperatures, this
+concept of thermal equilibrium can be easily introduced into the
+transportation context to denote the state when the occupancies of
+all traffic lanes are the same. Such state is called the occupancy
+equilibrium in this paper. It can be denoted by the following
+mathematical expression
+\begin{equation}\label{equ:equilibrium}
+\frac{\bar{x}_1}{x_1^*}=\cdots=\frac{\bar{x}_n}{x_n^*}=\bar{f}=\text{
+constant}
+\end{equation}
+The occupancy equilibrium implies that no particular concentration of
+vehicles exists in the system and hence the possibility to emerge
+congestion is extremely low.
+% Contrary  to the second law of thermodynamic, for an isolated
+% transportation network,
+If a transportation network can be isolated in certain circumstances,
+its entropy (resp, ectropy) is minimal (resp, maximal) when
+the system reaches the occupancy equilibrium. In other words, for
+isolated network, this state corresponds to the best organization of
+the system. This observation is stated in the following theorem.
 
+\begin{thm}\label{thm:entropy_equilibrium}
+Suppose the transportation network is isolated. Let $N$ be the total
+number of vehicles in the system. Let $\psi(\vec{x})$ and
+$\phi(\vec{x})$ denote the entropy and ectropy of the system  given
+by \eqref{equ:Tran_entropy} and \eqref{equ:Tran_ectropy}
+respectively, and define $\mathbb{D}\triangleq
+\{\vec{x}\in\mathbb{R}^n_+/\vec{\epsilon}^T\vec{x}=N\}$. Then,
+\begin{equation}\label{equ:entropy_equilibrium}
+\arg\min_{\vec{x}\in\mathbb{D}}(\psi(\vec{x})) =
+\arg\max_{\vec{x}\in\mathbb{D}}(\phi(\vec{x})) = \bar{\vec{x}} =
+\frac{N}{\vec{\epsilon}^T\vec{x}^*}\vec{x}^*
+\end{equation}
+\end{thm}
+\begin{proof}  The proof is identical to the proof of Proposition 3.17
+of \citet{haddad_thermodynamic_2005} with $N$ as the total energy of
+the system 
+and $x^*_i$ as the reciprocal of the specific heat of the $i$th
+subsystem. Hence it is omitted here.
+\end{proof}%The proof is essentially contained in
 
+Now, observe that if the state $ \bar{\vec{x}}$ is reached, then
+$\frac{\bar{x}_i}{x_i^*}=\frac{N}{\vec{\epsilon}^T\vec{x}^*}=\bar{f}$,
+for all $i=1,\cdots, n$, which corresponds to the occupancy
+equilibrium. This occupancy equilibrium leads to the minimal disorder
+and maximal order for the transportation network. Hence, the study of
+control problems should concern this state as an important objective.
 
+\iffalse
+Now, if we assume that $\sigma_{i,j}=\sigma_{j,i}$ if and only if
+$\frac{x_i}{x_i^*}=\frac{x_j}{x_j^*}$, then $ \bar{\vec{x}}$  is an
+equilibrium state Lyapunov stable. Indeed, since the system is
+isolated $S(k)=0$. It follows from equation \eqref{eq:g} that $g(k)=0$
+and hence $\Delta\psi(\vec{x}(k))\leq0$ in view of
+\eqref{equ:dissipative1}.
+\fi
 
-\subsection{Dissipativity based control of the entropy}
+\section{Dissipativity based control of the entropy}
+\label{sec:dissipativity}
 
 Now, in transportation context, the input vehicles bring disorder to
 the system. This supplied disorder depends not only on  the  net vehicles exchange between the network and the outside  $\vec{r}(k)-\vec{d}(k)$, but also on the distribution of them. The vehicles
@@ -828,16 +898,18 @@ Let $\mat{D}(x)=diag\{\hat{d}_{1}(x),\cdots,\hat{d}_{n}(x)\}$,
 $\mat{A}(x)=\mat{I}-\mat{D}(x)$ and $\mat{B}(x) =
 [\vec{B}_1(x),\cdots,\vec{B}_n(x)]^T$. In this case, the equation
 \eqref{equ:mdl_gnl} becomes
-$$\vec{x}(k+1)=\mat{A}(x)\vec{x}(k)+\mat{B}(x)\vec{u}(k)+\vec{r}(k)$$
+$$
+\vec{x}(k+1)=\mat{A}(x)\vec{x}(k)+\mat{B}(x)\vec{u}(k)+\vec{r}(k)
+$$
 
 Now, the dissipativity based control problem is stated as follows:
 find $\vec{u}(x)$ such that the closed loop system is dissipative. In
 other words, find $\vec{u}(x)$ such that
-\begin{align*}
-g(\vec{u}(k))&=\vec{x}^T(k+1)\mat{P}\vec{l}(k)\\
+\begin{align}\label{pbc0}
+g(\vec{u}(k))&=\vec{x}^T(k+1)\mat{P}\vec{l}(k)\nonumber\\
 &=\vec{u}^T(k)\mat{B}^T\mat{P}\mat{B}\vec{u}(k)
 +\vec{u}^T(k)\mat{B}^T\mat{P}(\mat{A}\vec{x}(k)+\vec{r}(k))\leq 0
-\end{align*}
+\end{align}
 In the following, we will provide the way to construct a feedback
 control law that achieves the dissipativity. To make the idea clear,
 put $\vec{y}=\frac{1}{2}(\mat{A}\vec{x}+\vec{r})$. It follows 
@@ -886,16 +958,97 @@ following LMI
 \end{pmatrix}\succeq 0
 \end{equation}
 \end{thm}
+This theorem provide a simple way to solve the dissipativity based control problem.
+However, since $\mat{B}$ is function of $\vec{x}$, the LMI \eqref{equ:lmi} should be solved for each cycle to get feedback gain $\mat{H}$. This presents  computational difficulties, which rapidly grow if the scale of the systems increases. To overcome this difficulty, we propose in the sequel a solution for the dissipativity based control problem independent of $B$. To do this, 
+let
+$\mat{M}=\mat{B}^T\mat{P}\mat{B}$ and
+$\vec{y}=\frac{1}{2}\mat{B}^T\mat{P}(\mat{A}\vec{x}+\vec{r})$.  It
+follows from Eq. \eqref{pbc0} that
+\begin{equation}\label{pbcc}
+g(\vec{u})=\vec{u}^T\mat{M}\vec{u}+2\vec{u}^T\vec{y}
+\end{equation}
+Now, observe that  since $\epsilon^T\vec{l} =\epsilon^T\mat{B}\vec{u}=0$ for all $u$ then $\epsilon^T\mat{B}=0$ which implies that the rows of $B$ are linearly dependent. Consequently  $B$ is singular so  $M$ is symmetric positive semidefinite and  all its eigenvalues  are nonnegative.  Hence, there exists an orthogonal matrix $K$ such that $M=KCK^T $, where $C$ is a diagonal matrix of the form
+$$C=diag(\xi_1;\cdots,\xi_r,0,\cdots,0)$$
+where $\xi_i>0$  are the positive eigenvalues  of $M$  and $r$ is the rank of $M$ . The orthonormal columns of $K$  are the eigenvectors of all eigenvalues  of $M$. 
 
-It follows immediately from Theorem \ref{thm:pbc} that the LMI
-\eqref{equ:lmi} defines a convex set of the matrix $H_\infty$ such
-that, for any solution of this set, the feedback control defined by
-$\vec{u}=\frac{1}{2} \mat{H} (\mat{A}\vec{x}+\vec{r})$ exhausts the
-class of control laws which render the system dissipative.
-Hence, theorem \ref{thm:pbc} gives explicit but non-unique solutions
-of the the dissipativity based control problem.
+Now, let $D =diag(\xi_1;\cdots,\xi_r)$, $M$ can be rewritten as
+$$M=K\left(\begin{array}{cc}D^{\frac{1}{2}}& 0 \\ 0 &I_{n-r} 
+\end{array}\right)
+\left(\begin{array}{cc}I_r& 0 \\ 0 &0 
+\end{array}\right)
+\left(\begin{array}{cc}D^{\frac{1}{2}}& 0 \\ 0 &I_{n-r} 
+\end{array}\right)
+K^T$$
+If we put 
+$$Q=K\left(\begin{array}{cc}D^{\frac{1}{2}}& 0 \\ 0 &I_{n-r} 
+\end{array}\right)$$
+then $Q^{-1}$ is well defined because $K$ is orthogonal. Hence, let $z=Q^T u$  and $\theta= Q^{-1}y$, equation \eqref{pbcc} can be rewritten as
+\begin{align}\label{pbc1}
+g(z)&=z^T\left(\begin{array}{cc}I_r& 0 \\ 0 &0 
+\end{array}\right)z+2z^T\theta=z^T z +2z^T \theta -z^T\left(\begin{array}{cc}0& 0 \\ 0 &I_{n-r} 
+\end{array}\right) z\nonumber\\
+&\leq z^T z +2z^T \theta=(z+\theta)^T (z+\theta) -\theta^T \theta
+\end{align}
+Let $R\in\mathbb{R}^{n\times n}$ and put
+$z=R\theta$, it follows
+\begin{equation}\label{pbc2}
+f(\theta)=(z+\theta)^T (z+\theta) -\theta^T \theta=\theta^T\Bigl[(R+I)^T(R+I)-I\Bigr]\theta
+\end{equation}
+Hence, $f(\theta)\leq 0$ for all $\theta$  if and only if $R$  is a solution of
+  the following LMI 
+$$\begin{pmatrix}
+\mat{I}& (\mat{R}+\mat{I})^T  \\
+ (\mat{R}+\mat{I})  & \mat{I}
+\end{pmatrix}\succeq 0$$
+This LMI is now independent of $\vec{x}$, hence it can be solved once for all cycles. Summarizing, we have the following theorem. 
 
-\newpage
+\begin{thm}\label{thm:pbc2}
+For the transportation system, the feedback control law
+\begin{equation}
+\label{equ:feedback2}
+\vec{u}=\frac{1}{2}(\mat{Q}^T)^{-1}\mat{R}\mat{Q}^{-1}\mat{B}^T\mat{P}(\mat{A}
+\vec{x}+\vec{r})
+\end{equation}
+renders the system dissipative with respect to
+entropy \eqref{equ:Tran_entropy} as the storage function and the
+supply function \eqref{equ:supply} if $\mat{R}$ is a solution of the
+following LMI
+$$\begin{pmatrix}
+\mat{I}& (\mat{R}+\mat{I})^T  \\
+ (\mat{R}+\mat{I})  & \mat{I}
+\end{pmatrix}\succeq 0$$
+\end{thm}
+
+
+Now, observe that if the matrix $R$ is chosen to be symmetric then $f(\theta)\leq 0$ if and only if $-2\leq\lambda_i\leq 0$, for each  eigenvalue $\lambda_i$  
+ of $R$. To show this, because $R$ is symmetric it is always diagonalizable. Let $R=FLF^T$ be the eigendecomposition of $R$, where $F^T=F^{-1}$ and $L$ is the diagonal matrix whose diagonal elements are the  eigenvalues of $R$. We have 
+ $$(R+I)^T(R+I)-I=R^2+2R=F(L^2+2L)F^T$$
+It infers that $f(\theta)\leq 0$ if and only if $(L^2+2L)$ is negative definite. Since $L^2+2L=diag(\lambda_1^2+2\lambda_1,\cdots,\lambda_n^2+2\lambda_n)$, it follows $(L^2+2L)$ is negative definite if and only if  $\lambda_i^2+2\lambda_i \leq 0, \forall i $. This infers that  $-2\leq\lambda_i\leq 0$.
+
+In the particular situation where $\mat{R}=r\mat{I}$, $r\in
+\mathbb{R}$,
+for any vector $\vec{\theta}$, $f(\vec{\theta})$ is non-positive if and only if $-2\leq r\leq 0$. Summarizing, we have the following corollary. 
+
+\begin{cor}\label{thm:pbcc2} Let $R$ be a symmetric matrix. 
+For the transportation system, the feedback control law
+\begin{equation}
+\label{equ:feedback2bis}
+\vec{u}=\frac{1}{2}(\mat{Q}^T)^{-1}\mat{R}\mat{Q}^{-1}\mat{B}^T\mat{P}(\mat{A}
+\vec{x}+\vec{r})
+\end{equation}
+renders the system dissipative with respect to
+entropy \eqref{equ:Tran_entropy} as the storage function and the
+supply function \eqref{equ:supply} if $-2\leq\lambda_i\leq 0,  \forall
+i=1,\cdots,n$, where $\lambda_i$ is an eigenvalue of $R$.
+ 
+\end{cor}
+
+From the corollary just stated,  It follows immediately that, for any
+arbitrarily selected $R$ that satisfies $-2\leq\lambda_i\leq 0,  \forall i=1,\cdots,n$, the feedback
+control defined by \eqref{equ:feedback2bis} exhausts the class of control laws
+which render the system dissipative. Hence, corollary \ref{thm:pbcc2} 
+gives explicit but non-unique solutions of the the dissipativity based
+control problem.
 
 Furthermore, the application of the control $\vec{u}$ in real
 transportation systems must concern the physical limitations on the
@@ -916,79 +1069,6 @@ where $u_i^*$ is the value derived from the feedback
 to real system.
 
 \newpage
-
-\section{Occupancy Equilibrium}\label{sec:equilibrium}
-
-For an isolated thermodynamic system without any input
-($\vec{r}^e(k)\equiv 0$) and output ($\vec{d}^e(k)\equiv 0$) energy
-flows, if a pair of connected subsystems have different temperatures,
-the energy transmission will emerge between them so that their
-temperatures tend to approximate. After enough amount of time, the
-isolated system will reach certain state when the temperature is
-spatially and temporally uniform. In this state, the system will lose
-all its capacity to produce any useful work. Such particular state is
-called thermal equilibrium \citep{cengel_thermodynamics:_2001}. For
-an isolated thermodynamic system in thermal equilibrium, its ectropy
-would be a minimum and entropy would be a maximum giving rise to a
-state of absolute disorder.
-
-Since the lane occupancies correspond to the temperatures, this
-concept of thermal equilibrium can be easily introduced into the
-transportation context to denote the state when the occupancies of
-all traffic lanes are the same. Such state is called the occupancy
-equilibrium in this paper. It can be denoted by the following
-mathematical expression
-\begin{equation}\label{equ:equilibrium}
-\frac{\bar{x}_1}{x_1^*}=\cdots=\frac{\bar{x}_n}{x_n^*}=\bar{f}=\text{constant}
-\end{equation}
-The occupancy equilibrium implies that no particular concentration of
-vehicles exists in the system and hence the possibility to emerge
-congestion is extremely low.
-% Contrary  to the second law of thermodynamic, for an isolated
-% transportation network,
-If a transportation network can be isolated in certain circumstances,
-its entropy (resp, ectropy) is minimal (resp, maximal) when
-the system reaches the occupancy equilibrium. In other words, for
-isolated network, this state corresponds to the best organization of
-the system. This observation is stated in the following theorem.
-
-\begin{thm}\label{thm:entropy_equilibrium}
-Suppose the transportation network is isolated. Let $N$ be the total
-number of vehicles in the system. Let $\psi(\vec{x})$ and
-$\phi(\vec{x})$ denote the entropy and ectropy of the system  given
-by \eqref{equ:Tran_entropy} and \eqref{equ:Tran_ectropy}
-respectively, and define $\mathbb{D}\triangleq
-\{\vec{x}\in\mathbb{R}^n_+/\vec{\epsilon}^T\vec{x}=N\}$. Then,
-\begin{equation}\label{equ:entropy_equilibrium}
-\arg\min_{\vec{x}\in\mathbb{D}}(\psi(\vec{x})) =
-\arg\max_{\vec{x}\in\mathbb{D}}(\phi(\vec{x})) = \bar{\vec{x}} =
-\frac{N}{\vec{\epsilon}^T\vec{x}^*}\vec{x}^*
-\end{equation}
-\end{thm}
-\begin{proof}  The proof is identical to the proof of Proposition 3.17 of \citet{haddad_thermodynamic_2005} with $N$ as the total energy of the system 
-and $x^*_i$ as the reciprocal of the specific heat of the $i$th subsystem. Hence it is omitted here.
-\end{proof}%The proof is essentially contained in
-
-Now, observe that if the state $ \bar{\vec{x}}$ is reached, then
-$\frac{\bar{x}_i}{x_i^*}=\frac{N}{\vec{\epsilon}^T\vec{x}^*}=\bar{f}$,
-for all $i=1,\cdots, n$, which corresponds to the occupancy
-equilibrium. This occupancy equilibrium leads to the minimal disorder
-and maximal order for the transportation network. Hence, the study of
-control problems should concern this state as an important objective.
-
-\iffalse
-Now, if we assume that $\sigma_{i,j}=\sigma_{j,i}$ if and only if
-$\frac{x_i}{x_i^*}=\frac{x_j}{x_j^*}$, then $ \bar{\vec{x}}$  is an
-equilibrium state Lyapunov stable. Indeed, since the system is
-isolated $S(k)=0$. It follows from equation \eqref{eq:g} that $g(k)=0$
-and hence $\Delta\psi(\vec{x}(k))\leq0$ in view of
-\eqref{equ:dissipative1}.
-\fi
-
-Note that the thermal equilibrium is a stable state because of the
-second law of thermodynamics. Since transportation systems have no
-corresponding principle, occupancy equilibrium is not a stable state
-naturally.
 
 \section{Conclusion}
 
@@ -1014,9 +1094,10 @@ hence may provide deep insight in the analysis of transportation
 control problems.
 In particular, this paper has presented a dissipassivity phenomenon
 of transportation entropy that reduces the system disorder and hence
-renders the system better organized. Though this phenomenon doesn't
-exist naturally, certain control strategies can be designed to
-achieve such objective.
+renders the system better organized.
+Though this phenomenon doesn't exist naturally in transportation
+context, the ways to construct feedback control strategies have been
+proposed in this paper to achieve such objective.
 
 Finally, we would like to point out that, though the traffic lanes
 are chosen as the units of transportation systems in this paper, the
@@ -1030,7 +1111,24 @@ etc in the future.
 
 \end{document}
 
+
+
+It well known that the solution set of  the LMI
+\eqref{equ:lmi} has a solution  matrix $H$ such
+that, for any solution of this set, the feedback control defined by
+$\vec{u}=\frac{1}{2} \mat{H} (\mat{A}\vec{x}+\vec{r})$ exhausts the
+class of control laws which render the system dissipative.
+Hence, theorem \ref{thm:pbc} gives explicit but non-unique solutions
+of the the dissipativity based control problem.
+
 Indeed, there are two cases to consider:
+
+
+ Moreover, if $\mat{R}=r\mat{I}$ with $r\in \mathbb{R}$, then the
+feedback control law 
+$$\vec{u}=\frac{r}{2} (\mat{Q}\mat{Q}^T)^{-1}\mat{B}^T\mat{P}
+(\mat{A}\vec{x}+\vec{r})$$
+ renders the system dissipative if $|r+1|\leq 1$.
 
 {\bf Case 1: B is nonsingular}\\
 
